@@ -1,0 +1,158 @@
+/*------------------------------------------------------------------
+  Project:      XE - Just Another WordPress Framework
+  Version:      1.0.0
+  Primary Use:  XE - Just Another WordPress Framework
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+  + General
+  + Typography
+  + Alignments
+  + Media
+  + Tool-Bar
+  + Header
+  + Navigation
+  + Sliders
+  + Title-Bar
+  + Footer
+  + Preloader
+  + Buttons
+  + Icons
+  + Small Icons
+  + About
+  + Portfolio
+  + Food Menu
+  + Call To Action
+  + Team
+  + Contact
+  + Forms
+-------------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  background: #fff;
+  font-weight: normal;
+  position: relative;
+  font-size: 14px;
+  font-family: '', sans-serif;
+  overflow-x: hidden;
+}
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: '', sans-serif;
+}
+dfn,
+cite,
+em,
+i {
+  font-style: italic;
+}
+blockquote {
+  margin: 0 1.5em;
+}
+pre {
+  font-family: "Courier 10 Pitch", Courier, monospace;
+}
+code,
+tt,
+var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr,
+acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+mark,
+ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+img {
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  -ms-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+.site-header {
+  z-index: 999;
+}
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+.navbar-brand {
+  padding: 3px 15px;
+}
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+a {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+a:hover,
+a:active {
+  outline: 0;
+}
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+  outline: none;
+}
+textarea {
+  width: 100%;
+}
