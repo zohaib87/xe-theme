@@ -51,11 +51,6 @@ Features
 * Forever Free.
 * Professional and Outstanding Support.
 
-Live Support & Questions
-------------------------
-
-[Click Here](http://xecreators.pk) to live chat with us for support, questions or suggestions.
-
 Required Plugins
 ----------------
 
@@ -79,6 +74,10 @@ Documentation
 
 Coming Soon!
 
+Live Support & Questions
+------------------------
+
+[Click Here](http://xecreators.pk) to live chat with us for support, questions or suggestions.
 
 Themes Build With This Framework
 ---------------------------------
