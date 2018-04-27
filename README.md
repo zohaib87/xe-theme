@@ -1,7 +1,5 @@
-# [XeFramework](http://xecreators.pk/) Just Another WordPress Framework
-
-_xe
-===
+About XeFramework
+=================
 
 Hi, This is modified version of starter theme called `_s`, or `underscores`, if you like. It's meant for hacking so don't use it as a Parent Theme. Instead try turning it into the next, most awesome, WordPress theme out there. That's what this framework is here for.
 
@@ -36,6 +34,7 @@ Required Plugins
 This Framework require these plugins:
 
 * [Xe Core](https://github.com/XeCreators/xe-core)
+* [ACF Pro](https://www.advancedcustomfields.com/pro/) (Not Included)
 * Visual Composer (Not Included)
 * Redux Framework 
 
@@ -56,7 +55,7 @@ Coming Soon!
 Themes Build With This Framework
 ---------------------------------
 
-* [Premio](http://demos.xecreators.pk/wp/premio/) (Built with Beta Version)
-* [Danee](http://demos.xecreators.pk/wp/danee/) (Built with Beta Version)
-* [Exact](http://demos.xecreators.pk/exact/)
-* [Xurais](http://demos.xecreators.pk/xurais/)
+* [Premio - Creative Business WordPress Theme](http://demos.xecreators.pk/wp/premio/) (Built with Beta Version)
+* [Danee - Onepage WordPress Theme](http://demos.xecreators.pk/wp/danee/) (Built with Beta Version)
+* [Exact - Multipurpose Responsive Onepage WordPress Theme](http://demos.xecreators.pk/exact/)
+* [Xurais - Creative Business WordPress Theme](http://demos.xecreators.pk/xurais/)
