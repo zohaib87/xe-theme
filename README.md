@@ -18,15 +18,43 @@ Download `_xe` from GitHub. The first thing you want to do is copy the `_xe` dir
 
 OR
 
-* Search for: `'_xe'` and replace with: `'megatherium'`
-* Search for: `_xe_` and replace with: `megatherium_`
-* Search for: `Text Domain: _xe` and replace with: `Text Domain: megatherium` in style.css.
-* Search for: <code>&nbsp;_xe</code> and replace with: <code>&nbsp;Megatherium</code>
-* Search for: `_xe-` and replace with: `megatherium-`
-* Search for: `xe_opt` and replace with: `megatherium_opt`
-* Search for: `Xe_` and replace with: `Megatherium_`
+1. Search for: `'_xe'` and replace with: `'megatherium'`
+2. Search for: `_xe_` and replace with: `megatherium_`
+3. Search for: `Text Domain: _xe` and replace with: `Text Domain: megatherium` in style.css.
+4. Search for: <code>&nbsp;_xe</code> and replace with: <code>&nbsp;Megatherium</code>
+5. Search for: `_xe-` and replace with: `megatherium-`
+6. Search for: `xe_opt` and replace with: `megatherium_opt`
+7. Search for: `Xe_` and replace with: `Megatherium_`
 
 Then, update the stylesheet header in `style.css` Next, delete this readme.
+
+Features
+--------
+
+* Built-In Mega Menu.
+* One Page and Multi Page.
+* Theme Options. (Redux)
+* Highly Customizable.
+* Easy to Customize.
+* Fontawesome and Ionicons Supported.
+* Google Fonts Integration.
+* Cusomizable Google Maps.
+* Easily Create Parallax Pages.
+* Wide, Fluid and Boxed Layout.
+* Right, Left or Both Sides Sidebar Supported.
+* Blog Masonry Layout.
+* WooCommerce Ready.
+* Unlimited Widget Areas.
+* One Click Demo Import.
+* Smooth Scroll Option.
+* Detailed Documentation. (Coming Soon)
+* Forever Free.
+* Professional and Outstanding Support.
+
+Live Support & Questions
+------------------------
+
+[Click Here](http://xecreators.pk) to live chat with us for support, questions or suggestions.
 
 Required Plugins
 ----------------
@@ -35,16 +63,16 @@ This Framework require these plugins:
 
 * [Xe Core](https://github.com/XeCreators/xe-core)
 * [ACF Pro](https://www.advancedcustomfields.com/pro/) (Not Included)
-* Visual Composer (Not Included)
-* Redux Framework 
+* [Visual Composer](https://codecanyon.net/item/visual-composer-page-builder-for-wordpress/242431?ref=XeCreators) (Not Included)
+* [Redux Framework](https://wordpress.org/plugins/redux-framework/)
 
 Recommended Plugins
 -------------------
 
 Following are recommended plugins to use with this Framework:
 
-* Revolution Slider (Not Included)
-* One Click Demo Import
+* [Revolution Slider](https://codecanyon.net/item/slider-revolution-responsive-wordpress-plugin/2751380?ref=XeCreators) (Not Included)
+* [One Click Demo Import](https://wordpress.org/plugins/one-click-demo-import/)
 
 Documentation
 -------------
