@@ -6,7 +6,7 @@ Hi, This is modified version of starter theme called `_s`, or `underscores`, if 
 Getting Started With Theme
 --------------------------
 
-Download `_xe` from GitHub. The first thing you want to do is copy the `_xe` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a seven-step find and replace on the name in all the templates.
+Download `xe-framework` from GitHub. The first thing you want to do is copy the `xe-framework` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a seven-step find and replace on the name in all the templates.
 
 1. Search for `'_xe'` (inside single quotations) to capture the text domain.
 2. Search for `_xe_` to capture all the function names.
