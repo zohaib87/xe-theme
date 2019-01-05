@@ -1,7 +1,7 @@
 About XeFramework
 =================
 
-Hi, This is modified version of starter theme called `_s`, or `underscores`, if you like. It's meant for hacking so don't use it as a Parent Theme. Instead try turning it into the next, most awesome, WordPress theme out there. That's what this framework is here for.
+Hi, This is Just another WordPress Framework or Blank Theme whatever you may prefer to call it. It was built to create themeforest compatible themes, so please don't use it as a Parent Theme. Instead try turning it into the next, most awesome, WordPress theme out there. That's what this framework is here for.
 
 Getting Started With Theme
 --------------------------
@@ -58,7 +58,7 @@ This Framework require these plugins:
 
 * [Xe Core](https://github.com/XeCreators/xe-core)
 * [ACF Pro](https://www.advancedcustomfields.com/pro/) (Not Included)
-* [Visual Composer](https://codecanyon.net/item/visual-composer-page-builder-for-wordpress/242431?ref=XeCreators) (Not Included)
+* [WPBakery Page Builder](https://codecanyon.net/item/visual-composer-page-builder-for-wordpress/242431?ref=XeCreators) (Not Included)
 * [Redux Framework](https://wordpress.org/plugins/redux-framework/)
 
 Recommended Plugins
@@ -77,7 +77,7 @@ Coming Soon!
 Live Support & Questions
 ------------------------
 
-[Click Here](http://xecreators.pk) to live chat with us for support, questions or suggestions.
+[Click Here](http://www.xecreators.pk) to live chat with us for support, questions or suggestions.
 
 Themes Build With This Framework
 ---------------------------------
