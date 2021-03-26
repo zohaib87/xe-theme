@@ -2,8 +2,7 @@
 var gulp = require('gulp');
 var config = require('./node_scripts/config.json');
 var browserSync = require("browser-sync").create();
-var concatCss = require('gulp-concat-css');
-var concatJs = require('gulp-concat');
+var concat = require('gulp-concat');
 var imagemin = require('gulp-imagemin');
 var cleanCss = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
@@ -55,7 +54,7 @@ function concat_js() {
   return gulp.src([
     'assets_dev/js/main.js'
   ])
-  .pipe(concatJs('main.js'))
+  .pipe(concat('main.js'))
   .pipe(gulp.dest('assets/js/'));
 }
 
@@ -75,8 +74,16 @@ function min_js() {
  * Concat CSS files
  */
 function concat_css() {
-  return gulp.src('assets_dev/css/_all.css')
-  .pipe(concatCss('main.css'))
+  return gulp.src([
+    'assets_dev/css/general.css',
+    'assets_dev/css/blog.css',
+    'assets_dev/css/pages.css',
+    'assets_dev/css/widgets.css',
+    'assets_dev/css/comments.css',
+    'assets_dev/css/woocommerce.css',
+    'assets_dev/css/forms.css',
+  ])
+  .pipe(concat('main.css'))
   .pipe(gulp.dest('assets/css/'));
 }
 
