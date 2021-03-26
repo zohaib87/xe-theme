@@ -1,0 +1,52 @@
+/*--------------------------------------------------------------
+# 404 Page
+--------------------------------------------------------------*/
+.error404 .page-header .page-title {
+  color: #404040;
+}
+/*--------------------------------------------------------------
+# Search
+--------------------------------------------------------------*/
+/*.search-form label,
+.woocommerce-product-search label {
+  width: 100%;
+  font-size: 12px;
+  font-weight: normal;
+}*/
+.search-form input.form-control,
+.woocommerce-product-search input {
+  width: 100%;
+  /*display: inline-block;
+  height: 40px;
+  padding-right: 10px;
+  padding-left: 10px;
+  background: #fff;
+  box-shadow: none;
+  border-radius: 0px;
+  border: 1px solid #e6e6e6;*/
+}
+.widget-area .search-form input.form-control,
+.search-results .search-form input.form-control,
+.error-404 .search-form input.form-control,
+.no-results .search-form input.form-control {
+  height: 45px;
+}
+.search-form .search-submit,
+.woocommerce-product-search input[type=submit] {
+  background: url(../img/search-icon.png) no-repeat;
+  background-size: cover;
+  height: 40px;
+  width: 40px;
+  border: none;
+  float: right;
+  position: relative;
+  z-index: 1;
+  margin-top: -42px;
+  /* margin-right: 10px; */
+}
+.woocommerce-product-search input[type=submit] {
+  margin-top: -40.5px;
+}
+.search-form input.search-submit:focus {
+  outline: none;
+}

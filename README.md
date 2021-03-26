@@ -1,88 +1,49 @@
 About XeFramework
 =================
 
-Hi, This is Just another WordPress Framework or Blank Theme whatever you may prefer to call it. It was built to create themeforest compatible themes, so please don't use it as a Parent Theme. Instead try turning it into the next, most awesome, WordPress theme out there. That's what this framework is here for.
+This is Just another WordPress Framework. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
-Getting Started With Theme
---------------------------
+Getting Started
+---------------
+1. You must have latest version of [Nodejs](https://nodejs.org/en/) installed.
+2. Install `gulp` globally using `npm install gulp -g` from your command line.
+3. Change folder name to your theme name. e.g: `xurais` or `xu-rais`.
+4. Navigate to `node_scripts` folder and open `config.json` with your favorite editor.
+5. Change `name`. eg: `Xurais` or `Xu Rais`. Also change the `proxy` to your local WordPress site url.
+6. Open command line, navigate to project folder and run `npm install` to install dependencies.
+7. Now run `gulp init` command to automatically change text-domain, prefixes, DocBlocks etc to your theme name.
+8. Run `gulp` command to watch your theme files for changes and start making an awesome WordPress Theme. ;-)
+9. Once you have completed your theme run `gulp build` command to generate a clean copy of your theme on desktop. `.pot` file will also be generated inside languages folder.
+10. For more detail please [Click Here](http://docs.xecreators.pk/xe-framework) to read the documentation.
 
-Download `xe-framework` from GitHub. The first thing you want to do is copy the `xe-framework` directory and change the name to something else (like, say, `megatherium`), and then you'll need to do a seven-step find and replace on the name in all the templates.
+Useful Commands
+---------------
 
-1. Search for `'_xe'` (inside single quotations) to capture the text domain.
-2. Search for `_xe_` to capture all the function names.
-3. Search for `Text Domain: _xe` in style.css.
-4. Search for <code>&nbsp;_xe</code> (with a space before it) to capture DocBlocks.
-5. Search for `_xe-` to capture prefixed handles.
-6. Search for `xe_opt` to capture global variables.
-7. Search for `Xe_` to capture prefixed classes.
-
-OR
-
-1. Search for: `'_xe'` and replace with: `'megatherium'`
-2. Search for: `_xe_` and replace with: `megatherium_`
-3. Search for: `Text Domain: _xe` and replace with: `Text Domain: megatherium` in style.css.
-4. Search for: <code>&nbsp;_xe</code> and replace with: <code>&nbsp;Megatherium</code>
-5. Search for: `_xe-` and replace with: `megatherium-`
-6. Search for: `xe_opt` and replace with: `megatherium_opt`
-7. Search for: `Xe_` and replace with: `Megatherium_`
-
-Then, update the stylesheet header in `style.css` Next, delete this readme.
+* `gulp concatcss`
+* `gulp concatjs`
+* `gulp mincss`
+* `gulp minjs`
+* `gulp imagemin`
+* Above commands are self explanatory and for manual use. To automate all the above just use `gulp`. To stop automation use `CTRL+C` in windows and `CMD+C` on mac.
 
 Features
 --------
 
-* Built-In Mega Menu.
-* One Page and Multi Page.
-* Theme Options. (Redux)
-* Highly Customizable.
-* Easy to Customize.
-* Fontawesome and Ionicons Supported.
-* Google Fonts Integration.
-* Cusomizable Google Maps.
-* Easily Create Parallax Pages.
+* Auto browser reload.
+* Auto/manual concat or minify CSS and JavaScript files.
+* Auto/manual image optimization.
+* Theme Options (Customizer).
+* Highly Customizable and Easy to Customize.
+* Bootstrap 4 and Fontawesome 5 Icons.
 * Wide, Fluid and Boxed Layout.
 * Right, Left or Both Sides Sidebar Supported.
-* Blog Masonry Layout.
 * WooCommerce Ready.
 * Unlimited Widget Areas.
 * One Click Demo Import.
-* Smooth Scroll Option.
-* Detailed Documentation. (Coming Soon)
 * Forever Free.
 * Professional and Outstanding Support.
 
-Required Plugins
-----------------
-
-This Framework require these plugins:
-
-* [Xe Core](https://github.com/XeCreators/xe-core)
-* [ACF Pro](https://www.advancedcustomfields.com/pro/) (Not Included)
-* [WPBakery Page Builder](https://codecanyon.net/item/visual-composer-page-builder-for-wordpress/242431?ref=XeCreators) (Not Included)
-* [Redux Framework](https://wordpress.org/plugins/redux-framework/)
-
-Recommended Plugins
--------------------
-
-Following are recommended plugins to use with this Framework:
-
-* [Revolution Slider](https://codecanyon.net/item/slider-revolution-responsive-wordpress-plugin/2751380?ref=XeCreators) (Not Included)
-* [One Click Demo Import](https://wordpress.org/plugins/one-click-demo-import/)
-
 Documentation
 -------------
-
-Coming Soon!
-
-Live Support & Questions
-------------------------
-
-[Click Here](http://www.xecreators.pk) to live chat with us for support, questions or suggestions.
-
-Themes Build With This Framework
----------------------------------
-
-* [Premio - Creative Business WordPress Theme](http://demos.xecreators.pk/wp/premio/) (Built with Beta Version)
-* [Danee - Onepage WordPress Theme](http://demos.xecreators.pk/wp/danee/) (Built with Beta Version)
-* [Exact - Multipurpose Responsive Onepage WordPress Theme](http://demos.xecreators.pk/exact/)
-* [Xurais - Creative Business WordPress Theme](http://demos.xecreators.pk/xurais/)
+ 
+* [Click Here](http://docs.xecreators.pk/xe-framework) to read detailed documentation.

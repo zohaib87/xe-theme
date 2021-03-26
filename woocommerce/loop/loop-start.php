@@ -13,10 +13,9 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     2.0.0
+ * @version     3.3.0
  */
 ?>
 <div class="clearfix"></div>
 
-<div class="row">
-<div class="masonry-container products">
+<div class="card-columns">

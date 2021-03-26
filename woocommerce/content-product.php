@@ -13,7 +13,7 @@
  * Check for Product Functions: woocommerce/includes/abstracts/abstract-wc-product.php
  *
  * @var $product->get_image( $size = 'shop_thumbnail', $attr = array(), $placeholder = true ) [< Escape with wp_kses_post >]
- * @var $product->get_price_html() [< Escape with wp_kses_post >]
+ * @var $product->get_price_html()
  * @var $product->add_to_cart_url()
  * @var $product->add_to_cart_text()
  * @var $product->get_id() [< Used inside "data-product_id" attribute >]
@@ -23,7 +23,7 @@
  * @see     https://docs.woocommerce.com/document/template-structure/
  * @author  WooThemes
  * @package WooCommerce/Templates
- * @version 3.0.0
+ * @version 3.6.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -37,7 +37,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 } ?>
 
-<div class="col-md-<?php echo esc_attr($xe_opt->shop['columns']); ?> col-xs-6 masonry <?php if (!is_product()) echo 'margin-bottom-30'; ?>">
+<div class="card">
 
 	<article <?php post_class(); ?>>
 
@@ -83,4 +83,4 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 	</article>
 
-</div><!-- .col-md-## -->
+</div><!-- .card -->

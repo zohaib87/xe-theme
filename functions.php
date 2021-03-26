@@ -1,13 +1,13 @@
 <?php
 /**
- * _xe functions and definitions.
+ * Theme functions and definitions.
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
  * @package _xe
  */
 
-if ( !function_exists('_xe_setup') ) {
+if (!function_exists('_xe_setup')) {
 
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -24,17 +24,17 @@ if ( !function_exists('_xe_setup') ) {
 		 * If you're building a theme based on _xe, use a find and replace
 		 * to change '_xe' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( '_xe', get_template_directory() . '/languages' );
+		load_theme_textdomain('_xe', get_template_directory() . '/languages');
 
 		/**
 		 * Register editor stylesheet for the theme.
 		 */
-		add_editor_style( array('css/editor-style.css') );
+		add_editor_style(array('css/editor-style.css'));
 
 		/**
 		 * Add default posts and comments RSS feed links to head.
 		 */
-		add_theme_support( 'automatic-feed-links' );
+		add_theme_support('automatic-feed-links');
 
 		/**
 		 * Let WordPress manage the document title.
@@ -42,21 +42,17 @@ if ( !function_exists('_xe_setup') ) {
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-		add_theme_support( 'title-tag' );
+		add_theme_support('title-tag');
 
 		/**
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-		add_theme_support( 'post-thumbnails' );
+		add_theme_support('post-thumbnails');
 		add_image_size('_xe-blog', 1280, 686);
 		add_image_size('_xe-post', 1280, 686);
 		add_image_size('_xe-recent-posts', 60, 60, true);
-		add_image_size('_xe-portfolio-list');
-		add_image_size('_xe-portfolio');
-		add_image_size('_xe-events-list');
-		add_image_size('_xe-events');
 
 		/**
 		 * Registering Navigation Menus
@@ -64,12 +60,16 @@ if ( !function_exists('_xe_setup') ) {
 		 * @link https://codex.wordpress.org/Function_Reference/register_nav_menus
 		 */
 		register_nav_menus( array(
-			'primary-menu' => esc_html__( 'Primary Location', '_xe' ),
-			'second-menu' => esc_html__( 'Second Location', '_xe' ),
-			'third-menu' => esc_html__( 'Third Location', '_xe' ),
-			'fourth-menu' => esc_html__( 'Fourth Location', '_xe' ),
-			'fifth-menu' => esc_html__( 'Fifth Location', '_xe' ),
-			'sixth-menu' => esc_html__( 'Sixth Location', '_xe' ),
+			'primary-menu' => esc_html__('Primary Location', '_xe'),
+			'second-menu' => esc_html__('Second Location', '_xe'),
+			'third-menu' => esc_html__('Third Location', '_xe'),
+			'fourth-menu' => esc_html__('Fourth Location', '_xe'),
+			'fifth-menu' => esc_html__('Fifth Location', '_xe'),
+			'sixth-menu' => esc_html__('Sixth Location', '_xe'),
+			'seventh-menu' => esc_html__('Seventh Location', '_xe'),
+			'eighth-menu' => esc_html__('Eighth Location', '_xe'),
+			'ninth-menu' => esc_html__('Ninth Location', '_xe'),
+			'tenth-menu' => esc_html__('Tenth Location', '_xe'),
 		) );
 
 		/**
@@ -86,7 +86,7 @@ if ( !function_exists('_xe_setup') ) {
 
 		/**
 		 * Enable support for Post Formats.
-		 * 
+		 *
 		 * @link https://developer.wordpress.org/themes/functionality/post-formats/
 		 */
 		add_theme_support( 'post-formats', array(
@@ -106,7 +106,7 @@ if ( !function_exists('_xe_setup') ) {
 	}
 
 }
-add_action( 'after_setup_theme', '_xe_setup' );
+add_action('after_setup_theme', '_xe_setup');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -148,18 +148,25 @@ function _xe_widgets_init() {
 	 */
 	_xe_register_sidebar( esc_html__( 'Sidebar 1', '_xe' ), 'sidebar-1' );
 	_xe_register_sidebar( esc_html__( 'Sidebar 2', '_xe' ), 'sidebar-2' );
-	
+  _xe_register_sidebar( esc_html__( 'Sub-Footer Column 1', '_xe' ), 'footer-1' );
+  _xe_register_sidebar( esc_html__( 'Sub-Footer Column 2', '_xe' ), 'footer-2' );
+  _xe_register_sidebar( esc_html__( 'Sub-Footer Column 3', '_xe' ), 'footer-3' );
+  _xe_register_sidebar( esc_html__( 'Sub-Footer Column 4', '_xe' ), 'footer-4' );
+
 	/**
 	 * Custom Sidebars
 	 */
-	global $xe_options;
+  $widget_areas = get_theme_mod( 'add_custom_widgets', '' );
 
-	if ( isset($xe_options['custom_sidebars']) && !empty($xe_options['custom_sidebars']) ) :
+	if ( isset($widget_areas) && !empty($widget_areas) ) :;
 
-		$custom_sidebars =  $xe_options['custom_sidebars'];
+		foreach ($widget_areas as $widget_area) {
 
-		foreach ($custom_sidebars as $key => $value) {
-			_xe_register_sidebar( esc_html($value), 'custom-sidebar-' . esc_attr($key) );
+      $key = $widget_area['widget_id'];
+      $value = $widget_area['widget_name'];
+
+			_xe_register_sidebar( esc_html($value), esc_attr($key) );
+
 		}
 
 	endif;
@@ -172,8 +179,9 @@ add_action( 'widgets_init', '_xe_widgets_init' );
  */
 function _xe_admin_scripts() {
 
-	wp_enqueue_style( '_xe-admin', get_template_directory_uri() . '/css/admin.css' );
-	wp_enqueue_script( '_xe-admin', get_template_directory_uri() . '/js/admin.js', array(), '20151215', true );
+	wp_enqueue_style( '_xe-admin', get_template_directory_uri() . '/assets/css/admin.css' );
+
+	wp_enqueue_script( '_xe-admin', get_template_directory_uri() . '/assets/js/admin.js', array(), '20151215', true );
 
 }
 add_action( 'admin_enqueue_scripts', '_xe_admin_scripts', 9999 );
@@ -183,82 +191,144 @@ add_action( 'admin_enqueue_scripts', '_xe_admin_scripts', 9999 );
  */
 function _xe_scripts() {
 
-	global $xe_options, $post;
+  global $xe_opt;
+  $min_css = ($xe_opt->min_css == 'on') ? '.min' : '';
+  $min_js = ($xe_opt->min_js == 'on') ? '.min' : '';
 
-	$smooth_scroll = ( isset($xe_options['smooth_scroll']) ) ? $xe_options['smooth_scroll'] : false;
-	$google_api_key = ( isset($xe_options['google_api_key']) && !empty($xe_options['google_api_key']) ) ? 'key='.$xe_options['google_api_key'] : 'v=3.exp';
-	$google_fonts = ( isset($xe_options['google_fonts']) && !empty($xe_options['google_fonts']) ) ? $xe_options['google_fonts'] : 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700';
+  /**
+   * Google Fonts
+   */
+  // wp_enqueue_style( '_xe-fonts', '' );
 
-	/**
-	 * Google Fonts
-	 */
-	wp_enqueue_style( 'google-fonts', esc_url($google_fonts) );
-	
 	/**
 	 * Styles
 	 */
-	wp_enqueue_style( '_xe-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . "/css/bootstrap.min.css" );
-	wp_enqueue_style( 'bootsnav', get_template_directory_uri() . "/css/bootsnav.css" );
-	wp_enqueue_style( 'slick', get_template_directory_uri() . "/css/slick.css" );
-	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . "/css/font-awesome.min.css" );
-	wp_enqueue_style( 'ionicons', get_template_directory_uri() . "/css/ionicons.min.css" );
-	wp_enqueue_style( '_xe-helpers', get_template_directory_uri() . "/css/helpers.min.css" );
-	wp_enqueue_style( '_xe-woocommerce', get_template_directory_uri() . "/css/woocommerce.css" );
-	wp_enqueue_style( '_xe-main', get_template_directory_uri() . "/css/main.css" );
+	wp_enqueue_style('_xe-style', get_template_directory_uri() . '/style.css');
+	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css');
+	wp_enqueue_style('fontawesome', get_template_directory_uri() . '/assets/css/all.min.css');
+	wp_enqueue_style('_xe-main', get_template_directory_uri() . '/assets/css/main'.esc_attr($min_css).'.css', array(), '2021');
 
 	/**
 	 * Scripts
 	 */
-	if ( is_404() ) {
-		// Do Nothing...
-	} elseif ( (is_home() || is_archive() || is_search() || has_shortcode($post->post_content, 'recent_posts') || has_shortcode($post->post_content, 'recent_products') || has_shortcode($post->post_content, 'featured_products') || has_shortcode($post->post_content, 'product_category') | has_shortcode($post->post_content, 'product_categories') || has_shortcode($post->post_content, 'sale_products') || has_shortcode($post->post_content, 'best_selling_products') || has_shortcode($post->post_content, 'top_rated_products') || has_shortcode($post->post_content, 'product_attribute')) && have_posts() ) {
-		wp_enqueue_script( 'masonry' );
-		wp_enqueue_script( 'masonry-init', get_template_directory_uri() . "/js/masonry-init.js", array('masonry'), '20151215', true );
-	}
+	wp_enqueue_script('bootstrap', get_template_directory_uri() . "/assets/js/bootstrap.bundle.min.js", array('jquery'), '2021', true);
+  wp_enqueue_script('stellar', get_template_directory_uri() . "/assets/js/stellar.min.js", array('jquery'), '2021', true);
+  wp_enqueue_script('sticky', get_template_directory_uri() . "/assets/js/sticky.min.js", array('jquery'), '2021', true);
+	wp_enqueue_script('_xe-main', get_template_directory_uri() . '/assets/js/main'.esc_attr($min_js).'.js', array('jquery'), '2015', true);
 
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . "/js/bootstrap.min.js", array('jquery'), '20151215', true );
-	wp_enqueue_script( 'bootsnav', get_template_directory_uri() . "/js/bootsnav.js", array('jquery', 'bootstrap'), '20151215', true );
-	wp_enqueue_script( 'slick', get_template_directory_uri() . "/js/slick.min.js", array('jquery'), '20151215', true );
-	wp_enqueue_script( 'sticky', get_template_directory_uri() . "/js/sticky.min.js", array('jquery'), '20151215', true );
-	wp_enqueue_script( 'stellar', get_template_directory_uri() . "/js/stellar.min.js", array('jquery'), '20151215', true );
-	wp_enqueue_script( '_xe-main', get_template_directory_uri() . "/js/main.js", array('jquery'), '20151215', true );
-	wp_enqueue_script( 'google-map-api', "https://maps.googleapis.com/maps/api/js?" . esc_attr($google_api_key), array(), '20151215', true );
-	wp_enqueue_script( 'google-map-init', get_template_directory_uri() . "/js/map.js", array('google-map-api'), '20151215', true );
-	wp_enqueue_script( '_xe-custom', get_template_directory_uri() . "/js/custom.js", array(), '20151215', true );
-
-	if ( $smooth_scroll == true ) {
-		wp_enqueue_script( 'smooth-scroll', get_template_directory_uri() . "/js/smooth-scroll.js", array('jquery'), '20151215', true );
-	}
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
+	if (is_singular() && comments_open() && get_option('thread_comments')) {
+		wp_enqueue_script('comment-reply');
 	}
 
 }
-add_action( 'wp_enqueue_scripts', '_xe_scripts' );
+add_action('wp_enqueue_scripts', '_xe_scripts');
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/controllers/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/extras.php';
+require get_template_directory() . '/controllers/extras.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require get_template_directory() . '/models/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+require get_template_directory() . '/helpers/jetpack.php';
 
 /**
- * Load framework files.
+ * Custom nav walker class.
  */
-require get_template_directory() . '/inc/framework.php';
+require get_template_directory() . '/helpers/class-wp-bootstrap-navwalker.php';
+
+/**
+ * Required plugins activation.
+ */
+require get_template_directory() . '/helpers/plugins-activator.php';
+
+/**
+ * Class that holds helper methods.
+ */
+require get_template_directory() . '/helpers/class-helpers.php';
+
+/**
+ * Class to set CSS Selectors.
+ */
+require get_template_directory() . '/helpers/class-selectors.php';
+
+/**
+ * Class to set default options.
+ */
+require get_template_directory() . '/helpers/class-defaults.php';
+
+/**
+ * Class to get and use Redux and ACF Pro options.
+ */
+require get_template_directory() . '/controllers/class-theme-options.php';
+
+/**
+ * Functions that require Kirki Customizer Framework.
+ */
+function _xe_theme_options() {
+
+  if ( class_exists('Kirki') ) {
+    require get_template_directory() . '/models/theme-options.php';
+  }
+
+}
+add_action('init', '_xe_theme_options');
+
+/**
+ * Functions that require Meta Box.
+ */
+if ( class_exists('RWMB_Loader') ) {
+	require get_template_directory() . '/helpers/extensions/meta-box-tabs/meta-box-tabs.php';
+  require get_template_directory() . '/helpers/extensions/meta-box-group/meta-box-group.php';
+  require get_template_directory() . '/helpers/extensions/meta-box-conditional-logic/meta-box-conditional-logic.php';
+	require get_template_directory() . '/models/page-options.php';
+}
+
+/**
+ * Enqueue dynamic styles in theme <head> tags.
+ */
+require get_template_directory() . '/controllers/class-dynamic-styles.php';
+
+/**
+ * Enqueue dynamic scripts in theme footer.
+ */
+require get_template_directory() . '/controllers/class-dynamic-scripts.php';
+
+/**
+ * Require widgets classes.
+ */
+require get_template_directory() . '/models/widgets/recent-posts.php';
+require get_template_directory() . '/models/widgets/categories.php';
+require get_template_directory() . '/models/widgets/archives.php';
+require get_template_directory() . '/models/widgets/price-filter.php';
+
+/**
+ * Register widgets
+ */
+function _xe_register_custom_widgets() {
+
+  register_widget('Xe_RecentPostsWidget');
+  register_widget('Xe_CategoriesWidget');
+  register_widget('Xe_ArchivesWidget');
+  register_widget('Xe_PriceFilterWidget');
+
+}
+add_action('widgets_init', '_xe_register_custom_widgets');
+
+/**
+ * One click demo import.
+ */
+if (class_exists('OCDI_Plugin')) {
+	require get_template_directory() . '/helpers/class-demo-content.php';
+}

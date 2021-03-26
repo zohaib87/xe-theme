@@ -9,14 +9,6 @@
 
 global $xe_opt;
 
-if ( is_post_type_archive('xe-portfolio') ) {
-	$post_format = 'portfolio-list';
-} elseif ( is_post_type_archive('xe-events') ) {
-	$post_format = 'events-list';
-} else {
-	$post_format = '';
-}
-
 get_header(); ?>
 
 <div id="content" class="site-content <?php echo esc_attr($xe_opt->container); ?> padding-top-bottom">
@@ -27,22 +19,23 @@ get_header(); ?>
 			<?php 
 				if ( have_posts() ) :
 
-					get_template_part( 'template-parts/start', $post_format );
+					echo '<div class="card-columns">';
 
 					/* Start the Loop */
-					while ( have_posts() ) : the_post();
+					while ( have_posts() ) : 
+						the_post();
 
-						get_template_part( 'template-parts/content', $post_format );
+						get_template_part( 'views/archive', $xe_opt->blog['style'] );
 
 					endwhile;
 
-					get_template_part( 'template-parts/end', $post_format );
+					echo '</div><!-- .card-columns -->';
 
 					_xe_paging_nav();
 
 				else :
 
-					get_template_part( 'template-parts/content', 'none' );
+					get_template_part( 'views/content', 'none' );
 
 				endif; 
 			?>

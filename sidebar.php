@@ -14,7 +14,7 @@ $sidebar = $xe_opt->sidebar();
 /**
  * Render Left Sidebar
  */
-if ( $sidebar['position'] == 'left' || $sidebar['position'] == 'both' ) : ?>
+if ( $sidebar['position'] == 'left' || ($sidebar['position'] == 'both' && is_active_sidebar($sidebar['left'])) ) : ?>
 
 <aside id="secondary" class="widget-area left" role="complementary">
 	<?php dynamic_sidebar($sidebar['left']); ?>
@@ -25,7 +25,7 @@ if ( $sidebar['position'] == 'left' || $sidebar['position'] == 'both' ) : ?>
 /**
  * Render Right Sidebar
  */
-if ( $sidebar['position'] == 'right' || $sidebar['position'] == 'both' ) : ?>
+if ( $sidebar['position'] == 'right' || ($sidebar['position'] == 'both' && is_active_sidebar($sidebar['right'])) ) : ?>
 
 <aside id="tertiary" class="widget-area right" role="complementary">
 	<?php dynamic_sidebar($sidebar['right']); ?>

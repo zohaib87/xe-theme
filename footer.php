@@ -14,23 +14,7 @@ global $xe_opt;
 ?>
 
 <footer id="colophon" class="site-footer">
-
-	<?php if ($xe_opt->footer['section'] == true) : ?>
-
-	<div id="footer-section">
-		<?php $xe_opt->footer_section(); ?>
-	</div><!-- #footer-section -->
-
-	<?php endif; ?>
-
-	<div id="footer" class="site-info">
-		<div class="text-center <?php echo esc_attr($xe_opt->container); ?>">
-
-			<?php get_template_part( 'template-parts/footer', $xe_opt->footer['style'] ); ?>
-
-		</div>
-	</div><!-- #footer -->
-
+	<?php get_template_part( 'views/footer', $xe_opt->footer['style'] ); ?>
 </footer><!-- #colophon -->
 	
 </div><!-- #page -->

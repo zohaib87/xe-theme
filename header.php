@@ -25,22 +25,14 @@
 
 <body <?php body_class(); ?>>
 
-<?php if ( $xe_opt->preloader == true ) : ?>
-
+<?php if ( $xe_opt->preloader == 'on' ) : ?>
 	<!-- Preloader Here -->
-
 <?php endif; ?>
 
 <div id="wrapper" class="<?php echo esc_attr($xe_opt->site_layout); ?>"><?php // Closed in footer ?>
 
 <div id="page" class="site"><?php // Closed in footer ?>
 
-<?php 
-	get_template_part( 'template-parts/header', $xe_opt->header['style'] ); 
-
-	if ( $xe_opt->title_bar['switch'] == true ) : 
-
-		get_template_part('template-parts/title-bar');
-
-	endif;
+<?php
+  get_template_part( 'views/header', $xe_opt->header['style'] );
 ?>

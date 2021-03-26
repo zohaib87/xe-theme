@@ -1,0 +1,240 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  overflow-x: hidden;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}
+.site {
+  background: var(--bg-color);
+}
+::-moz-selection {
+  color: var(--selection-color);
+  background-color: var(--selection-bg-color);
+}
+::selection {
+  color: var(--selection-color);
+  background-color: var(--selection-bg-color);
+}
+.padding-top-bottom {
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
+}
+@media (min-width: 576px) {
+  .blog .card-columns {
+    column-count: var(--blog-columns);
+  }
+  .woocommerce .card-columns {
+    column-count: var(--shop-columns);
+  }
+}
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+a {
+  color: var(--primary-color);
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+a:hover,
+a:active {
+  color: var(--primary-light);
+  outline: 0;
+}
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+dfn, cite, em, i {
+  font-style: italic;
+}
+blockquote {
+  padding: 0 1.5em;
+  border-left: 5px solid #e7e7e7;
+}
+pre {
+  font-family: "Courier 10 Pitch", Courier, monospace;
+}
+code, tt, var {
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+abbr, acronym {
+  border-bottom: 1px dotted #666;
+  cursor: help;
+}
+mark, ins {
+  background: #fff9c0;
+  text-decoration: none;
+}
+/*--------------------------------------------------------------
+# Table
+--------------------------------------------------------------*/
+table {
+  font-family: verdana,arial,sans-serif;
+  font-size:11px;
+  color:#333;
+  border-width: 1px;
+  border-color: #f7f7f7;
+  border-collapse: collapse;
+}
+table th {
+  border-width: 1px;
+  padding: 8px;
+  border-style: solid;
+  border-color: #f7f7f7;
+  background-color: #f7f7f7;
+}
+table tbody th {
+  border-width: 1px;
+  padding: 8px;
+  border-style: solid;
+  border-color: #f7f7f7;
+  background-color: #fff;
+}
+table td {
+  border-width: 1px;
+  padding: 8px;
+  border-style: solid;
+  border-color: #f7f7f7;
+  background-color: #ffffff;
+}
+/*--------------------------------------------------------------
+# Definition Lists
+--------------------------------------------------------------*/
+dl {
+}
+dt {
+  float: left;
+  clear: left;
+  width: 150px;
+  text-align: right;
+  font-weight: bold;
+  color: #4c4c4c;
+}
+dt::after {
+  content: ":";
+}
+dd {
+  margin: 0 0 0 165px;
+  padding: 0 0 0.5em 0;
+}
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0;
+}
+/*--------------------------------------------------------------
+# Alignment
+--------------------------------------------------------------*/
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 30px;
+}
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 30px;
+}
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-h {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  transform: translate(-50%)
+}
+.center-v {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%)
+}
+.center-hv {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
+}
+.center-hvp {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
+}
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+img {
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  -ms-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+/* Make sure embeds and iframes fit their containers. */
+embed, iframe, object {
+  max-width: 100%;
+}
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+.site-content {
+  min-height: calc(100vh - 70px);
+}

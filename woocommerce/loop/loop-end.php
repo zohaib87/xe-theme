@@ -17,5 +17,4 @@
  */
 ?>
 
-</div><!-- #masonry -->
-</div><!-- .row -->
+</div><!-- .card-columns -->

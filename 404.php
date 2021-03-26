@@ -25,11 +25,7 @@ get_header(); ?>
 				<div class="page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try again?', '_xe' ); ?></p>
 
-					<?php get_search_form(); 
-
-					if (!empty($xe_opt->img_404)) : ?>
-						<img src="<?php echo esc_url($xe_opt->img_404); ?>" alt="Error 404" class="img-responsive">
-					<?php endif ?>
+					<?php get_search_form(); ?>
 
 				</div><!-- .page-content -->
 				

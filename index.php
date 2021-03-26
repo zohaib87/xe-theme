@@ -24,27 +24,28 @@ get_header(); ?>
 			<?php
 				if ( have_posts() ) :
 
-					get_template_part( 'template-parts/start' );
+					echo '<div class="card-columns">';
 
 					/* Start the Loop */
-					while ( have_posts() ) : the_post();
+					while ( have_posts() ) :
+						the_post();
 
 						/*
 						 * Include the Post-Format-specific template for the content.
 						 * If you want to override this in a child theme, then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
-						get_template_part( 'template-parts/content', get_post_format() );
+						get_template_part( 'views/archive', get_post_type() );
 
 					endwhile;
-							
-					get_template_part( 'template-parts/end' );
+
+					echo '</div><!-- .card-columns -->';
 
 					_xe_paging_nav();
 
 				else :
 
-					get_template_part( 'template-parts/content', 'none' );
+					get_template_part( 'views/content', 'none' );
 
 				endif; 
 			?>
