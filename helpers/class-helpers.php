@@ -11,8 +11,6 @@ if (!class_exists('Xe_Helpers')) :
 
 class Xe_Helpers {
 
-  public static $general, $site_layout, $color_scheme, $top_bar, $header, $title_bar, $sidebars, $footer;
-
   /**
    * Auto load files from a directory.
    */

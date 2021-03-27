@@ -5,27 +5,6 @@
   display: none !important;
 }
 /*--------------------------------------------------------------
-# Menu Items
---------------------------------------------------------------*/
-.acf-menu-item-fields {
-  width: 390px;
-}
-.menu-item .acf-menu-item-fields .xe-mega-menu {
-  display: none;
-}
-.menu-item-depth-0 .acf-menu-item-fields .xe-mega-menu {
-  display: block;
-}
-.menu-item .acf-field .acf-label {
-  margin: 2px 0 0;
-} 
-.menu-item .acf-field .acf-label label {
-  font-size: 13px;
-  font-style: italic;
-  font-weight: normal;
-  color: #666;
-}
-/*--------------------------------------------------------------
 # WPBakery Page Builder
 --------------------------------------------------------------*/
 span.vc_admin_label {
@@ -71,4 +50,23 @@ span.vc_admin_label {
 }
 #fs_account .postbox {
   max-width: 100%;
+}
+/*--------------------------------------------------------------
+# Dashboard Widgets
+--------------------------------------------------------------*/
+#theme_support_widget .inside {
+  padding: 0;
+}
+.theme-support-content {
+  padding: 0 12px;
+}
+.theme-support-footer {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 12px;
+  border-top: 1px solid #f0f0f1;
+  color: #dcdcde;
+}
+.theme-support-footer a {
+  text-decoration: none;
 }

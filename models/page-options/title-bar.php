@@ -7,27 +7,7 @@
 
 use Helpers\Xe_Helpers as Helper;
 
-Helper::$title_bar['title_bar_switch'] = array(
-  'id' => 'title_bar_switch',
-  'name' => esc_html__( 'Title-Bar', '_xe' ),
-  'type' => 'select',
-  'options' => array(
-    '0' => esc_html__( 'Default', '_xe' ),
-    'on' => esc_html__( 'Enable', '_xe' ),
-    'off' => esc_html__( 'Disable', '_xe' ),
-  ),
-  'multiple' => false,
-  'select_all_none' => false,
-  'std'  => '0',
-  'tab'  => 'title_bar_tab',
-);
 
-Helper::$title_bar['subtitle'] = array(
-  'id' => 'subtitle', 
-  'name' => esc_html__( 'Subtitle', '_xe' ),
-  'type' => 'text',
-  'tab' => 'title_bar_tab'
-);
 
 Helper::$title_bar['title_color'] = array(
   'id' => 'title_color',

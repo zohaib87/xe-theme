@@ -289,9 +289,6 @@ add_action('init', '_xe_theme_options');
  * Functions that require Meta Box.
  */
 if ( class_exists('RWMB_Loader') ) {
-	require get_template_directory() . '/helpers/extensions/meta-box-tabs/meta-box-tabs.php';
-  require get_template_directory() . '/helpers/extensions/meta-box-group/meta-box-group.php';
-  require get_template_directory() . '/helpers/extensions/meta-box-conditional-logic/meta-box-conditional-logic.php';
 	require get_template_directory() . '/models/page-options.php';
 }
 

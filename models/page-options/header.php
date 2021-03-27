@@ -18,16 +18,7 @@ Helper::$header['header_style'] = array(
   'tab'  => 'header_tab',
 );
 
-Helper::$header['header_menu'] = array(
-  'id' => 'header_menu', 
-  'name' => esc_html__( 'Header Menu Location', '_xe' ), 
-  'type' => 'select',
-  'options' => Helper::menu_locations(true),
-  'multiple' => false,
-  'select_all_none' => false,
-  'std'  => '0',
-  'tab'  => 'header_tab',
-);
+
 
 Helper::$header['header_bg'] = array(
   'id' => 'header_bg',

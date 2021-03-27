@@ -1,20 +1,19 @@
 About XeFramework
 =================
 
-This is Just another WordPress Framework. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
+This is just another WordPress framework. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
 Getting Started
 ---------------
 1. You must have latest version of [Nodejs](https://nodejs.org/en/) installed.
 2. Install `gulp` globally using `npm install gulp -g` from your command line.
 3. Change folder name to your theme name. e.g: `xurais` or `xu-rais`.
-4. Navigate to `node_scripts` folder and open `config.json` with your favorite editor.
-5. Change `name`. eg: `Xurais` or `Xu Rais`. Also change the `proxy` to your local WordPress site url.
-6. Open command line, navigate to project folder and run `npm install` to install dependencies.
-7. Now run `gulp init` command to automatically change text-domain, prefixes, DocBlocks etc to your theme name.
-8. Run `gulp` command to watch your theme files for changes and start making an awesome WordPress Theme. ;-)
-9. Once you have completed your theme run `gulp build` command to generate a clean copy of your theme on desktop. `.pot` file will also be generated inside languages folder.
-10. For more detail please [Click Here](http://docs.xecreators.pk/xe-framework) to read the documentation.
+4. Navigate to `node_scripts` folder and open `config.json` with your favorite editor, Change `name` to your theme name eg: `Xurais` or `Xu Rais` and change the `proxy` to your local WordPress site url.
+5. Open command line, navigate to project folder and run `npm install` to install dependencies.
+6. Now run `gulp init` command to automatically change text-domain, prefixes, DocBlocks etc to your theme name.
+7. Run `gulp` command to watch your theme files for changes and start making an awesome WordPress Theme. ;-)
+8. Once you have completed your theme run `gulp build` command to generate a clean copy of your theme on desktop. `.pot` file will also be generated inside languages folder.
+9. For more detail please [Click Here](http://docs.xecreators.pk/xe-framework) to read the documentation.
 
 Useful Commands
 ---------------

@@ -122,30 +122,6 @@ class Xe_ThemeOptions {
     $this->bg['bg-position'] = !empty($this->boxed_layout_bg['background-position']) ? $this->boxed_layout_bg['background-position'] : '';
     $this->bg['bg-image'] = !empty($this->boxed_layout_bg['background-image']) ? $this->boxed_layout_bg['background-image'] : '';
 
-    // Page Options for Site_Layout
-    if ( _xe_signle() ) :
-
-      if ( _xe_override('site_layout') ) {
-        $this->site_layout = rwmb_meta('site_layout');
-      }
-      if ( _xe_override('main_grid_width') ) {
-        $this->main_grid_width = rwmb_meta('main_grid_width');
-      }
-      if ( _xe_override('boxed_layout_margin') ) {
-        $this->boxed_layout_margin = rwmb_meta('boxed_layout_margin');
-      }
-      if ( _xe_override('boxed_layout_bg') ) {
-        $this->boxed_layout_bg = rwmb_meta('boxed_layout_bg');
-        $this->bg['color'] = $this->boxed_layout_bg['color'];
-        $this->bg['repeat'] = $this->boxed_layout_bg['repeat'];
-        $this->bg['size'] = $this->boxed_layout_bg['size'];
-        $this->bg['attachment'] = $this->boxed_layout_bg['attachment'];
-        $this->bg['position'] = $this->boxed_layout_bg['position'];
-        $this->bg['image'] = $this->boxed_layout_bg['image'];
-      }
-
-    endif;
-
     // Setup Classes for Site_Layout
     $this->container = ($this->site_layout == 'full-width') ? 'container-fluid' : 'container';
     $this->boxed_layout_class = ($this->site_layout == 'boxed') ? 'bg' : '';
@@ -157,24 +133,6 @@ class Xe_ThemeOptions {
     $this->txt_selection_color = get_theme_mod('txt_selection_color', De::$txt_selection_color);
     $this->txt_selection_bg_color = get_theme_mod('txt_selection_bg_color', De::$txt_selection_bg_color);
     $this->bg_color = get_theme_mod('bg_color', De::$bg_color);
-
-    // Page Options for Color_Scheme
-    if ( _xe_signle() ) :
-
-      if ( _xe_override('primary_color') ) {
-        $this->primary_color = rwmb_meta('primary_color');
-      }
-      if ( _xe_override('txt_selection_color') ) {
-        $this->txt_selection_color = rwmb_meta('txt_selection_color');
-      }
-      if ( _xe_override('txt_selection_bg_color') ) {
-        $this->txt_selection_bg_color = rwmb_meta('txt_selection_bg_color');
-      }
-      if ( _xe_override('bg_color') ) {
-        $this->bg_color = rwmb_meta('bg_color');
-      }
-
-    endif;
 
     /**
      * Typography
@@ -197,30 +155,6 @@ class Xe_ThemeOptions {
     $this->top_bar['phone'] = get_theme_mod( 'top_bar_phone', De::$top_bar_phone );
     $this->top_bar['email'] = get_theme_mod( 'top_bar_email', De::$top_bar_email );
 
-    // Page Options for Top_Bar
-    if ( _xe_signle() ) :
-
-      if ( _xe_override('top_bar_switch') ) {
-        $this->top_bar['switch'] = rwmb_meta('top_bar_switch');
-      }
-      if ( _xe_override('top_bar_menu') ) {
-        $this->top_bar['menu'] = rwmb_meta('top_bar_menu');
-      }
-      if ( _xe_override('top_bar_social') ) {
-        $this->top_bar['social'] = rwmb_meta('top_bar_social');
-      }
-      if ( _xe_override('top_bar_bg_color') ) {
-        $this->top_bar['bg-color'] = rwmb_meta('top_bar_bg_color');
-      }
-      if ( _xe_override('top_bar_phone') ) {
-        $this->top_bar['phone'] = rwmb_meta('top_bar_phone');
-      }
-      if ( _xe_override('top_bar_email') ) {
-        $this->top_bar['email'] = rwmb_meta('top_bar_email');
-      }
-
-    endif;
-
     /**
      * Header
      */
@@ -236,30 +170,8 @@ class Xe_ThemeOptions {
     // Page Options for Header
     if ( _xe_signle() ) :
 
-      if ( _xe_override('header_style') ) {
-        $this->header['style'] = rwmb_meta('header_style');
-      }
       if ( _xe_override('header_menu') ) {
         $this->header['menu'] = rwmb_meta('header_menu');
-      }
-      if ( _xe_override('header_logo') ) {
-        $dark_images = rwmb_meta('header_logo', array( 'limit' => 1 ) );
-        $dark_image = reset($dark_images);
-        $this->logo['dark'] = $dark_image['url'];
-      }
-      if ( _xe_override('header_light_logo') ) {
-        $light_images = rwmb_meta('header_light_logo', array( 'limit' => 1 ) );
-        $light_image = reset($light_images);
-        $this->logo['light'] = $light_image['url'];
-      }
-      if ( _xe_override('header_search') ) {
-        $this->header['search'] = rwmb_meta('header_search');
-      }
-      if ( _xe_override('header_cart') ) {
-        $this->header['cart'] = rwmb_meta('header_cart');
-      }
-      if ( _xe_override('header_social') ) {
-        $this->header['social'] = rwmb_meta('header_social');
       }
 
     endif;
@@ -295,36 +207,6 @@ class Xe_ThemeOptions {
       }
       if ( _xe_override('subtitle') ) {
         $this->title_bar['subtitle'] = rwmb_meta('subtitle');
-      }
-      if ( _xe_override('title_color') ) {
-        $this->title_bar['title-color'] = rwmb_meta('title_color');
-      }
-      if ( _xe_override('subtitle_color') ) {
-        $this->title_bar['subtitle-color'] = rwmb_meta('subtitle_color');
-      }
-      if ( _xe_override('breadcrumb') ) {
-        $this->title_bar['breadcrumb'] = rwmb_meta('breadcrumb');
-      }
-      if ( _xe_override('title_bar_bg') ) {
-        $this->title_bar_bg = rwmb_meta('title_bar_bg');
-        $this->title_bar['color'] = $this->title_bar_bg['color'];
-        $this->title_bar['repeat'] = $this->title_bar_bg['repeat'];
-        $this->title_bar['size'] = $this->title_bar_bg['size'];
-        $this->title_bar['attachment'] = $this->title_bar_bg['attachment'];
-        $this->title_bar['position'] = $this->title_bar_bg['position'];
-        $this->title_bar['image'] = $this->title_bar_bg['image'];
-      }
-      if ( _xe_override('title_bar_overlay') ) {
-        $this->title_bar['bg-overlay'] = rwmb_meta('title_bar_overlay');
-      }
-      if ( _xe_override('title_bar_height') ) {
-        $this->title_bar['height'] = rwmb_meta('title_bar_height');
-      }
-      if ( _xe_override('title_bar_pt') ) {
-        $this->title_bar['pt'] = rwmb_meta('title_bar_pt');
-      }
-      if ( _xe_override('title_bar_pb') ) {
-        $this->title_bar['pb'] = rwmb_meta('title_bar_pb');
       }
 
     endif;
@@ -441,30 +323,6 @@ class Xe_ThemeOptions {
     $this->footer['text-color'] = get_theme_mod('footer_text_color', De::$footer_text_color);
     $this->footer['copyright'] = get_theme_mod('copyright_info', De::$copyright_info);
     $this->footer['social'] = get_theme_mod('footer_social', De::$footer_social);
-
-    // Page Options for Footer
-    if ( _xe_signle() ) :
-
-      if ( _xe_override('footer_style') ) {
-        $this->footer['style'] = rwmb_meta('footer_style');
-      }
-      if ( _xe_override('footer_logo') ) {
-        $this->footer['logo'] = rwmb_meta('footer_logo');
-      }
-      if ( _xe_override('footer_bg_color') ) {
-        $this->footer['bg-color'] = rwmb_meta('footer_bg_color');
-      }
-      if ( _xe_override('footer_text_color') ) {
-        $this->footer['text-color'] = rwmb_meta('footer_text_color');
-      }
-      if ( _xe_override('footer_copyright') ) {
-        $this->footer['copyright'] = rwmb_meta('footer_copyright');
-      }
-      if ( _xe_override('footer_social') ) {
-        $this->footer['social'] = rwmb_meta('footer_social');
-      }
-
-    endif;
 
     $this->footer['copyright'] = str_replace('|Y|', date('Y'), $this->footer['copyright']);
     $this->footer['copyright'] = str_replace('|y|', date('y'), $this->footer['copyright']);

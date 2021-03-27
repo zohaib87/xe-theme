@@ -3,7 +3,7 @@
  * Template part for displaying Footer.
  *
  * @var $xe_opt->footer['logo'] [< Returns url >]
- * @var $xe_opt->footer['social'] [< Returns true or false >]
+ * @var $xe_opt->footer['social'] [< Returns on or off >]
  * @var $xe_opt->footer['copyright'] [< String of copyright info (Use wp_kses_post) >]
  * @var $xe_opt->footer['logo']
  *
