@@ -1,7 +1,7 @@
 ﻿=== _xe ===
 Requires at least: 5.6
 Tested up to: 5.7
-Requires PHP: 7.4
+Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -10,6 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This is just another WordPress framework or whatever you may prefer to call it. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
 == Changelog ==
+----- v2.1.2 ------------
+Fixed: Concatenation list of css and js moved to config.json.
+
 ----- v2.1.1 ------------
 Removed: Deprecated options leftovers.
 

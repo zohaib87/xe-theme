@@ -1,5 +1,17 @@
 {
   "name": "Xe",
   "proxy": "wpmu/",
+  "css": [
+    "assets_dev/css/general.css",
+    "assets_dev/css/blog.css",
+    "assets_dev/css/pages.css",
+    "assets_dev/css/widgets.css",
+    "assets_dev/css/comments.css",
+    "assets_dev/css/woocommerce.css",
+    "assets_dev/css/forms.css"
+  ],
+  "js": [
+    "assets_dev/js/main.js"
+  ],
   "local_repo": "E:/Projects/Github/xe-framework"
 }
