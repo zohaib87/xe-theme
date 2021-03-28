@@ -1,6 +1,6 @@
 {
   "name": "Xe",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "This is Just another WordPress Framework. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.",
   "main": "build.js",
   "scripts": {
