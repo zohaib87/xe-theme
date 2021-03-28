@@ -3,6 +3,8 @@ About XeFramework
 
 This is just another WordPress framework. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
+* [Click Here](http://docs.xecreators.pk/wp/xe-framework) to read detailed documentation.
+
 Getting Started
 ---------------
 1. You must have latest version of [Nodejs](https://nodejs.org/en/) installed.
@@ -13,7 +15,7 @@ Getting Started
 6. Now run `gulp init` command to automatically change text-domain, prefixes, DocBlocks etc to your theme name.
 7. Run `gulp` command to watch your theme files for changes and start making an awesome WordPress Theme. ;-)
 8. Once you have completed your theme run `gulp build` command to generate a clean copy of your theme on desktop. `.pot` file will also be generated inside languages folder.
-9. For more detail please [Click Here](http://docs.xecreators.pk/xe-framework) to read the documentation.
+9. For more detail please [Click Here](http://docs.xecreators.pk/wp/xe-framework) to read the documentation.
 
 Useful Commands
 ---------------
@@ -29,7 +31,7 @@ Features
 --------
 
 * Auto browser reload.
-* Auto/manual concat or minify CSS and JavaScript files.
+* Auto/manual concatenate or minify CSS and JavaScript files.
 * Auto/manual image optimization.
 * Theme Options (Customizer).
 * Highly Customizable and Easy to Customize.
@@ -41,8 +43,3 @@ Features
 * One Click Demo Import.
 * Forever Free.
 * Professional and Outstanding Support.
-
-Documentation
--------------
- 
-* [Click Here](http://docs.xecreators.pk/xe-framework) to read detailed documentation.
