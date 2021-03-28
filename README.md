@@ -3,7 +3,7 @@ About XeFramework
 
 This is just another WordPress framework. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
-[Click Here](http://docs.xecreators.pk/wp/xe-framework) for detailed documentation.
+[Click Here](http://docs.xecreators.pk/xe-framework) for detailed documentation.
 
 Getting Started
 ---------------
