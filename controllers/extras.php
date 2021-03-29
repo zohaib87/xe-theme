@@ -143,42 +143,6 @@ if ( class_exists('WooCommerce') ) {
 }
 
 /**
- * Change posts label
- */
-function _xe_change_post_label() {
-
-  global $menu;
-  global $submenu;
-  $menu[5][0] = 'Blog Posts';
-
-}
-add_action( 'admin_menu', '_xe_change_post_label' );
-
-/**
- * Change posts objects
- */
-function _xe_change_post_objects() {
-
-  global $wp_post_types;
-  $labels = &$wp_post_types['post']->labels;
-  $labels->name = 'Blog Posts';
-  // $labels->singular_name = 'Post';
-  // $labels->menu_name = 'Posts';
-  // $labels->name_admin_bar = 'Post';
-  // $labels->add_new = 'Add New';
-  // $labels->add_new_item = 'Add Post';
-  // $labels->new_item = 'Post';
-  // $labels->edit_item = 'Edit Posts';
-  // $labels->view_item = 'View Post';
-  // $labels->all_items = 'All Posts';
-  // $labels->search_items = 'Search Posts';
-  // $labels->not_found = 'No Posts found';
-  // $labels->not_found_in_trash = 'No Posts found in Trash';
-
-}
-add_action( 'init', '_xe_change_post_objects' );
-
-/**
  * Remove admin-bar push down
  */
 function _xe_admin_bar_push_down() {
