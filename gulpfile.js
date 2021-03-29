@@ -51,7 +51,7 @@ function browser_sync() {
  * Concat JS files
  */
 function concat_js() {
-  return gulp.src(config.js)
+  return gulp.src(config.concat_js)
   .pipe(concat('main.js'))
   .pipe(gulp.dest('assets/js/'));
 }
@@ -60,7 +60,7 @@ function concat_js() {
  * Minify JS files
  */
 function min_js() {
-  return gulp.src('assets/js/main.js')
+  return gulp.src(config.min_js)
   .pipe(uglify())
   .pipe(rename({
     suffix: '.min'
@@ -72,7 +72,7 @@ function min_js() {
  * Concat CSS files
  */
 function concat_css() {
-  return gulp.src(config.css)
+  return gulp.src(config.concat_css)
   .pipe(concat('main.css'))
   .pipe(gulp.dest('assets/css/'));
 }
@@ -81,7 +81,7 @@ function concat_css() {
  * Minify CSS files
  */
 function min_css() {
-  return gulp.src('assets/css/main.css')
+  return gulp.src(config.min_css)
   .pipe(cleanCss())
   .pipe(rename({
     suffix: '.min'
@@ -111,7 +111,7 @@ exports.default = function() {
   gulp.watch('assets_dev/css/*.css', concat_css);
   gulp.watch('assets_dev/js/*.js', concat_js);
   gulp.watch('assets_dev/img/*', image_min);
-  gulp.watch('assets/css/main.css', min_css);
-  gulp.watch('assets/js/main.js', min_js);
+  gulp.watch(config.min_css, min_css);
+  gulp.watch(config.min_js, min_js);
   browser_sync();
 };
