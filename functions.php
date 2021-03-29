@@ -198,7 +198,7 @@ function _xe_scripts() {
   /**
    * Google Fonts
    */
-  // wp_enqueue_style( '_xe-fonts', '' );
+  // wp_enqueue_style( 'google-fonts', '' );
 
 	/**
 	 * Styles
