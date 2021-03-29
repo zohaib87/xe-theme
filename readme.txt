@@ -11,7 +11,7 @@ This is just another WordPress framework or whatever you may prefer to call it. 
 
 == Changelog ==
 ----- v2.1.3 ------------
-New Added: Demo data in one click import for development.
+Fixed: Demo data in one click import for development.
 Fixed: Build folder now can be changed from config.json
 
 ----- v2.1.2 ------------
