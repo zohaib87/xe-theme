@@ -1,10 +1,10 @@
 {
   "menus": [
-    { "name": "Primary Menu", "location": "primary-menu" },
-    { "name": "Blog and Posts", "location": "second-menu" }
+    { "name": "All Pages", "location": "primary-menu" },
+    { "name": "Testing Menu", "location": "second-menu" }
   ],
   "pages": { 
-    "front": "Home", 
-    "blog": "Blog Posts" 
+    "front": "Front Page", 
+    "blog": "Blog" 
   }
 }

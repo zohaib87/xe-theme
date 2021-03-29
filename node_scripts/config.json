@@ -13,5 +13,6 @@
   "js": [
     "assets_dev/js/main.js"
   ],
+  "build": "E:/Projects/Xe Framework",
   "local_repo": "E:/Projects/Github/xe-framework"
 }

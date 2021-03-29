@@ -10,7 +10,7 @@ var nameLower = name.toLowerCase();
 var nameHyphen = nameLower.replace(/ /g, '-');
 var nameUnderscores = nameLower.replace(/ /g, '_');
 
-var targetUrl = path.join(require('os').homedir(), 'Desktop', nameHyphen);
+var targetUrl = config.build+'/'+nameHyphen;
 var currentTheme = path.resolve(__dirname, '..');
 
 // Copy Theme
@@ -76,7 +76,7 @@ copydir( currentTheme, targetUrl, {
 }, function(err) {
 
   if (err) throw err;
-  console.log('Theme copied to desktop successfully.');
+  console.log('Theme copied successfully.');
 
   // Remove unnecessary folders/files.
   rimraf(targetUrl+'/node_modules/', function() {
