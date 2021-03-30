@@ -55,7 +55,7 @@ $args = array(
 
     <!-- Navigation -->
     <nav id="site-navigation" class="<?php echo esc_attr($nav_classes); ?>" role="navigation">
-      <a class="navbar-brand" href="#">XE</a>
+      <a class="navbar-brand" href="<?php echo esc_url( home_url('/') ); ?>">XE</a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
