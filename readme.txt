@@ -12,6 +12,7 @@ This is just another WordPress framework or whatever you may prefer to call it. 
 == Changelog ==
 Fixed: Error page inconsistent layout.
 Fixed: Missing map files for Bootstrap.
+Fixed: Minor bugs.
 Removed: Deprecated options leftovers.
 
 ----- v2.1.4 ------------

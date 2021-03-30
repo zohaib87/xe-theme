@@ -158,7 +158,7 @@ function _xe_widgets_init() {
 	 */
   $widget_areas = get_theme_mod( 'add_custom_widgets', '' );
 
-	if ( isset($widget_areas) && !empty($widget_areas) ) :;
+	if ( isset($widget_areas) && !empty($widget_areas) ) :
 
 		foreach ($widget_areas as $widget_area) {
 
