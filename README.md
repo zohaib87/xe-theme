@@ -38,7 +38,6 @@ Features
 * Wide, Fluid and Boxed Layout.
 * Right, Left or Both Sides Sidebar Supported.
 * WooCommerce Ready.
-* Unlimited Widget Areas.
 * One Click Demo Import.
 * Forever Free.
 * Professional and Outstanding Support.
