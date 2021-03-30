@@ -10,6 +10,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This is just another WordPress framework or whatever you may prefer to call it. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
 == Changelog ==
+Fixed: Missing map files for Bootstrap.
+
 ----- v2.1.4 ------------
 Fixed: Minify css and js files can now be added in config.json.
 Fixed: Minor Bugs.
