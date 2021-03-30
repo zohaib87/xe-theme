@@ -29,7 +29,7 @@ class Xe_Defaults {
   $top_bar_switch, $top_bar_menu, $top_bar_social, $top_bar_text_color, $top_bar_bg_color, $top_bar_phone, $top_bar_email,
 
   // Header
-  $header_style, $header_container, $header_menu, $header_bg, $header_logo, $header_light_logo, $header_search, $header_cart, $header_social, $header_text_one, $header_text_two,
+  $header_style, $header_container, $header_menu, $header_bg, $header_logo, $header_light_logo, $header_search, $header_cart, $header_social,
 
   // Title_Bar
   $title_bar_switch, $title_color, $subtitle_color, $breadcrumb, $title_bar_parallax, $title_bar_bg_color, $title_bar_bg_img, $title_bar_overlay, $title_bar_height, $title_bar_pt, $title_bar_pb,
@@ -109,8 +109,6 @@ class Xe_Defaults {
     Self::$header_search = 'on';
     Self::$header_cart = 'on';
     Self::$header_social = 'on';
-    Self::$header_text_one = esc_html__( 'Get a Free Quote', '_xe' );
-    Self::$header_text_two = esc_html__( '+92 308 5039935', '_xe' );
 
     // Title_Bar
     Self::$title_bar_switch = 'on';

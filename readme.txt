@@ -11,6 +11,7 @@ This is just another WordPress framework or whatever you may prefer to call it. 
 
 == Changelog ==
 Fixed: Missing map files for Bootstrap.
+Removed: Deprecated options leftovers.
 
 ----- v2.1.4 ------------
 Fixed: Minify css and js files can now be added in config.json.
