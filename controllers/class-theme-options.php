@@ -13,9 +13,6 @@ class Xe_ThemeOptions {
 	public $site_layout, $boxed_layout_bg, $boxed_layout_class, $bg, $container,
 	$preloader, $current_menu, $primary_color,
 
-	// Typography
-	$headings,
-
 	// Top_Bar
 	$top_bar,
 
@@ -32,7 +29,7 @@ class Xe_ThemeOptions {
 	$to_sidebar_position, $to_left_sidebar_selector, $to_right_sidebar_selector,
 	
 	// Footer
-	$footer,
+	$sub_footer, $footer,
 
 	// Blog, Post, Page, Portfolio, Events, WooCommerce, Search and Error 404
 	$blog, $comments, $post_comments, $page_comments, $product_reviews, $excerpt_length, $portfolio, $event, $shop, $img_404, $related_posts, $related_products,
@@ -73,11 +70,17 @@ class Xe_ThemeOptions {
      * Check if Single Page overrides Theme Options.
      * @return true or false
      */
-    function _xe_override($value) {
+    function _xe_override($value, $numeric = false) {
 
       $option = rwmb_meta($value);
 
-      if ( !empty($option) && $option != 'default' ) {
+      if ( $numeric == true ) {
+        $check = is_numeric($option);
+      } else {
+        $check = !empty($option) && $option != 'default';
+      }
+
+      if ( $check ) {
         return true;
       } else {
         return false;
@@ -97,10 +100,10 @@ class Xe_ThemeOptions {
     // Page Options for General_Options
     if ( _xe_signle() ) :
 
-      if ( _xe_override('padding_top') ) {
+      if ( _xe_override('padding_top', true) ) {
         $this->padding_top = rwmb_meta('padding_top');
       }
-      if ( _xe_override('padding_bottom') ) {
+      if ( _xe_override('padding_bottom', true) ) {
         $this->padding_bottom = rwmb_meta('padding_bottom');
       }
 
@@ -109,12 +112,12 @@ class Xe_ThemeOptions {
     /**
      * Site_Layout
      */
-    $this->site_layout = get_theme_mod( 'site_layout', De::$site_layout );
-    $this->main_grid_width = get_theme_mod( 'main_grid_width', De::$main_grid_width );
+    $this->site_layout = get_theme_mod('site_layout', De::$site_layout);
+    $this->main_grid_width = get_theme_mod('main_grid_width', De::$main_grid_width);
     $this->boxed_layout_margin = get_theme_mod('boxed_layout_margin', De::$boxed_layout_margin);
 
     $this->boxed_layout_bg = get_theme_mod('boxed_layout_bg', De::$boxed_layout_bg);
-
+    
     $this->bg['bg-color'] = !empty($this->boxed_layout_bg['background-color']) ? $this->boxed_layout_bg['background-color'] : '';
     $this->bg['bg-repeat'] = !empty($this->boxed_layout_bg['background-repeat']) ? $this->boxed_layout_bg['background-repeat'] : '';
     $this->bg['bg-size'] = !empty($this->boxed_layout_bg['background-size']) ? $this->boxed_layout_bg['background-size'] : '';
@@ -133,16 +136,6 @@ class Xe_ThemeOptions {
     $this->txt_selection_color = get_theme_mod('txt_selection_color', De::$txt_selection_color);
     $this->txt_selection_bg_color = get_theme_mod('txt_selection_bg_color', De::$txt_selection_bg_color);
     $this->bg_color = get_theme_mod('bg_color', De::$bg_color);
-
-    /**
-     * Typography
-     */
-    $this->headings['h1'] = get_theme_mod('h1_size', De::$h1_size);
-    $this->headings['h2'] = get_theme_mod('h2_size', De::$h2_size);
-    $this->headings['h3'] = get_theme_mod('h3_size', De::$h3_size);
-    $this->headings['h4'] = get_theme_mod('h4_size', De::$h4_size);
-    $this->headings['h5'] = get_theme_mod('h5_size', De::$h5_size);
-    $this->headings['h6'] = get_theme_mod('h6_size', De::$h6_size);
 
     /**
      * Top_Bar
@@ -184,20 +177,9 @@ class Xe_ThemeOptions {
     $this->title_bar['title-color'] = get_theme_mod('title_color', De::$title_color);
     $this->title_bar['subtitle-color'] = get_theme_mod('subtitle_color', De::$subtitle_color);
     $this->title_bar['breadcrumb'] = get_theme_mod('breadcrumb', De::$breadcrumb);
-    $this->title_bar['parallax'] = get_theme_mod('title_bar_parallax', De::$title_bar_parallax);
-
-    $this->title_bar_bg = get_theme_mod('title_bar_bg', '');
-    $this->title_bar['bg-color'] = !empty($this->title_bar_bg['background-color']) ? $this->title_bar_bg['background-color'] : De::$title_bar_bg_color;
-    $this->title_bar['bg-image'] = !empty($this->title_bar_bg['background-image']) ? $this->title_bar_bg['background-image'] : De::$title_bar_bg_img;
-    $this->title_bar['bg-repeat'] = !empty($this->title_bar_bg['background-repeat']) ? $this->title_bar_bg['background-repeat'] : De::$title_bar_bg_repeat;
-    $this->title_bar['bg-size'] = !empty($this->title_bar_bg['background-size']) ? $this->title_bar_bg['background-size'] : De::$title_bar_bg_size;
-    $this->title_bar['bg-attachment'] = !empty($this->title_bar_bg['background-attachment']) ? $this->title_bar_bg['background-attachment'] : De::$title_bar_bg_attachment;
-    $this->title_bar['bg-position'] = !empty($this->title_bar_bg['background-position']) ? $this->title_bar_bg['background-position'] : De::$title_bar_bg_position;
-
+    $this->title_bar['bg-color'] = get_theme_mod('title_bar_bg_color', De::$title_bar_bg_color);
+    $this->title_bar['bg-image'] = get_theme_mod('title_bar_bg_img', De::$title_bar_bg_img);
     $this->title_bar['bg-overlay'] = get_theme_mod('title_bar_overlay', De::$title_bar_overlay);
-    $this->title_bar['height'] = get_theme_mod('title_bar_height', De::$title_bar_height);
-    $this->title_bar['pt'] = get_theme_mod('title_bar_pt', De::$title_bar_pt);
-    $this->title_bar['pb'] = get_theme_mod('title_bar_pb', De::$title_bar_pb);
 
     // Page Options for Title_Bar
     if ( _xe_signle() ) :
@@ -296,10 +278,10 @@ class Xe_ThemeOptions {
     // Page Options for Sidebar
     if ( _xe_signle() ) :
 
-      if ( _xe_override('left_sidebar_width') ) {
+      if ( _xe_override('left_sidebar_width', true) ) {
         $this->left_sidebar_width = rwmb_meta('left_sidebar_width');
       }
-      if ( _xe_override('right_sidebar_width') ) {
+      if ( _xe_override('right_sidebar_width', true) ) {
         $this->right_sidebar_width = rwmb_meta('right_sidebar_width');
       }
       if ( _xe_override('sidebar_position') ) {
@@ -323,6 +305,7 @@ class Xe_ThemeOptions {
     $this->footer['text-color'] = get_theme_mod('footer_text_color', De::$footer_text_color);
     $this->footer['copyright'] = get_theme_mod('copyright_info', De::$copyright_info);
     $this->footer['social'] = get_theme_mod('footer_social', De::$footer_social);
+    $this->sub_footer = get_theme_mod('sub_footer', De::$sub_footer);
 
     $this->footer['copyright'] = str_replace('|Y|', date('Y'), $this->footer['copyright']);
     $this->footer['copyright'] = str_replace('|y|', date('y'), $this->footer['copyright']);
@@ -410,46 +393,6 @@ class Xe_ThemeOptions {
 		return $sidebar;
 
 	}
-
-  /**
-   * Sub Footer
-   */
-  public function sub_footer() {
-
-    $col_one = is_active_sidebar('footer-1');
-    $col_two = is_active_sidebar('footer-2');
-    $col_three = is_active_sidebar('footer-3');
-    $col_four = is_active_sidebar('footer-4');
-
-    $col_count = array($col_one, $col_two, $col_three, $col_four);
-    $col_count = count(array_filter($col_count));
-
-    switch ($col_count) {
-      case 1:
-        $col = '12';
-        break;
-      case 2:
-        $col = '6';
-        break;
-      case 3:
-        $col = '4';
-        break;
-      case 4:
-        $col = '3';
-        break;
-      default:
-        $col = false;
-    }
-
-    return [
-      'col-one' => $col_one, 
-      'col-two' => $col_two, 
-      'col-three' => $col_three, 
-      'col-four' => $col_four,
-      'col' => $col
-    ];
-
-  }
 
 }
 global $xe_opt; 

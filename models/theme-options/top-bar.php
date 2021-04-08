@@ -81,7 +81,7 @@ Kirki::add_field( 'xe_options', [
   'description' => esc_html__( 'Enter your/company phone number.', '_xe' ),
   'section'  => 'top_bar',
   'default'  => De::$top_bar_phone,
-  'transport' => 'postMessage',
+  'transport' => 'auto',
 ] );
 
 Kirki::add_field( 'xe_options', [
@@ -91,5 +91,5 @@ Kirki::add_field( 'xe_options', [
   'description' => esc_html__( 'Enter your/company email.', '_xe' ),
   'section'  => 'top_bar',
   'default'  => De::$top_bar_email,
-  'transport' => 'postMessage',
+  'transport' => 'auto',
 ] );

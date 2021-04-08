@@ -10,6 +10,7 @@
 global $xe_opt;
 
 $thumbnail_url = get_the_post_thumbnail_url( null, '_xe-blog' );
+$thumbnail_alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ); 
 $date = get_the_date();
 $author = array(
   'name' => get_the_author_meta('display_name'),
@@ -46,7 +47,7 @@ $post_format = get_post_format();
         $title_margin = '';
         $count = 0;
 
-        ?><div id="featured-gallery" class="featured-gallery carousel slide" data-ride="carousel">
+        ?><div id="featured-gallery-<?php the_ID(); ?>" class="featured-gallery carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <?php
               foreach ($images as $image) {
@@ -62,11 +63,11 @@ $post_format = get_post_format();
             ?>
           </div><!-- .carousel-inner -->
 
-          <a class="carousel-control-prev" href="#featured-gallery" role="button" data-slide="prev">
+          <a class="carousel-control-prev" href="#featured-gallery-<?php the_ID(); ?>" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
           </a>
-          <a class="carousel-control-next" href="#featured-gallery" role="button" data-slide="next">
+          <a class="carousel-control-next" href="#featured-gallery-<?php the_ID(); ?>" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
           </a>

@@ -63,32 +63,24 @@ Kirki::add_field( 'xe_options', [
 ] );
 
 Kirki::add_field( 'xe_options', [
-  'type'        => 'radio-buttonset',
-  'settings'    => 'title_bar_parallax',
-  'label'       => esc_html__( 'Background Parallax', '_xe' ),
-  'section'     => 'title_bar',
-  'default'     => De::$title_bar_parallax,
-  'choices'     => [
-    'on'  => esc_html__( 'Enable', '_xe' ),
-    'off' => esc_html__( 'Disable', '_xe' ),
+  'type' => 'color',
+  'settings' => 'title_bar_bg_color',
+  'label'  => esc_html__( 'Background Color', '_xe' ),
+  'section' => 'title_bar',
+  'default' => De::$title_bar_bg_color,
+  'choices' => [
+    'alpha' => true,
   ],
-  'transport' => 'auto',
+  'transport' => 'postMessage',
 ] );
 
 Kirki::add_field( 'xe_options', [
-  'type'        => 'background',
-  'settings'    => 'title_bar_bg',
-  'label'       => esc_html__( 'Background', '_xe' ),
-  'section'     => 'title_bar',
-  'default'     => [
-    'background-color'      => De::$title_bar_bg_color,
-    'background-image'      => De::$title_bar_bg_img,
-    'background-repeat'     => De::$title_bar_bg_repeat,
-    'background-position'   => De::$title_bar_bg_position,
-    'background-size'       => De::$title_bar_bg_size,
-    'background-attachment' => De::$title_bar_bg_attachment,
-  ],
-  'transport'   => 'auto',
+  'type'        => 'image',
+  'settings'    => 'title_bar_bg_img',
+  'label'       => esc_html__( 'Background Image', '_xe' ),
+  'section'     => 'header',
+  'default'     => De::$title_bar_bg_img,
+  'transport' => 'auto',
 ] );
 
 Kirki::add_field( 'xe_options', [
@@ -100,35 +92,5 @@ Kirki::add_field( 'xe_options', [
   'choices' => [
     'alpha' => true,
   ],
-  'transport' => 'postMessage',
-] );
-
-Kirki::add_field( 'xe_options', [
-  'type'     => 'text',
-  'settings' => 'title_bar_height',
-  'label'    => esc_html__( 'Height', '_xe' ),
-  'description' => esc_html__( 'Enter height value in pixels. Do not add "px".', '_xe' ),
-  'section'  => 'title_bar',
-  'default'  => De::$title_bar_height,
-  'transport' => 'postMessage',
-] );
-
-Kirki::add_field( 'xe_options', [
-  'type'     => 'text',
-  'settings' => 'title_bar_pt',
-  'label'    => esc_html__( 'Padding Top', '_xe' ),
-  'description' => esc_html__( 'Enter padding value in pixels. Do not add "px".', '_xe' ),
-  'section'  => 'title_bar',
-  'default'  => De::$title_bar_pt,
-  'transport' => 'postMessage',
-] );
-
-Kirki::add_field( 'xe_options', [
-  'type'     => 'text',
-  'settings' => 'title_bar_pb',
-  'label'    => esc_html__( 'Padding Bottom', '_xe' ),
-  'description' => esc_html__( 'Enter padding value in pixels. Do not add "px".', '_xe' ),
-  'section'  => 'title_bar',
-  'default'  => De::$title_bar_pb,
   'transport' => 'postMessage',
 ] );

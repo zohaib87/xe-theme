@@ -44,7 +44,7 @@ class Xe_Defaults {
   $left_sidebar_width, $right_sidebar_width, $sidebar_position, $left_sidebar_selector, $right_sidebar_selector,
 
   // Footer
-  $footer_style, $footer_section, $footer_selector, $footer_logo, $footer_bg_color, $footer_bg_img, $title_bar_bg_repeat, $title_bar_bg_size, $title_bar_bg_attachment, $title_bar_bg_position, $footer_text_color, $copyright_info, $footer_social,
+  $footer_style, $footer_section, $footer_selector, $footer_logo, $footer_bg_color, $footer_bg_img, $title_bar_bg_repeat, $title_bar_bg_size, $title_bar_bg_attachment, $title_bar_bg_position, $footer_text_color, $copyright_info, $footer_social, $sub_footer,
 
   // Social_Profiles
   $social_facebook, $social_twitter, $social_github, $social_behance, $social_dribbble, $social_pinterest, $social_instagram, $social_linkedin, $social_tumblr, $social_youtube, $social_vimeo,
@@ -81,14 +81,6 @@ class Xe_Defaults {
     Self::$txt_selection_color = '#fff';
     Self::$txt_selection_bg_color = '#0073aa';
     Self::$bg_color = '#fff';
-
-    // Typography
-    Self::$h1_size = 36;
-    Self::$h2_size = 30;
-    Self::$h3_size = 24;
-    Self::$h4_size = 18;
-    Self::$h5_size = 14;
-    Self::$h6_size = 12;
 
     // Top_Bar
     Self::$top_bar_switch = 'on';
@@ -155,6 +147,7 @@ class Xe_Defaults {
     Self::$footer_text_color = '#fff';
     Self::$copyright_info = '© 2018-|y| Xe Framework by <a href="https://www.xecreators.pk/">XeCreators</a>. Proudly powered by <a href="https://wordpress.org/">WordPress</a>';
     Self::$footer_social = 'off';
+    Self::$sub_footer = 'off';
 
     // Social_Profiles
     Self::$social_facebook = '#';

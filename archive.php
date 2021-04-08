@@ -25,7 +25,7 @@ get_header(); ?>
 					while ( have_posts() ) : 
 						the_post();
 
-						get_template_part( 'views/archive', $xe_opt->blog['style'] );
+						get_template_part( 'views/archive', get_post_format() );
 
 					endwhile;
 

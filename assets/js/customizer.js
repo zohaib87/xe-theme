@@ -100,30 +100,6 @@
       $(":root").get(0).style.setProperty("--top-bar-bg-color", to);
     } );
   } );
-  wp.customize( 'top_bar_phone', function( value ) {
-    value.bind( function( to ) {
-      $(selectors.phone).html(to);
-    } );
-  } );
-  wp.customize( 'top_bar_email', function( value ) {
-    value.bind( function( to ) {
-      $(selectors.email).html(to);
-    } );
-  } );
-
-  /**
-   * Header
-   */
-  wp.customize( 'header_text_one', function( value ) {
-    value.bind( function( to ) {
-      $("header .text-one").html(to);
-    } );
-  } );
-  wp.customize( 'header_text_two', function( value ) {
-    value.bind( function( to ) {
-      $("header .text-two").html(to);
-    } );
-  } );
   
   /**
    * Title_Bar
@@ -141,33 +117,6 @@
   wp.customize( 'title_bar_overlay', function( value ) {
     value.bind( function( to ) {
       $(":root").get(0).style.setProperty("--title-bar-overlay", to);
-    } );
-  } );
-  wp.customize( 'title_bar_height', function( value ) {
-    value.bind( function( to ) {
-      if ($.isNumeric(to)) {
-        $(":root").get(0).style.setProperty("--title-bar-height", to+"px");
-      } else {
-        $(":root").get(0).style.setProperty("--title-bar-height", "auto");
-      }
-    } );
-  } );
-  wp.customize( 'title_bar_pt', function( value ) {
-    value.bind( function( to ) {
-      if ($.isNumeric(to)) {
-        $(":root").get(0).style.setProperty("--title-bar-pt", to+"px");
-      } else {
-        $(":root").get(0).style.setProperty("--title-bar-pt", "auto");
-      }
-    } );
-  } );
-  wp.customize( 'title_bar_pb', function( value ) {
-    value.bind( function( to ) {
-      if ($.isNumeric(to)) {
-        $(":root").get(0).style.setProperty("--title-bar-pb", to+"px");
-      } else {
-        $(":root").get(0).style.setProperty("--title-bar-pb", "auto");
-      }
     } );
   } );
 

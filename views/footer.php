@@ -12,35 +12,25 @@
 
 global $xe_opt;
 
-$sub_footer = $xe_opt->sub_footer();
-
-if ($sub_footer['col']) : ?>
+if ($xe_opt->sub_footer == 'on') : ?>
   <div id="sub-footer" class="sub-footer">
     <div class="<?php echo esc_attr($xe_opt->container); ?>">
       <div class="row">
-        <?php if (is_active_sidebar('footer-1')) : ?>
-          <div class="col-md-<?php echo esc_attr($sub_footer['col']); ?> col-one">
-            <?php dynamic_sidebar('footer-1'); ?>
-          </div>
-        <?php endif; ?>
+        <div class="col-md-4 col-one">
+          <?php dynamic_sidebar('footer-1'); ?>
+        </div>
 
-        <?php if (is_active_sidebar('footer-2')) : ?>
-          <div class="col-md-<?php echo esc_attr($sub_footer['col']); ?> col-two">
-            <?php dynamic_sidebar('footer-2'); ?>
-          </div>
-        <?php endif; ?>
+        <div class="col-md-4 col-two">
+          <?php dynamic_sidebar('footer-2'); ?>
+        </div>
 
-        <?php if (is_active_sidebar('footer-3')) : ?>
-          <div class="col-md-<?php echo esc_attr($sub_footer['col']); ?> col-three">
-            <?php dynamic_sidebar('footer-3'); ?>
-          </div>
-        <?php endif; ?>
+        <div class="col-md-4 col-three">
+          <?php dynamic_sidebar('footer-3'); ?>
+        </div>
 
-        <?php if (is_active_sidebar('footer-4')) : ?>
-          <div class="col-md-<?php echo esc_attr($sub_footer['col']); ?> col-four">
-            <?php dynamic_sidebar('footer-4'); ?>
-          </div>
-        <?php endif; ?>
+        <div class="col-md-4 col-four">
+          <?php dynamic_sidebar('footer-4'); ?>
+        </div>
       </div>
     </div>
   </div>

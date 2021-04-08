@@ -82,11 +82,11 @@ $args = array(
 
 <!-- Title-Bar -->
 <?php if ( $xe_opt->title_bar['switch'] == 'on' ) : ?>
-  <div id="title-bar" class="title-bar text-center" <?php if ($xe_opt->title_bar['parallax'] == 'on') echo 'data-stellar-background-ratio="0.5"'; ?>>
+  <div id="title-bar" class="title-bar text-center">
     <div class="overlay">
       <div class="<?php echo esc_attr($xe_opt->container); ?>">
-        <h1 class="display-4 title"><?php echo esc_attr($xe_opt->title_bar['title']); ?></h1>
-        <p class="lead subtitle"><?php echo esc_attr($xe_opt->title_bar['subtitle']); ?></p>
+        <h1 class="display-4 title"><?php echo wp_kses($xe_opt->title_bar['title'], $args); ?></h1>
+        <p class="lead subtitle"><?php echo wp_kses($xe_opt->title_bar['subtitle'], $args); ?></p>
       </div>
     </div>
   </div>

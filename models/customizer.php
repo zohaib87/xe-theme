@@ -29,8 +29,6 @@ function _xe_customize_preview_js() {
 
 	wp_enqueue_script( '_xe-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array( 'customize-preview' ), '2015', true );
   wp_localize_script( '_xe-customizer', 'selectors', array(
-    'phone' => Se::$top_bar['phone'],
-    'email' => Se::$top_bar['email'],
     'blog_title' => Se::$titles['blog'],
     'search_title' => Se::$titles['search'],
     'error_title' => Se::$titles['error'],

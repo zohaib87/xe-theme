@@ -16,9 +16,26 @@ use Helpers\Xe_Helpers as Helper;
 
 global $xe_opt;
 
+$post = get_post();
 $sidebar = $xe_opt->sidebar();
-$sidebar_active = ($sidebar['position'] != 'none') ? 'sidebar-active' : '';
-$classes = Helper::classes( array('page-content', $xe_opt->container, $sidebar_active) );
+$comments_container = false;
+$elementor = (function_exists('_xe_elemcheck') && _xe_elemcheck() == true);
+$wpbakery = ($post && preg_match('/vc_row/', $post->post_content));
+
+if ($elementor || $wpbakery) {
+
+  if ($sidebar['position'] == 'none') :
+    $classes = 'builder-active';
+    $comments_container = true;
+  else :
+    $classes = 'builder-active sidebar-active '.$xe_opt->container;
+  endif;
+
+} else {
+  $classes = 'page-content '.$xe_opt->container;
+}
+
+$classes = Helper::classes( array('site-content', 'padding-top-bottom', $classes) );
 
 get_header(); ?>
 
@@ -36,7 +53,9 @@ get_header(); ?>
 					if ( $xe_opt->page_comments == 'on' ) {
 						// If comments are open or we have at least one comment, load up the comment template.
 						if ( comments_open() || get_comments_number() ) :
-							comments_template();
+							if ($comments_container == true) echo '<div class="'.esc_attr($xe_opt->container).'">';
+                comments_template();
+              if ($comments_container == true) echo '</div>';
 						endif;
 					}
 

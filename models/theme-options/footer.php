@@ -79,3 +79,17 @@ Kirki::add_field( 'xe_options', [
   ],
   'transport' => 'auto',
 ] );
+
+Kirki::add_field( 'xe_options', [
+  'type'        => 'radio-buttonset',
+  'settings'    => 'sub_footer',
+  'label'       => esc_html__( 'Sub Footer', '_xe' ),
+  'description' => esc_html__( 'This does not effect the main footer, its just added right before it.', '_xe' ),
+  'section'     => 'footer',
+  'default'     => De::$sub_footer,
+  'choices'     => [
+    'on'  => esc_html__( 'Enable', '_xe' ),
+    'off' => esc_html__( 'Disable', '_xe' ),
+  ],
+  'transport' => 'auto',
+] );

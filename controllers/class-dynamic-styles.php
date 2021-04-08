@@ -28,10 +28,6 @@ class Xe_DynamicStyles {
 		$dark = Helper::darken($color, 20);
 		$light = Helper::darken($color, -20);
 
-    $title_bar_height = is_numeric($xe_opt->title_bar['height']) ? $xe_opt->title_bar['height'] . 'px' : 'auto';
-    $title_bar_pt = is_numeric($xe_opt->title_bar['pt']) ? $xe_opt->title_bar['pt'] . 'px' : 'auto';
-    $title_bar_pb = is_numeric($xe_opt->title_bar['pb']) ? $xe_opt->title_bar['pb'] . 'px' : 'auto';
-
 		$css = "
     :root{
       --primary-color: ".esc_attr($color).";
@@ -49,14 +45,6 @@ class Xe_DynamicStyles {
       --subtitle-color: ".esc_attr($xe_opt->title_bar['subtitle-color']).";
       --title-bar-bg-color: ".esc_attr($xe_opt->title_bar['bg-color']).";
       --title-bar-bg-image: url(".esc_attr($xe_opt->title_bar['bg-image']).");
-      --title-bar-bg-repeat: ".esc_attr($xe_opt->title_bar['bg-repeat']).";
-      --title-bar-bg-size: ".esc_attr($xe_opt->title_bar['bg-size']).";
-      --title-bar-bg-attachment: ".esc_attr($xe_opt->title_bar['bg-attachment']).";
-      --title-bar-bg-position: ".esc_attr($xe_opt->title_bar['bg-position']).";
-      --title-bar-overlay: ".esc_attr($xe_opt->title_bar['bg-overlay']).";
-      --title-bar-height: ".esc_attr($title_bar_height).";
-      --title-bar-pt: ".esc_attr($title_bar_pt).";
-      --title-bar-pb: ".esc_attr($title_bar_pb).";
 
       --padding-top: ".esc_attr($xe_opt->padding_top)."px;
       --padding-bottom: ".esc_attr($xe_opt->padding_bottom)."px;
@@ -104,11 +92,6 @@ class Xe_DynamicStyles {
     ".wp_strip_all_tags(Se::$title_bar['bg'])." {
       background-color: var(--title-bar-bg-color);
       background-image: var(--title-bar-bg-image);
-      background-repeat: var(--title-bar-bg-repeat);
-      background-size: var(--title-bar-bg-size);
-      background-attachment: var(--title-bar-bg-attachment);
-      background-position: var(--title-bar-bg-position);
-      min-height:  var(--title-bar-height);
     }
     ";
     $css .= "
@@ -124,11 +107,6 @@ class Xe_DynamicStyles {
     $css .= "
     ".wp_strip_all_tags(Se::$title_bar['overlay'])." {
       background-color: var(--title-bar-overlay);
-      width: 100%;
-      height: 100%;
-      min-height: var(--title-bar-height);
-      padding-top: var(--title-bar-pt);
-      padding-bottom: var(--title-bar-pb);
     }
     ";
 

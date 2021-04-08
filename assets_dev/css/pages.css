@@ -10,23 +10,9 @@
 /*--------------------------------------------------------------
 # Search
 --------------------------------------------------------------*/
-/*.search-form label,
-.woocommerce-product-search label {
-  width: 100%;
-  font-size: 12px;
-  font-weight: normal;
-}*/
 .search-form input.form-control,
 .woocommerce-product-search input {
   width: 100%;
-  /*display: inline-block;
-  height: 40px;
-  padding-right: 10px;
-  padding-left: 10px;
-  background: #fff;
-  box-shadow: none;
-  border-radius: 0px;
-  border: 1px solid #e6e6e6;*/
 }
 .widget-area .search-form input.form-control,
 .search-results .search-form input.form-control,
@@ -45,11 +31,57 @@
   position: relative;
   z-index: 1;
   margin-top: -42px;
-  /* margin-right: 10px; */
 }
 .woocommerce-product-search input[type=submit] {
   margin-top: -40.5px;
 }
 .search-form input.search-submit:focus {
   outline: none;
+}
+/*--------------------------------------------------------------
+# WPBakery Page Builder
+--------------------------------------------------------------*/
+.vc_col-has-fill>.vc_column-inner,
+.vc_row-has-fill+.vc_row-full-width+.vc_row>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill+.vc_row>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill+.vc_vc_row>.vc_row>.vc_vc_column>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill+.vc_vc_row_inner>.vc_row>.vc_vc_column_inner>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill>.vc_row>.vc_vc_column>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill>.vc_vc_column_inner>.vc_column_container>.vc_column-inner,
+.vc_section.vc_section-has-fill,
+.vc_section.vc_section-has-fill+.vc_row-full-width+.vc_section,
+.vc_section.vc_section-has-fill+.vc_section {
+  padding-top: 0 !important;
+}
+@media (min-width: 768px) {
+  .page .builder-active.sidebar-active .container {
+    width: 100%;
+  }
+}
+/*--------------------------------------------------------------
+# Elementor
+--------------------------------------------------------------*/
+@media (min-width: 576px) {
+  .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 540px !important;
+  }
+}
+@media (min-width: 768px) {
+  .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 720px !important;
+  }
+  .page .builder-active.sidebar-active .elementor-section.elementor-section-boxed > .elementor-container {
+    width: 100%;
+  }
+}
+@media (min-width: 992px) {
+  .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 960px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .elementor-section.elementor-section-boxed > .elementor-container {
+    max-width: 1140px !important;
+  }
 }

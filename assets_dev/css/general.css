@@ -22,6 +22,7 @@ body {
   padding-bottom: var(--padding-bottom);
 }
 @media (min-width: 576px) {
+  .archive .card-columns,
   .blog .card-columns {
     column-count: var(--blog-columns);
   }

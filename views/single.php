@@ -10,6 +10,7 @@
 global $xe_opt;
 
 $thumbnail_url = get_the_post_thumbnail_url( null, '_xe-post' );
+$thumbnail_alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ); 
 $date = get_the_date();
 $author = array(
   'name' => get_the_author_meta('display_name'),
