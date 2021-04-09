@@ -10,6 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This is just another WordPress framework or whatever you may prefer to call it. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
 == Changelog ==
+----- v2.3.0 ------------
+New Added: PrugeCSS to remove unused CSS.
+
 ----- v2.2.0 ------------
 New Added: Auto load widgets, template tags and extra functions.
 New Added: Elementor custom widget templates.
@@ -17,7 +20,7 @@ Fixed: Featured slide gallery post format on archive.
 Fixed: Archive card columns setup from customizer.
 Fixed: Archive getting post format.
 Fixed: Page Options numeric value override.
-Fixed: Elementor and WPbakery Page Builder compatibility issues.
+Fixed: Elementor and WPBakery Page Builder compatibility issues.
 Fixed: Sub footer issue.
 Fixed: Error 404 page inconsistent layout.
 Fixed: Missing map files for Bootstrap.

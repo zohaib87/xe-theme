@@ -24,7 +24,7 @@ endif;
 /**
  * Read more link
  */
-if (!function_exists('_xe_custom_excerpt_length')) :
+if (!function_exists('_xe_excerpt_more')) :
 
   function _xe_excerpt_more($more) {
 

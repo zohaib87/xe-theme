@@ -339,49 +339,9 @@ embed, iframe, object {
   width:100%;
   height:100%;
 }
-.featured-gallery .slick-dots {
-  position: absolute;
-  bottom: 15px;
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: center;
-}
-.featured-gallery .slick-dots li {
-  display: inline-block;
-  margin: 0 4px;
-}
-.featured-gallery .slick-dots li button {
-  font-size: 0;
-  width: 6px;
-  height: 6px;
-  padding: 0px;
-  cursor: pointer;
-  border: 0;
-  outline: none;
-  background: rgba(195, 195, 195, 0.5);
-  border-radius: 100px;
-}
-.featured-gallery .slick-dots li.slick-active button {
-  background-color: #fff;
-}
 /*--------------------------------------------------------------
 # Sticky Post
 --------------------------------------------------------------*/
-article.sticky .post-info,
-article.tag-sticky-2 .post-info {
-  background: #F7F7F7;
-  padding: 15px;
-  /* margin-bottom: 30px; */
-}
-.single-post article.sticky .post-info,
-.single-post article.tag-sticky-2 .post-info {
-  background: transparent;
-  padding: 0;
-  margin-bottom: 0;
-}
 .sticky-post {
   color: var(--primary-color);
   position: absolute;

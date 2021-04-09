@@ -19,6 +19,18 @@
   "min_js": [
     "assets/js/main.js"
   ],
+  "purge_css": [
+    "assets/css/main.css",
+    "assets/css/main.min.css"
+  ],
+  "safelist": [
+    "dl", "dt", "dd",
+    "dfn", "cite", "em", "i", "blockquote", 
+    "pre", "code", "tt", "var", "abbr", "acronym", "mark", "ins",
+    "table", "tbody", "td", "th",
+    "embed", "iframe", "object",
+    "aligncenter", "logged-in-as", "form-submit"
+  ],
   "build": "E:/Projects/Xe Framework",
   "local_repo": "E:/Projects/Github/xe-framework"
 }
