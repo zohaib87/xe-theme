@@ -26,52 +26,17 @@ $post_format = get_post_format();
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<?php
-      if ($post_format == 'video' || $post_format == 'audio') {
+      if ($post_format == 'video') {
 
-        $post = get_post();
-        $content = do_shortcode( apply_filters( 'the_content', $post->post_content ) );
-        $video = get_media_embedded_in_content($content);
+        _xe_featured_video();
 
-        if (count($video)) :
+      } elseif ($post_format == 'audio') {
 
-          echo '<div class="featured-'.esc_attr($post_format).'">';
-          echo $video[0];
-          echo '</div><!-- .featured-'.esc_attr($post_format).' -->';
-
-        endif;
+        _xe_featured_audio();
 
       } elseif ($post_format == 'gallery') {
 
-        $id = get_the_ID();
-        $images = get_post_gallery_images( $id );
-        $title_margin = '';
-        $count = 0;
-
-        ?><div id="featured-gallery-<?php the_ID(); ?>" class="featured-gallery carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <?php
-              foreach ($images as $image) {
-
-                if ($count == 5) break;
-                $atcive = ($count == 1) ? 'active' : '';
-
-                echo '<div class="carousel-item '.esc_attr($atcive).'"><img class="img-fluid" src="'.esc_url($image).'" alt=""/></div>';
-
-                $count++;
-
-              }
-            ?>
-          </div><!-- .carousel-inner -->
-
-          <a class="carousel-control-prev" href="#featured-gallery-<?php the_ID(); ?>" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#featured-gallery-<?php the_ID(); ?>" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div><!-- .featured-gallery --><?php
+        _xe_featured_gallery();
 
       } else {             
   			

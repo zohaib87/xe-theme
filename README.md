@@ -24,7 +24,8 @@ Useful Commands
 * `gulp mincss`
 * `gulp minjs`
 * `gulp imagemin`
-* Above commands are self explanatory and for manual use. To automate all the above just use `gulp`. To stop automation use `CTRL+C` in windows and `CMD+C` on mac.
+* `gulp purgecss`
+* Above commands are self explanatory and for manual use. To automate all the above just use `gulp`. To stop automation use `CTRL+C` in windows and `CMD+C` on mac. PurgeCSS will not be automated, you have to use it manually.
 
 Features
 --------
@@ -32,6 +33,7 @@ Features
 * Auto browser reload.
 * Auto/manual concatenate or minify CSS and JavaScript files.
 * Auto/manual image optimization.
+* Remove unused CSS using PurgeCSS.
 * Theme Options (Customizer).
 * Highly Customizable and Easy to Customize.
 * Bootstrap 4 and Fontawesome 5 Icons.
