@@ -134,8 +134,8 @@ exports.mincss = min_css;
 exports.minjs = min_js;
 
 exports.default = function() {
-  gulp.watch('assets_dev/css/*.css', concat_css);
-  gulp.watch('assets_dev/js/*.js', concat_js);
+  gulp.watch(config.concat_css, concat_css);
+  gulp.watch(config.concat_js, concat_js);
   gulp.watch('assets_dev/img/*', image_min);
   gulp.watch(config.min_css, min_css);
   gulp.watch(config.min_js, min_js);

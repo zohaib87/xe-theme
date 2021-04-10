@@ -10,6 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This is just another WordPress framework or whatever you may prefer to call it. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
 == Changelog ==
+----- v2.3.2 ------------
+Fixed: Minor bug in gulp watch.
+
 ----- v2.3.1 ------------
 New Added: Featured gallery, video and audio code moved to template-tags.
 
