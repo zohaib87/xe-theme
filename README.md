@@ -31,8 +31,8 @@ Features
 --------
 
 * Auto browser reload.
-* Auto/manual concatenate or minify CSS and JavaScript files.
-* Auto/manual image optimization.
+* Auto/manual `concatenate` or `minify` CSS and JavaScript files.
+* Auto/manual `image optimization`.
 * Remove unused CSS using PurgeCSS.
 * Theme Options (Customizer).
 * Highly Customizable and Easy to Customize.
