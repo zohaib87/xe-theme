@@ -15,6 +15,7 @@ Getting Started
 6. Now run `gulp init` command to automatically change text-domain, prefixes, DocBlocks etc to your theme name.
 7. Run `gulp` command to watch your theme files for changes and start making an awesome WordPress Theme. ;-)
 8. Once you have completed your theme run `gulp build` command to generate a clean copy of your theme on desktop. `.pot` file will also be generated inside languages folder.
+9. Run `gulp child` to generate child-theme.
 
 Useful Commands
 ---------------
