@@ -10,6 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This is just another WordPress framework or whatever you may prefer to call it. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
 == Changelog ==
+----- v2.3.5 ------------
+Fixed: Minor bugs in theme build.
+
 ----- v2.3.4 ------------
 Fixed: Minor bugs in child theme generator.
 
