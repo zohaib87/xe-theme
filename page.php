@@ -35,11 +35,11 @@ if ($elementor || $wpbakery) {
   $classes = 'page-content '.$xe_opt->container;
 }
 
-$classes = Helper::classes( array('site-content', 'padding-top-bottom', $classes) );
+$classes = Helper::classes( array('site-content', 'padding-top-bottom', $classes, 'clearfix') );
 
 get_header(); ?>
 
-<div id="content" class="site-content padding-top-bottom <?php echo esc_attr($classes); ?>">
+<div id="content" class="<?php echo esc_attr($classes); ?>">
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">

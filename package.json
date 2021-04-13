@@ -1,6 +1,6 @@
 {
   "name": "xe",
-  "version": "2.3.7",
+  "version": "2.3.8",
   "description": "This is Just another WordPress framework. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.",
   "main": "build.js",
   "scripts": {
