@@ -10,6 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This is just another WordPress framework or whatever you may prefer to call it. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
 == Changelog ==
+----- v2.3.7 ------------
+Fixed: Blog and archives inconsistent bottom padding.
+
 ----- v2.3.6 ------------
 Removed: PrugeCSS leftovers.
 

@@ -16,7 +16,7 @@ global $xe_opt;
 
 get_header(); ?>
 
-<div id="content" class="site-content <?php echo esc_attr($xe_opt->container); ?> padding-top-bottom">
+<div id="content" class="site-content <?php echo esc_attr($xe_opt->container); ?> padding-top-bottom clearfix">
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
