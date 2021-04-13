@@ -7,8 +7,6 @@ var imagemin = require('gulp-imagemin');
 var cleanCss = require('gulp-clean-css');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
-var purgecss = require('gulp-purgecss');
-var purgecssWP = require('purgecss-with-wordpress');
 
 /**
  * Initialize
@@ -27,34 +25,19 @@ function build(done) {
 }
 
 /**
+ * Build child theme
+ */
+function child(done) {
+  require('./node_scripts/child.js');
+  done();
+}
+
+/**
  * Copy theme to a location
  */
 function copy(done) {
   require('./node_scripts/copy.js');
   done();
-}
-
-/**
- * Purge CSS
- */
-function purge_css() {
-  return gulp.src(config.purge_css)
-  .pipe(purgecss({
-    content: ['**/*.php'],
-    safelist: {
-      standard: [
-        ...purgecssWP.safelist,
-        ...config.safelist
-      ],
-      greedy: [
-        /^center-/, /-moz/, /^vc_/, /^elementor-/,
-        /wpcf7/, /password/, /content/, /:focus/,
-        /woocommerce/, /product/, /cart_totals$/, /add_payment_method$/,
-        /widget/, /author/, /comment/, /reply/, /^wp-/, /^gallery-/
-      ]
-    }
-  }))
-  .pipe(gulp.dest('assets/css/'));
 }
 
 /**
@@ -125,8 +108,8 @@ function image_min() {
 
 exports.init = init;
 exports.build = build;
+exports.child = child;
 exports.copy = copy;
-exports.purgecss = purge_css;
 exports.concatcss = concat_css;
 exports.concatjs = concat_js;
 exports.imagemin = image_min;

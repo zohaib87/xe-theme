@@ -2,7 +2,7 @@
 /**
  * Add or Remove menu pages.
  *
- * @package Xhost
+ * @package _xe
  */
 
 /**
