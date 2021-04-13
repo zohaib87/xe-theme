@@ -11,6 +11,7 @@ var nameUnderscores = nameLower.replace(/ /g, '_');
 var txtDomain = "'"+nameHyphen+"'";
 var funcNames = nameUnderscores+"_";
 var styleCss = "Text Domain: "+nameHyphen;
+var template = "Template: "+nameHyphen;
 var dockBlocks = " "+name;
 var preHandles = nameHyphen+"-";
 var gloVars = nameUnderscores+"_opt";
@@ -22,11 +23,12 @@ var currentTheme = path.resolve(__dirname, '..');
 var options = {
   files: [
     currentTheme+'/style.css',
+    currentTheme+'/child/style.css',
     currentTheme+'/**/*.php',
     currentTheme+'/readme.txt',
   ],
-  from: [/'_xe'/g, /_xe_/g, /Text Domain: _xe/g, / _xe/g, /_xe-/g, /xe_opt/g, /Xe_/g],
-  to: [txtDomain, funcNames, styleCss, dockBlocks, preHandles, gloVars, preClasses],
+  from: [/'_xe'/g, /_xe_/g, /Text Domain: _xe/g, /Template: _xe/g, / _xe/g, /_xe-/g, /xe_opt/g, /Xe_/g],
+  to: [txtDomain, funcNames, styleCss, template, dockBlocks, preHandles, gloVars, preClasses],
 };
 
 try {
