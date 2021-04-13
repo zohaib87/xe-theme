@@ -1,6 +1,6 @@
 {
   "name": "xe",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "description": "This is Just another WordPress framework. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.",
   "main": "build.js",
   "scripts": {
@@ -18,10 +18,8 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-concat": "^2.6.1",
     "gulp-imagemin": "^7.1.0",
-    "gulp-purgecss": "^4.0.3",
     "gulp-rename": "^2.0.0",
     "gulp-uglify": "^3.0.2",
-    "purgecss-with-wordpress": "^4.0.3",
     "replace-in-file": "^5.0.2",
     "rimraf": "^3.0.2",
     "wp-pot": "^1.8.0"
