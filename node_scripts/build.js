@@ -32,6 +32,9 @@ copydir( currentTheme, targetUrl, {
     if (stat === 'directory' && path.basename(filename) === 'assets_dev') {
       return false;
     }
+    if (stat === 'directory' && path.basename(filename) === 'child') {
+      return false;
+    }
 
     // do not want copy files with specific extension
     if (stat === 'file' && path.extname(filepath) === '.psd') {
@@ -87,6 +90,9 @@ copydir( currentTheme, targetUrl, {
   });
   rimraf(targetUrl+'/assets_dev/', function() {
     console.log("assets_dev folder removed.");
+  });
+  rimraf(targetUrl+'/child/', function() {
+    console.log("child folder removed.");
   });
 
   // Generate POT file.
