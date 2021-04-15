@@ -16,11 +16,10 @@ use Helpers\Xe_Helpers as Helper;
 
 global $xe_opt;
 
-$post = get_post();
 $sidebar = $xe_opt->sidebar();
 $comments_container = false;
 $elementor = (function_exists('_xe_elemcheck') && _xe_elemcheck() == true);
-$wpbakery = ($post && preg_match('/vc_row/', $post->post_content));
+$wpbakery = (function_exists('_xe_bakerycheck') && _xe_bakerycheck() == true);
 
 if ($elementor || $wpbakery) {
 

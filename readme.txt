@@ -1,15 +1,18 @@
 ﻿=== _xe ===
 Requires at least: 5.6
-Tested up to: 5.7
+Tested up to: 5.7.1
 Requires PHP: 7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-This is just another WordPress framework or whatever you may prefer to call it. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
+This is just another WordPress framework + build process. It is built for developers to create awesome and highly customizable themes for clients or sell it on marketplace.
 
 == Changelog ==
+----- v2.3.9 ------------
+Fixed: WPBakery Page Builder compatibility issue.
+
 ----- v2.3.8 ------------
 Fixed: Minor bugs in layout.
 
