@@ -10,6 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This is just another WordPress framework + build process. It is built for developers to create awesome and highly customizable themes for clients or sell it on marketplace.
 
 == Changelog ==
+----- v2.3.10 ------------
+Fixed: Box layout background errors.
+
 ----- v2.3.9 ------------
 Fixed: WPBakery Page Builder compatibility issue.
 

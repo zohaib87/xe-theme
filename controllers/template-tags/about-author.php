@@ -26,12 +26,11 @@ if (!function_exists('_xe_about_author')) {
 
     <div class="author-info">
       <ul class="row">
-        <li class="col-xs-2">
+        <li class="col-md-2">
           <?php echo wp_kses_post($author['img']); ?>
         </li>
-        <li class="col-xs-10 ml-3">
+        <li class="col-md-10">
           <h5>About <?php echo esc_html($author['name']); ?></h5>
-          <br>
           <?php echo wp_kses_post($author['desc']); ?>
         </li>
       </ul>

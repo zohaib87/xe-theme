@@ -118,12 +118,12 @@ class Xe_ThemeOptions {
 
     $this->boxed_layout_bg = get_theme_mod('boxed_layout_bg', De::$boxed_layout_bg);
     
-    $this->bg['bg-color'] = !empty($this->boxed_layout_bg['background-color']) ? $this->boxed_layout_bg['background-color'] : '';
-    $this->bg['bg-repeat'] = !empty($this->boxed_layout_bg['background-repeat']) ? $this->boxed_layout_bg['background-repeat'] : '';
-    $this->bg['bg-size'] = !empty($this->boxed_layout_bg['background-size']) ? $this->boxed_layout_bg['background-size'] : '';
-    $this->bg['bg-attachment'] = !empty($this->boxed_layout_bg['background-attachment']) ? $this->boxed_layout_bg['background-attachment'] : '';
-    $this->bg['bg-position'] = !empty($this->boxed_layout_bg['background-position']) ? $this->boxed_layout_bg['background-position'] : '';
-    $this->bg['bg-image'] = !empty($this->boxed_layout_bg['background-image']) ? $this->boxed_layout_bg['background-image'] : '';
+    $this->bg['color'] = !empty($this->boxed_layout_bg['background-color']) ? $this->boxed_layout_bg['background-color'] : '';
+    $this->bg['repeat'] = !empty($this->boxed_layout_bg['background-repeat']) ? $this->boxed_layout_bg['background-repeat'] : '';
+    $this->bg['size'] = !empty($this->boxed_layout_bg['background-size']) ? $this->boxed_layout_bg['background-size'] : '';
+    $this->bg['attachment'] = !empty($this->boxed_layout_bg['background-attachment']) ? $this->boxed_layout_bg['background-attachment'] : '';
+    $this->bg['position'] = !empty($this->boxed_layout_bg['background-position']) ? $this->boxed_layout_bg['background-position'] : '';
+    $this->bg['image'] = !empty($this->boxed_layout_bg['background-image']) ? $this->boxed_layout_bg['background-image'] : '';
 
     // Setup Classes for Site_Layout
     $this->container = ($this->site_layout == 'full-width') ? 'container-fluid' : 'container';
