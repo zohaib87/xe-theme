@@ -20,12 +20,10 @@ Getting Started
 Useful Commands
 ---------------
 
-* `gulp concatcss`
-* `gulp concatjs`
-* `gulp mincss`
-* `gulp minjs`
-* `gulp imagemin`
-* Above commands are self explanatory and for manual use. To automate all the above just use `gulp`. To stop automation use `CTRL+C` in windows and `CMD+C` on mac.
+* `gulp css`: Concatenate and minify CSS files.
+* `gulp js`: Concatenate and minify JS files.
+* `gulp img`: Optimize images.
+* To automate all the above just use `gulp`. To stop automation use `CTRL+C` in windows and `CMD+C` on mac.
 
 Features
 --------
@@ -33,7 +31,6 @@ Features
 * Auto browser reload.
 * Auto/manual `concatenate` or `minify` CSS and JavaScript files.
 * Auto/manual `image optimization`.
-* Remove unused CSS using PurgeCSS.
 * Theme Options (Customizer).
 * Highly Customizable and Easy to Customize.
 * Bootstrap 4 and Fontawesome 5 Icons.

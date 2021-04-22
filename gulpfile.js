@@ -1,5 +1,7 @@
+/* jshint esversion: 6 */
 
 var gulp = require('gulp');
+const { series, parallel } = require('gulp');
 var config = require('./node_scripts/config.json');
 var browserSync = require("browser-sync").create();
 var concat = require('gulp-concat');
@@ -110,17 +112,13 @@ exports.init = init;
 exports.build = build;
 exports.child = child;
 exports.copy = copy;
-exports.concatcss = concat_css;
-exports.concatjs = concat_js;
-exports.imagemin = image_min;
-exports.mincss = min_css;
-exports.minjs = min_js;
+exports.css = series(concat_css, min_css);
+exports.js = series(concat_js, min_js);
+exports.img = image_min;
 
 exports.default = function() {
-  gulp.watch(config.concat_css, concat_css);
-  gulp.watch(config.concat_js, concat_js);
+  gulp.watch(config.concat_css, series(concat_css, min_css));
+  gulp.watch(config.concat_js, series(concat_js, min_js));
   gulp.watch('assets_dev/img/*', image_min);
-  gulp.watch(config.min_css, min_css);
-  gulp.watch(config.min_js, min_js);
   browser_sync();
 };
