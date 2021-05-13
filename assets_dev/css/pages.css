@@ -3,9 +3,13 @@
 --------------------------------------------------------------*/
 .error404 .page-header .page-title {
   color: #404040;
+  margin-left: -2px;
 }
-.error404 .site-main {
+.error404 .site-main{
   margin: 0;
+}
+.error404 .page-content p {
+  margin: 0 0 15px 2px;
 }
 /*--------------------------------------------------------------
 # Search

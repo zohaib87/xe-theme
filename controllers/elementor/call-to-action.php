@@ -97,8 +97,8 @@ class Xe_CallToAction extends \Elementor\Widget_Base {
         'label' => esc_html__( 'Text Color', '_xe' ),
         'type' => \Elementor\Controls_Manager::COLOR,
         'scheme' => [
-          'type' => \Elementor\Scheme_Color::get_type(),
-          'value' => \Elementor\Scheme_Color::COLOR_1,
+          'type' => \Elementor\Core\Schemes\Color::get_type(),
+          'value' => \Elementor\Core\Schemes\Color::COLOR_1,
         ],
         'default' => '#000',
       ]

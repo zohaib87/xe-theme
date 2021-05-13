@@ -30,6 +30,7 @@ use Helpers\Xe_Helpers as Helper;
 
 global $xe_opt;
 
+$mega_menu = (function_exists('max_mega_menu_is_enabled') && max_mega_menu_is_enabled($xe_opt->header['menu']));
 $header_classes = Helper::classes( array('site-header', 'bg-primary') );
 $nav_classes = Helper::classes( array('navbar', 'navbar-expand-lg', 'navbar-dark') );
 

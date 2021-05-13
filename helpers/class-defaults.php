@@ -128,7 +128,7 @@ class Xe_Defaults {
     // Subtitles
     Self::$blog_subtitle = esc_html__( 'Welcome to amazing blog!', '_xe' );
     Self::$search_subtitle = esc_html__( 'Not what you looking for? Maybe try again...', '_xe' );
-    Self::$error_subtitle = esc_html__( 'Error 404! Page Not Found.', '_xe' );
+    Self::$error_subtitle = esc_html__( 'Page Not Found.', '_xe' );
     Self::$shop_subtitle = esc_html__( 'Checkout Our Amazing Products!', '_xe' );
 
     // Sidebars

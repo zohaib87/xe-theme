@@ -37,12 +37,10 @@
   background-color: var(--primary-dark);
 }
 span.wpcf7-not-valid-tip {
-  color: white;
-  background: darkred;
-  padding: 5px 10px;
+  color: #dc3545;
+  padding-left: 2px;
   font-size: 12px;
   font-weight: normal;
-  font-style: italic;
   display: block;
 }
 div.wpcf7-validation-errors {
@@ -52,6 +50,9 @@ div.wpcf7-response-output {
   font-size: 13px;
   margin: 0 0 30px;
   padding: 5px 10px;
+}
+.wpcf7 form .wpcf7-response-output {
+  margin: 0;
 }
 /*--------------------------------------------------------------
 # Post Password Protected Form

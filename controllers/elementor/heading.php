@@ -70,8 +70,8 @@ class Xe_Heading extends \Elementor\Widget_Base {
         'label' => esc_html__( 'Heading Color', '_xe' ),
         'type' => \Elementor\Controls_Manager::COLOR,
         'scheme' => [
-          'type' => \Elementor\Scheme_Color::get_type(),
-          'value' => \Elementor\Scheme_Color::COLOR_1,
+          'type' => \Elementor\Core\Schemes\Color::get_type(),
+          'value' => \Elementor\Core\Schemes\Color::COLOR_1,
         ],
         'default' => '#000',
       ]
@@ -81,8 +81,8 @@ class Xe_Heading extends \Elementor\Widget_Base {
         'label' => esc_html__( 'Sub Heading Color', '_xe' ),
         'type' => \Elementor\Controls_Manager::COLOR,
         'scheme' => [
-          'type' => \Elementor\Scheme_Color::get_type(),
-          'value' => \Elementor\Scheme_Color::COLOR_1,
+          'type' => \Elementor\Core\Schemes\Color::get_type(),
+          'value' => \Elementor\Core\Schemes\Color::COLOR_1,
         ],
         'default' => '#000',
       ]
