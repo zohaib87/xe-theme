@@ -1,6 +1,12 @@
 About XeFramework
 =================
 
+<div align="center">
+	
+[![BoxBilling Demo](https://img.shields.io/badge/XeFramework-Demo-blue)](https://demos.xecreators.pk/)
+
+</div>
+
 This is just another WordPress framework. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
 Getting Started
