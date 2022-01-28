@@ -1,5 +1,4 @@
-About XeFramework
-=================
+# About XeFramework
 
 [![Issues](https://img.shields.io/github/issues/XeCreators/xe-framework)](https://github.com/XeCreators/xe-framework/issues)
 [![Download Latest](https://img.shields.io/github/downloads/XeCreators/xe-framework/total)](https://github.com/XeCreators/xe-framework/releases/latest)
