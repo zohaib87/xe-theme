@@ -5,7 +5,7 @@
 [![Release Latest](https://img.shields.io/github/v/release/XeCreators/xe-framework?color=yellowgreen)](https://github.com/XeCreators/xe-framework/releases/latest)
 [![XeFramework Demo](https://img.shields.io/badge/XeFramework-demo-blue)](https://demos.xecreators.pk/)
 ![Repo Size](https://img.shields.io/github/repo-size/XeCreators/xe-framework.svg)
-[![License](https://img.shields.io/badge/License-GPL--2.0-orange.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+[![License](https://img.shields.io/github/license/XeCreators/xe-framework)](https://github.com/XeCreators/xe-framework/blob/master/LICENSE.md)
 
 This is just another WordPress framework. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
