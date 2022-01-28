@@ -3,7 +3,7 @@
 [![Issues](https://img.shields.io/github/issues/XeCreators/xe-framework)](https://github.com/XeCreators/xe-framework/issues)
 [![Download Latest](https://img.shields.io/github/downloads/XeCreators/xe-framework/total)](https://github.com/XeCreators/xe-framework/releases/latest)
 [![Release Latest](https://img.shields.io/github/v/release/XeCreators/xe-framework?color=yellowgreen)](https://github.com/XeCreators/xe-framework/releases/latest)
-[![XeFramework Demo](https://img.shields.io/badge/XeFramework-demo-blue)](https://demos.xecreators.pk/)
+[![XeFramework Demo](https://img.shields.io/badge/XeFramework-Demo-blue)](https://demos.xecreators.pk/)
 ![Repo Size](https://img.shields.io/github/repo-size/XeCreators/xe-framework.svg)
 [![License](https://img.shields.io/github/license/XeCreators/xe-framework)](https://github.com/XeCreators/xe-framework/blob/master/LICENSE.md)
 
