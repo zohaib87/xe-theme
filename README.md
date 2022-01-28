@@ -2,7 +2,7 @@ About XeFramework
 =================
 
 [![Issues](https://img.shields.io/github/issues/XeCreators/xe-framework)](https://github.com/XeCreators/xe-framework/issues)
-[![XeFramework Demo](https://img.shields.io/badge/XeFramework-Demo-blue)](https://demos.xecreators.pk/)
+[![XeFramework Demo](https://img.shields.io/badge/XeFramework-demo-blue)](https://demos.xecreators.pk/)
 
 This is just another WordPress framework. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
