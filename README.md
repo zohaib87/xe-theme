@@ -25,8 +25,6 @@ This is just another WordPress framework. It is built for developers to create a
 ## Features
 
 * Auto browser reload.
-* Auto/manual `concatenate` or `minify` CSS and JavaScript files.
-* Auto/manual `image optimization`.
 * Theme Options (Customizer).
 * Highly Customizable and Easy to Customize.
 * Bootstrap 4 and Fontawesome 5 Icons.
