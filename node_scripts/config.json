@@ -1,24 +1,6 @@
 {
   "name": "Xe",
   "proxy": "wpmu/",
-  "concat_css": [
-    "assets_dev/css/general.css",
-    "assets_dev/css/blog.css",
-    "assets_dev/css/pages.css",
-    "assets_dev/css/widgets.css",
-    "assets_dev/css/comments.css",
-    "assets_dev/css/woocommerce.css",
-    "assets_dev/css/forms.css"
-  ],
-  "min_css": [
-    "assets/css/main.css"
-  ],
-  "concat_js": [
-    "assets_dev/js/main.js"
-  ],
-  "min_js": [
-    "assets/js/main.js"
-  ],
   "build": "E:/Projects/Xe Framework",
   "local_repo": "E:/Projects/Github/xe-framework"
 }

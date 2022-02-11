@@ -12,7 +12,7 @@ var targetUrl = config.build+'/'+nameHyphen+'-child';
 var currentTheme = path.resolve(__dirname, '..');
 
 // Copy Theme
-copydir( currentTheme+'/child/', targetUrl, {
+copydir.sync( currentTheme+'/child/', targetUrl, {
 
   utimes: true,  // keep add time and modify time
   mode: true,    // keep file mode
@@ -21,13 +21,13 @@ copydir( currentTheme+'/child/', targetUrl, {
   filter: function(stat, filepath, filename) {
 
     // do not want copy directories
+    if (stat === 'directory' && path.basename(filename) === '.vscode') {
+      return false;
+    }
     if (stat === 'directory' && path.basename(filename) === 'node_modules') {
       return false;
     }
     if (stat === 'directory' && path.basename(filename) === 'node_scripts') {
-      return false;
-    }
-    if (stat === 'directory' && path.basename(filename) === 'assets_dev') {
       return false;
     }
 
@@ -58,7 +58,7 @@ copydir( currentTheme+'/child/', targetUrl, {
     if (stat === 'file' && path.basename(filepath) === 'init.js') {
       return false;
     }
-    if (stat === 'file' && path.basename(filepath) === 'gulpfile.js') {
+    if (stat === 'file' && path.basename(filepath) === 'browser_sync.js') {
       return false;
     }
 
@@ -71,9 +71,5 @@ copydir( currentTheme+'/child/', targetUrl, {
 
   }
 
-}, function(err) {
-
-  if (err) throw err;
-  console.log('Child theme copied successfully.');
-
 });
+console.log('Child theme copied successfully.');

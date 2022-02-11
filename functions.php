@@ -7,22 +7,22 @@
  * @package _xe
  */
 
-require get_template_directory() . '/controllers/setup.php';
+require get_template_directory() . '/includes/setup.php';
 
 /**
  * Register custom widgets
  */
-require get_template_directory() . '/models/widgets.php';
+require get_template_directory() . '/includes/widgets.php';
 
 /**
- * Enqueue scripts and styles for front end.
+ * Enqueue scripts and styles for admin and front end.
  */
-require get_template_directory() . '/controllers/scripts.php';
+require get_template_directory() . '/includes/scripts.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/models/customizer.php';
+require get_template_directory() . '/includes/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -55,9 +55,9 @@ require get_template_directory() . '/helpers/class-selectors.php';
 require get_template_directory() . '/helpers/class-defaults.php';
 
 /**
- * Class to get and use Redux and ACF Pro options.
+ * Class to get and use Kirki and MetaBox.io options.
  */
-require get_template_directory() . '/controllers/class-theme-options.php';
+require get_template_directory() . '/includes/class-theme-options.php';
 
 /**
  * Functions that require Kirki Customizer Framework.
@@ -65,7 +65,7 @@ require get_template_directory() . '/controllers/class-theme-options.php';
 function _xe_theme_options() {
 
   if ( class_exists('Kirki') ) {
-    require get_template_directory() . '/models/theme-options.php';
+    require get_template_directory() . '/includes/theme-options.php';
   }
 
 }
@@ -75,28 +75,28 @@ add_action('init', '_xe_theme_options');
  * Functions that require Meta Box.
  */
 if ( class_exists('RWMB_Loader') ) {
-	require get_template_directory() . '/models/page-options.php';
+	require get_template_directory() . '/includes/page-options.php';
 }
 
 /**
  * Enqueue dynamic styles in theme <head> tags.
  */
-require get_template_directory() . '/controllers/class-dynamic-styles.php';
+require get_template_directory() . '/includes/class-dynamic-styles.php';
 
 /**
  * Enqueue dynamic scripts in theme footer.
  */
-require get_template_directory() . '/controllers/class-dynamic-scripts.php';
+require get_template_directory() . '/includes/class-dynamic-scripts.php';
 
 /**
  * Custom template tags for this theme.
  */
-Helpers\Xe_Helpers::auto_load_files( get_template_directory() . '/controllers/template-tags/*.php' );
+Helpers\Xe_Helpers::auto_load_files( get_template_directory() . '/includes/template-tags/*.php' );
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-Helpers\Xe_Helpers::auto_load_files( get_template_directory() . '/controllers/extras/*.php' );
+Helpers\Xe_Helpers::auto_load_files( get_template_directory() . '/includes/extras/*.php' );
 
 /**
  * One click demo import.
@@ -108,6 +108,6 @@ if (class_exists('OCDI_Plugin')) {
 /**
  * Elementor
  */
-if (is_plugin_active( 'elementor/elementor.php' )) {
-  require get_template_directory() . '/controllers/elementor.php';
+if (is_plugin_active('elementor/elementor.php')) {
+  require get_template_directory() . '/includes/elementor.php';
 }

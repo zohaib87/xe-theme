@@ -14,7 +14,7 @@ var targetUrl = config.build+'/'+nameHyphen;
 var currentTheme = path.resolve(__dirname, '..');
 
 // Copy Theme
-copydir( currentTheme, targetUrl, {
+copydir.sync( currentTheme, targetUrl, {
 
   utimes: true,  // keep add time and modify time
   mode: true,    // keep file mode
@@ -23,6 +23,9 @@ copydir( currentTheme, targetUrl, {
   filter: function(stat, filepath, filename) {
 
     // do not want copy directories
+    if (stat === 'directory' && path.basename(filename) === '.vscode') {
+      return false;
+    }
     if (stat === 'directory' && path.basename(filename) === 'node_modules') {
       return false;
     }
@@ -63,7 +66,7 @@ copydir( currentTheme, targetUrl, {
     if (stat === 'file' && path.basename(filepath) === 'init.js') {
       return false;
     }
-    if (stat === 'file' && path.basename(filepath) === 'gulpfile.js') {
+    if (stat === 'file' && path.basename(filepath) === 'browser_sync.js') {
       return false;
     }
 
@@ -76,32 +79,27 @@ copydir( currentTheme, targetUrl, {
 
   }
 
-}, function(err) {
-
-  if (err) throw err;
-  console.log('Theme copied successfully.');
-
-  // Remove unnecessary folders/files.
-  rimraf(targetUrl+'/node_modules/', function() {
-    console.log("node_modules folder removed.");
-  });
-  rimraf(targetUrl+'/node_scripts/', function() {
-    console.log("node_scripts folder removed.");
-  });
-  rimraf(targetUrl+'/assets_dev/', function() {
-    console.log("assets_dev folder removed.");
-  });
-  rimraf(targetUrl+'/child/', function() {
-    console.log("child folder removed.");
-  });
-
-  // Generate POT file.
-  wpPot({
-    destFile: targetUrl+'/languages/'+nameHyphen+'.pot',
-    domain: '',
-    package: name,
-    src: '**/*.php'
-  });
-  console.log('POT file Generated.');
-
 });
+console.log('Theme copied successfully.');
+
+// Remove unnecessary folders/files.
+rimraf.sync(targetUrl+'/.vscode/');
+console.log(".vscode folder removed.");
+
+rimraf.sync(targetUrl+'/node_modules/');
+console.log("node_modules folder removed.");
+
+rimraf.sync(targetUrl+'/node_scripts/');
+console.log("node_scripts folder removed.");
+
+rimraf.sync(targetUrl+'/child/');
+console.log("child folder removed.");
+
+// Generate POT file.
+wpPot({
+  destFile: targetUrl+'/languages/'+nameHyphen+'.pot',
+  domain: '',
+  package: name,
+  src: '**/*.php'
+});
+console.log('POT file Generated.');

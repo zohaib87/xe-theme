@@ -9,7 +9,7 @@ use Helpers\Xe_Helpers as Helper;
 
 function _xe_load_elementor_widgets() {
 
-  Helper::auto_load_files(get_template_directory() . '/controllers/elementor/*.php');
+  Helper::auto_load_files(get_template_directory() . '/includes/elementor/*.php');
 
 }
 add_action('init', '_xe_load_elementor_widgets');
