@@ -10,6 +10,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 This is just another WordPress framework + build process. It is built for developers to create awesome and highly customizable themes for clients or sell it on marketplace.
 
 == Changelog ==
+----- v2.3.14 ------------
+Removed: Model folder.
+
 ----- v2.3.13 ------------
 Fixed: Minor bugs.
 Removed: Support for gulp, concat, minify and image minification.

@@ -1,8 +1,7 @@
 {
   "name": "xe",
-  "version": "2.3.13",
+  "version": "2.3.14",
   "description": "This is Just another WordPress framework. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.",
-  "main": "build.js",
   "scripts": {
     "init": "cd node_scripts && node init.js",
     "build": "cd node_scripts && node build.js",
