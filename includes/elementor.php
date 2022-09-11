@@ -35,6 +35,6 @@ add_action('elementor/elements/categories_registered', '_xe_add_elementor_catego
 function _xe_elemcheck() {
 
   global $post;
-  return \Elementor\Plugin::$instance->db->is_built_with_elementor($post->ID);
+  return \Elementor\Plugin::$instance->documents->get($post->ID)->is_built_with_elementor();
 
 }
