@@ -14,8 +14,8 @@ This is just another WordPress framework. It is built for developers to create a
 1. You must have latest version of [Nodejs](https://nodejs.org/en/) installed.
 2. Change folder name to your theme name. e.g: `xurais` or `xu-rais`.
 3. Navigate to `node_scripts` folder and open `config.json` with your favorite editor.
-  1. Change `"name"` to your theme name eg: `Xurais` or `Xu Rais`.
-  2. Change the `"proxy"` to your local WordPress site url.
+   1. Change `"name"` to your theme name eg: `Xurais` or `Xu Rais`.
+   2. Change the `"proxy"` to your local WordPress site url.
 5. Open command line, navigate to project folder and run `npm install` to install dependencies.
 6. Now run `npm run init` command to automatically change text-domain, prefixes, DocBlocks etc to your theme name.
 7. Run `npm run serve` command to watch your theme files for changes and auto reload browser. ;-)
