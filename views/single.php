@@ -10,7 +10,7 @@
 global $xe_opt;
 
 $thumbnail_url = get_the_post_thumbnail_url( null, '_xe-post' );
-$thumbnail_alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true ); 
+$thumbnail_alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
 $date = get_the_date();
 $author = array(
   'name' => get_the_author_meta('display_name'),
@@ -28,32 +28,32 @@ $str_regux = '';
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<?php 
+			<?php
 				if ($post_format == 'gallery') {
 
 					_xe_featured_gallery();
 
         } else {
-		                
-					if ( has_post_thumbnail() ) :
+
+					if ( has_post_thumbnail() ) {
 
 						echo '<div class="img-featured">';
-						the_post_thumbnail( '_xe-post', array('class' => 'img-fuild') );		
+						the_post_thumbnail( '_xe-post', array('class' => 'img-fluid') );
 						echo '</div><!-- .img-featured -->';
 
-					endif;
+          }
 
 				}
 			?>
 
 			<header class="entry-header">
-				<?php 
-					if ( is_sticky() ) { 
-						echo '<i class="fa fa-thumb-tack sticky-post"></i>'; 
-					} 
+				<?php
+					if ( is_sticky() ) {
+						echo '<i class="fa fa-thumb-tack sticky-post"></i>';
+					}
 					if ($xe_opt->title_bar['switch'] == 'off') {
 						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-					} 
+					}
 				?>
 			</header><!-- .entry-header -->
 

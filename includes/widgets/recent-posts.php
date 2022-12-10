@@ -40,7 +40,7 @@ class Xe_RecentPostsWidget extends WP_Widget {
 			'post_type'	=> 'post',
 			'posts_per_page' => $instance['number'],
 			'orderby' 	=> 'date',
-			'order' 	=> 'ASC',
+			'order' 	=> 'DESC',
 		);
 		$query = new WP_Query($query_args);
 
