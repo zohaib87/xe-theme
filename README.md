@@ -9,6 +9,8 @@
 
 This is just another WordPress framework. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
+[Explore Documentation »](https://xecreators.github.io/xe-framework)
+
 ## Getting Started
 
 1. You must have latest version of [Nodejs](https://nodejs.org/en/) installed.
@@ -24,8 +26,6 @@ This is just another WordPress framework. It is built for developers to create a
 8. Once you have completed your theme run `npm run build` command to generate a clean copy of your theme. `.pot` file will also be generated inside languages folder.
 9. Run `npm run child` to generate child-theme.
 10. To stop auto browser reload use `CTRL+C` in windows and `CMD+C` on mac.
-
-*For more details check out the documentation: [https://xecreators.github.io/xe-framework](https://xecreators.github.io/xe-framework)*
 
 ## Features
 
