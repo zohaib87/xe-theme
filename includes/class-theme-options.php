@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Class to get and use Theme and Page options.
  *
@@ -27,7 +27,7 @@ class Xe_ThemeOptions {
 	$left_sidebar_width, $right_sidebar_width,
 	$po_sidebar_position, $po_left_sidebar_selector, $po_right_sidebar_selector,
 	$to_sidebar_position, $to_left_sidebar_selector, $to_right_sidebar_selector,
-	
+
 	// Footer
 	$sub_footer, $footer,
 
@@ -40,7 +40,7 @@ class Xe_ThemeOptions {
 	function __construct() {
 
 		// Assign Theme and Page Option values to variables
-    add_action( 'wp', array($this, 'init_vars') );
+    add_action('wp', array($this, 'init_vars'));
 
 	}
 
@@ -63,7 +63,7 @@ class Xe_ThemeOptions {
       } else {
         return false;
       }
-      
+
     }
 
     /**
@@ -74,31 +74,29 @@ class Xe_ThemeOptions {
 
       $option = rwmb_meta($value);
 
-      if ( $numeric == true ) {
+      if ($numeric == true) {
         $check = is_numeric($option);
       } else {
         $check = !empty($option) && $option != 'default';
       }
 
-      if ( $check ) {
+      if ($check) {
         return true;
       } else {
         return false;
       }
 
     }
-    
+
     /**
      * General_Options
      */
     $this->preloader = get_theme_mod( 'preloader', De::$preloader );
     $this->padding_top = get_theme_mod( 'padding_top', De::$padding_top );
     $this->padding_bottom = get_theme_mod( 'padding_bottom', De::$padding_bottom );
-    $this->min_css = get_theme_mod( 'min_css', De::$min_css );
-    $this->min_js = get_theme_mod( 'min_js', De::$min_js );
 
     // Page Options for General_Options
-    if ( _xe_signle() ) :
+    if ( _xe_signle() ) {
 
       if ( _xe_override('padding_top', true) ) {
         $this->padding_top = rwmb_meta('padding_top');
@@ -107,8 +105,8 @@ class Xe_ThemeOptions {
         $this->padding_bottom = rwmb_meta('padding_bottom');
       }
 
-    endif;
-    
+    }
+
     /**
      * Site_Layout
      */
@@ -117,7 +115,7 @@ class Xe_ThemeOptions {
     $this->boxed_layout_margin = get_theme_mod('boxed_layout_margin', De::$boxed_layout_margin);
 
     $this->boxed_layout_bg = get_theme_mod('boxed_layout_bg', De::$boxed_layout_bg);
-    
+
     $this->bg['color'] = !empty($this->boxed_layout_bg['background-color']) ? $this->boxed_layout_bg['background-color'] : '';
     $this->bg['repeat'] = !empty($this->boxed_layout_bg['background-repeat']) ? $this->boxed_layout_bg['background-repeat'] : '';
     $this->bg['size'] = !empty($this->boxed_layout_bg['background-size']) ? $this->boxed_layout_bg['background-size'] : '';
@@ -200,14 +198,14 @@ class Xe_ThemeOptions {
 
       $this->title_bar['title'] = get_theme_mod( 'blog_title', De::$blog_title );
       $this->title_bar['subtitle'] = get_theme_mod( 'blog_subtitle', De::$blog_subtitle );
-       
+
     elseif ( is_archive() ) :
 
       if ( function_exists('is_shop') && is_shop() ) {
 
         $this->title_bar['title'] = get_theme_mod( 'shop_title', De::$shop_title );
         $this->title_bar['subtitle'] = get_theme_mod( 'shop_subtitle', De::$shop_subtitle );
-      
+
       } else {
 
         if ( is_category() ) :
@@ -265,7 +263,7 @@ class Xe_ThemeOptions {
       $this->title_bar['title'] = get_the_title();
 
     endif;
-    
+
     /**
      * Sidebars
      */
@@ -309,7 +307,7 @@ class Xe_ThemeOptions {
 
     $this->footer['copyright'] = str_replace('|Y|', date('Y'), $this->footer['copyright']);
     $this->footer['copyright'] = str_replace('|y|', date('y'), $this->footer['copyright']);
-    
+
     /**
      * Social_Profiles
      */
@@ -324,18 +322,18 @@ class Xe_ThemeOptions {
     $this->social['tumblr'] = get_theme_mod('social_tumblr', De::$social_tumblr);
     $this->social['youtube'] = get_theme_mod('social_youtube', De::$social_youtube);
     $this->social['vimeo'] = get_theme_mod('social_vimeo', De::$social_vimeo);
-    
+
     /**
      * Blog
      */
     $this->excerpt_length = get_theme_mod('excerpt_length', De::$excerpt_length);
-    
+
     /**
      * Columns
      */
     $this->blog['columns'] = get_theme_mod('blog_columns', De::$blog_columns);
     $this->shop['columns'] = get_theme_mod('shop_columns', De::$shop_columns);
-    
+
     /**
      * Related_Items
      */
@@ -395,5 +393,5 @@ class Xe_ThemeOptions {
 	}
 
 }
-global $xe_opt; 
+global $xe_opt;
 $xe_opt = new Xe_ThemeOptions();
