@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * WPBakery Page Builder functions.
  *
@@ -12,12 +12,12 @@ function _xe_bakerycheck() {
 
   global $post;
 
-  if (is_plugin_active('js_composer/js_composer.php')) :
+  if (in_array('js_composer/js_composer.php', apply_filters('active_plugins', get_option('active_plugins')))) {
 
     if ($post && preg_match('/vc_row/', $post->post_content)) {
       return true;
     }
 
-  endif;
+  }
 
 }
