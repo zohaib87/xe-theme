@@ -46,31 +46,3 @@ Kirki::add_field( 'xe_options', [
   ],
   'transport' => 'auto',
 ] );
-
-Kirki::add_field( 'xe_options', [
-  'type'        => 'radio-buttonset',
-  'settings'    => 'min_css',
-  'label'       => esc_html__( 'Minify CSS', '_xe' ),
-  'description' => esc_html__( 'Enabling this option will load minified css files.', '_xe' ),
-  'section'     => 'general',
-  'default'     => De::$min_css,
-  'choices'     => [
-    'on'  => esc_html__( 'Enable', '_xe' ),
-    'off' => esc_html__( 'Disable', '_xe' ),
-  ],
-  'transport' => 'auto',
-] );
-
-Kirki::add_field( 'xe_options', [
-  'type'        => 'radio-buttonset',
-  'settings'    => 'min_js',
-  'label'       => esc_html__( 'Minify JS', '_xe' ),
-  'description' => esc_html__( 'Enabling this option will load minified js files.', '_xe' ),
-  'section'     => 'general',
-  'default'     => De::$min_js,
-  'choices'     => [
-    'on'  => esc_html__( 'Enable', '_xe' ),
-    'off' => esc_html__( 'Disable', '_xe' ),
-  ],
-  'transport' => 'auto',
-] );
