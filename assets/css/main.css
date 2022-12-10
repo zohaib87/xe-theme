@@ -887,6 +887,7 @@ embed, iframe, object {
 }
 .comment-list {
   margin-left: 100px;
+  padding-left: 0;
 }
 .comment-list li {
   list-style: none;
