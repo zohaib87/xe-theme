@@ -6,7 +6,7 @@
     "init": "cd node_scripts && node init.js",
     "build": "cd node_scripts && node build.js",
     "child": "cd node_scripts && node child.js",
-    "copy": "cd node_scripts && node copy.js",
+    "pot": "cd node_scripts && node pot.js",
     "serve": "cd node_scripts && node browser_sync.js"
   },
   "license": "GPL-2.0-or-later",
