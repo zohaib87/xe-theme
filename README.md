@@ -25,6 +25,8 @@ This is just another WordPress framework. It is built for developers to create a
 9. Run `npm run child` to generate child-theme.
 10. To stop auto browser reload use `CTRL+C` in windows and `CMD+C` on mac.
 
+*For more details check out the documentation: [https://xecreators.github.io/xe-framework](https://xecreators.github.io/xe-framework)*
+
 ## Features
 
 * Auto browser reload.
