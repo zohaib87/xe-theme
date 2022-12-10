@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Enqueue dynamic styles in theme <head> tags.
  *
@@ -209,7 +209,7 @@ class Xe_DynamicStyles {
 	protected function content_width() {
 
 		global $xe_opt;
-		
+
 		$left_sidebar_width = $xe_opt->left_sidebar_width;
 		$right_sidebar_width = $xe_opt->right_sidebar_width;
 		$content_width = 100 - ($left_sidebar_width + $right_sidebar_width);
@@ -313,11 +313,11 @@ class Xe_DynamicStyles {
 			return $left_sidebar . $media_query;
 
 		} elseif ( $sidebar['position'] == 'right' && is_active_sidebar($sidebar['right']) ) {
-			
+
 			return $right_sidebar . $media_query;
 
     } elseif ( $sidebar['position'] == 'both' && is_active_sidebar($sidebar['left']) && is_active_sidebar($sidebar['right']) ) {
-      
+
       return $both_sidebars . $media_query;
 
     } elseif ( $sidebar['position'] == 'both' && is_active_sidebar($sidebar['left']) ) {
@@ -373,7 +373,7 @@ class Xe_DynamicStyles {
     $main_css .= $this->top_bar();
     $main_css .= $this->title_bar();
     $main_css .= $this->footer();
-		
+
 		// Enqueue Styles
     if ( !empty($style_css) ) {
       wp_add_inline_style( '_xe-style', Helper::minify_css($style_css) );
