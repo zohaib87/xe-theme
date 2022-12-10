@@ -9,32 +9,33 @@
 
 global $xe_opt;
 
-get_header(); ?>
+get_header();
 
-<div id="content" class="site-content <?php echo esc_attr($xe_opt->container); ?> padding-top-bottom clearfix">
+?>
+  <div id="content" class="site-content <?php echo esc_attr($xe_opt->container); ?> padding-top-bottom clearfix">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <div id="primary" class="content-area">
+      <main id="main" class="site-main" role="main">
 
-			<section class="error-404 not-found">
+        <section class="error-404 not-found">
 
-				<header class="page-header mb-2">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', '_xe' ); ?></h1>
-				</header><!-- .page-header -->
+          <header class="page-header mb-2">
+            <h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', '_xe' ); ?></h1>
+          </header><!-- .page-header -->
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try again?', '_xe' ); ?></p>
+          <div class="page-content">
+            <p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try again?', '_xe' ); ?></p>
 
-					<?php get_search_form(); ?>
+            <?php get_search_form(); ?>
 
-				</div><!-- .page-content -->
-				
-			</section><!-- .error-404 -->
+          </div><!-- .page-content -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+        </section><!-- .error-404 -->
 
-</div><!-- #content -->
+      </main><!-- #main -->
+    </div><!-- #primary -->
 
+  </div><!-- #content -->
 <?php
+
 get_footer();
