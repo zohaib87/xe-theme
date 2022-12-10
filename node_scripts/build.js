@@ -1,5 +1,6 @@
 
 var config = require('./config.json');
+var fs  = require('fs');
 var wpPot = require('wp-pot');
 var copydir = require('copy-dir');
 var path = require('path');
@@ -8,10 +9,16 @@ var rimraf = require("rimraf");
 var name = config.name;
 var nameLower = name.toLowerCase();
 var nameHyphen = nameLower.replace(/ /g, '-');
-var nameUnderscores = nameLower.replace(/ /g, '_');
 
 var targetUrl = config.build+'/'+nameHyphen;
 var currentTheme = path.resolve(__dirname, '..');
+
+// Delete old folder
+fs.rmSync(targetUrl, {
+  recursive: true,
+  force: true
+});
+console.log("Old folder removed.");
 
 // Copy Theme
 copydir.sync( currentTheme, targetUrl, {
@@ -22,51 +29,46 @@ copydir.sync( currentTheme, targetUrl, {
 
   filter: function(stat, filepath, filename) {
 
-    // do not want copy directories
-    if (stat === 'directory' && path.basename(filename) === '.vscode') {
-      return false;
-    }
-    if (stat === 'directory' && path.basename(filename) === 'node_modules') {
-      return false;
-    }
-    if (stat === 'directory' && path.basename(filename) === 'node_scripts') {
-      return false;
-    }
-    if (stat === 'directory' && path.basename(filename) === 'assets_dev') {
-      return false;
-    }
-    if (stat === 'directory' && path.basename(filename) === 'child') {
-      return false;
-    }
-
     // do not want copy files with specific extension
-    if (stat === 'file' && path.extname(filepath) === '.psd') {
-      return false;
-    }
-    if (stat === 'file' && path.extname(filepath) === '.settings') {
+    var extensions = [
+      '.psd',
+      '.settings'
+    ];
+    if ( stat === 'file' && extensions.includes(path.extname(filepath)) ) {
       return false;
     }
 
     // do not want copy files with specific name and extension
-    if (stat === 'file' && path.basename(filepath) === 'package.json') {
+    var fileNames = [
+      '.gitignore',
+      'package.json',
+      'package-lock.json',
+      'composer.json',
+      'composer.lock',
+      'sftp-config.json',
+      'build.js',
+      'copy.js',
+      'init.js',
+      'browser_sync.js',
+      'README.md',
+      'LICENSE.md',
+      'mkdocs.yml'
+    ];
+    if (stat === 'file' && fileNames.includes(path.basename(filepath)) ) {
       return false;
     }
-    if (stat === 'file' && path.basename(filepath) === 'package-lock.json') {
-      return false;
-    }
-    if (stat === 'file' && path.basename(filepath) === 'sftp-config.json') {
-      return false;
-    }
-    if (stat === 'file' && path.basename(filepath) === 'build.js') {
-      return false;
-    }
-    if (stat === 'file' && path.basename(filepath) === 'copy.js') {
-      return false;
-    }
-    if (stat === 'file' && path.basename(filepath) === 'init.js') {
-      return false;
-    }
-    if (stat === 'file' && path.basename(filepath) === 'browser_sync.js') {
+
+    // do not want copy directories
+    var directories = [
+      '.git',
+      '.github',
+      '.vscode',
+      'node_modules',
+      'node_scripts',
+      'docs',
+      'site'
+    ];
+    if ( stat === 'directory' && directories.includes(path.basename(filename)) ) {
       return false;
     }
 
@@ -98,8 +100,8 @@ console.log("child folder removed.");
 // Generate POT file.
 wpPot({
   destFile: targetUrl+'/languages/'+nameHyphen+'.pot',
-  domain: '',
+  relativeTo: targetUrl,
   package: name,
-  src: '**/*.php'
+  src: targetUrl+'/**/*.php'
 });
 console.log('POT file Generated.');

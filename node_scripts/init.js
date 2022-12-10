@@ -14,7 +14,8 @@ var styleCss = "Text Domain: "+nameHyphen;
 var template = "Template: "+nameHyphen;
 var dockBlocks = " "+name;
 var preHandles = nameHyphen+"-";
-var gloVars = nameUnderscores+"_opt";
+// var gloVars = nameUnderscores+"_opt";
+var gloVars = "$"+global+"_opt";
 var preClasses = name.replace(/ /g, '_')+"_";
 
 var currentTheme = path.resolve(__dirname, '..');
