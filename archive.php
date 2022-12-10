@@ -16,28 +16,28 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<?php 
-				if ( have_posts() ) :
+			<?php
+				if ( have_posts() ) {
 
 					echo '<div class="card-columns">';
 
 					/* Start the Loop */
-					while ( have_posts() ) : 
+					while ( have_posts() ) {
 						the_post();
 
 						get_template_part( 'views/archive', get_post_format() );
 
-					endwhile;
+          }
 
 					echo '</div><!-- .card-columns -->';
 
 					_xe_paging_nav();
 
-				else :
+        } else {
 
 					get_template_part( 'views/content', 'none' );
 
-				endif; 
+        }
 			?>
 
 		</main><!-- #main -->
