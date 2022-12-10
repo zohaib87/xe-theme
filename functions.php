@@ -101,7 +101,7 @@ Helpers\Xe_Helpers::auto_load_files( get_template_directory() . '/includes/templ
 /**
  * Custom functions that act independently of the theme templates.
  */
-get_template_directory() . '/includes/extras.php';
+require get_template_directory() . '/includes/extras.php';
 
 /**
  * One click demo import.
