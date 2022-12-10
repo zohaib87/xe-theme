@@ -37,5 +37,6 @@ This is just another WordPress framework. It is built for developers to create a
 * Right, Left or Both Sides Sidebar Supported.
 * WooCommerce Ready.
 * One Click Demo Import.
+* Compatible with Elementor and WPBakery Page Builder.
 * Forever Free.
 * Professional and Outstanding Support.
