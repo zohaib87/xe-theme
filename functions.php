@@ -89,6 +89,11 @@ require get_template_directory() . '/includes/class-dynamic-styles.php';
 require get_template_directory() . '/includes/class-dynamic-scripts.php';
 
 /**
+ * Dashboard widgets for admin panel.
+ */
+require get_template_directory() . '/includes/class-dashboard-widgets.php';
+
+/**
  * Custom template tags for this theme.
  */
 Helpers\Xe_Helpers::auto_load_files( get_template_directory() . '/includes/template-tags/*.php' );
@@ -96,7 +101,7 @@ Helpers\Xe_Helpers::auto_load_files( get_template_directory() . '/includes/templ
 /**
  * Custom functions that act independently of the theme templates.
  */
-Helpers\Xe_Helpers::auto_load_files( get_template_directory() . '/includes/extras/*.php' );
+get_template_directory() . '/includes/extras.php';
 
 /**
  * One click demo import.
@@ -108,6 +113,6 @@ if (class_exists('OCDI_Plugin')) {
 /**
  * Elementor
  */
-if (is_plugin_active('elementor/elementor.php')) {
+if (in_array('elementor/elementor.php', apply_filters('active_plugins', get_option('active_plugins')))) {
   require get_template_directory() . '/includes/elementor.php';
 }
