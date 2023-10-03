@@ -1,15 +1,23 @@
 ﻿=== _xe ===
 Requires at least: 5.6
-Tested up to: 5.7.1
-Requires PHP: 7.0
+Tested up to: 6.3
+Requires PHP: 7.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-This is just another WordPress framework + build process. It is built for developers to create awesome and highly customizable themes for clients or sell it on marketplace.
+Just a starter WordPress theme + build process. It is built for developers to create awesome and highly customizable themes for clients or sell it on marketplace.
 
 == Changelog ==
+----- v2.3.15 ------------
+New Added: Version control for CSS and JS files.
+New Added: Links to WordPress Developer Resources.
+Updated: Elementor deprecated functions.
+Removed: Minification feature and options.
+Fixed: Error if no featured image selected for products.
+Fixed: Minor bugs.
+
 ----- v2.3.14 ------------
 Removed: Model folder.
 
