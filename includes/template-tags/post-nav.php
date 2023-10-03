@@ -13,15 +13,15 @@ if (!function_exists('_xe_post_nav')) :
     $next_post = get_next_post();
 
     if ($prev_post) {
-       $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
-       $prev_link = get_permalink($prev_post->ID);
+      $prev_title = strip_tags(str_replace('"', '', $prev_post->post_title));
+      $prev_link = get_permalink($prev_post->ID);
     } else {
       $prev_title = $prev_link = '';
     }
 
     if ($next_post) {
-       $next_title = strip_tags(str_replace('"', '', ucwords($next_post->post_title)));
-       $next_link = get_permalink($next_post->ID);
+      $next_title = strip_tags(str_replace('"', '', ucwords($next_post->post_title)));
+      $next_link = get_permalink($next_post->ID);
     } else {
       $next_title = $next_link = '';
     }
