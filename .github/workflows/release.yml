@@ -22,9 +22,9 @@ jobs:
           type: zip
           filename: ${{ github.event.repository.name }}.zip
           directory: ../
-          exclusions: '*.git* /docs/* *.md *.yml'
+          exclusions: '*.git* *.md *.yml /*docs/*'
           recursive_exclusions: '/psd/* *.psd'
-          # exclusions e.g: '*.git* /*node*/* /child/* *.json *.lock *.md'
+          # exclusions e.g: '*.git* /*node_*/* *.json *.lock *.md'
 
       - name: Upload Archive Release Asset
         uses: actions/upload-release-asset@v1
@@ -33,5 +33,5 @@ jobs:
         with:
           upload_url: ${{ steps.latest_release_info.outputs.upload_url }}
           asset_path: ../${{ github.event.repository.name }}.zip
-          asset_name: ${{ github.event.repository.name }}-${{ steps.latest_release_info.outputs.tag_name }}.zip
+          asset_name: ${{ github.event.repository.name }}.zip
           asset_content_type: application/zip
