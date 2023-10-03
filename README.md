@@ -9,7 +9,7 @@
 Just a starter WordPress theme + build process. It is built for developers to create awesome and highly customizable themes for clients or sell it on any marketplace.
 
 [![Download Latest Release](https://img.shields.io/badge/Download_Latest_Release-blue?style=for-the-badge)](https://github.com/zohaib87/xe-theme/releases/latest/download/xe-theme.zip)
-[![Explore Documentation »](https://img.shields.io/badge/Explore_Documentation-282a2e?style=for-the-badge)](https://xecreators.github.io/xe-theme)
+[![Explore Documentation »](https://img.shields.io/badge/Explore_Documentation-282a2e?style=for-the-badge)](https://zohaib87.github.io/xe-theme)
 
 ## Requirements
 
