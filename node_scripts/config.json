@@ -1,7 +1,5 @@
 {
   "name": "Xe",
-  "proxy": "wpmu/",
   "global": "xe_opt",
-  "build": "E:/Projects/Xe Framework",
-  "local_repo": "E:/Projects/Github/xe-framework"
+  "build": "E:/Projects/Xe Theme"
 }
