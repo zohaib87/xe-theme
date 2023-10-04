@@ -106,7 +106,7 @@ class Xe_Testimonials extends \Elementor\Widget_Base {
         </div>
       <?php } ?>
     </div><!-- .testimonial-carousel -->
-    
+
     <?php if (is_admin()) { ?>
       <script type='text/javascript'>
         if (jQuery('.testimonial-carousel').length) {
@@ -135,7 +135,7 @@ class Xe_Testimonials extends \Elementor\Widget_Base {
                 items:2
               }
             }
-          });       
+          });
         }
       </script>
     <?php }
@@ -145,6 +145,6 @@ class Xe_Testimonials extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Xe_Testimonials() );
+\Elementor\Plugin::instance()->widgets_manager->register( new Xe_Testimonials() );
 
 endif;

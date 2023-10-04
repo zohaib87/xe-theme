@@ -119,6 +119,6 @@ class Xe_Heading extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Xe_Heading() );
+\Elementor\Plugin::instance()->widgets_manager->register( new Xe_Heading() );
 
 endif;

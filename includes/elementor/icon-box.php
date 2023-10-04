@@ -123,7 +123,7 @@ class Xe_IconBox extends \Elementor\Widget_Base {
               <div class="text"><?php echo esc_html($sub_heading); ?></div>
             </div>
           </div>
-        </div> 
+        </div>
       </div>
     <?php else : ?>
       <div class="service-block">
@@ -141,7 +141,7 @@ class Xe_IconBox extends \Elementor\Widget_Base {
           <?php endif; ?>
           </div>
         </div>
-      </div>       
+      </div>
     <?php endif;
 
   }
@@ -149,6 +149,6 @@ class Xe_IconBox extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Xe_IconBox() );
+\Elementor\Plugin::instance()->widgets_manager->register( new Xe_IconBox() );
 
 endif;

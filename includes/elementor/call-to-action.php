@@ -161,6 +161,6 @@ class Xe_CallToAction extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Xe_CallToAction() );
+\Elementor\Plugin::instance()->widgets_manager->register( new Xe_CallToAction() );
 
 endif;

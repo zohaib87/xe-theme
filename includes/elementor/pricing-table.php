@@ -155,6 +155,6 @@ class Xe_PricingTable extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Xe_PricingTable() );
+\Elementor\Plugin::instance()->widgets_manager->register( new Xe_PricingTable() );
 
 endif;

@@ -122,6 +122,6 @@ class Xe_Counter extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Xe_Counter() );
+\Elementor\Plugin::instance()->widgets_manager->register( new Xe_Counter() );
 
 endif;

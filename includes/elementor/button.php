@@ -72,6 +72,6 @@ class Xe_Button extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type( new Xe_Button() );
+\Elementor\Plugin::instance()->widgets_manager->register( new Xe_Button() );
 
 endif;
