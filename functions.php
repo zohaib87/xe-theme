@@ -10,11 +10,6 @@
 require get_template_directory() . '/includes/setup.php';
 
 /**
- * Register custom widgets
- */
-require get_template_directory() . '/includes/widgets.php';
-
-/**
  * Enqueue scripts and styles for admin and front end.
  */
 require get_template_directory() . '/includes/scripts.php';
