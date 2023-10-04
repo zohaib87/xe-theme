@@ -65,17 +65,21 @@ require get_template_directory() . '/includes/class-theme-options.php';
 function _xe_theme_options() {
 
   if ( class_exists('Kirki') ) {
+
     require get_template_directory() . '/includes/theme-options.php';
+
   }
 
 }
-add_action('init', '_xe_theme_options');
+add_action( 'init', '_xe_theme_options' );
 
 /**
  * Functions that require Meta Box.
  */
 if ( class_exists('RWMB_Loader') ) {
+
 	require get_template_directory() . '/includes/page-options.php';
+
 }
 
 /**
@@ -107,12 +111,16 @@ require get_template_directory() . '/includes/extras.php';
  * One click demo import.
  */
 if (class_exists('OCDI_Plugin')) {
+
 	require get_template_directory() . '/helpers/class-demo-content.php';
+
 }
 
 /**
  * Elementor
  */
 if ( Helpers\Xe_Helpers::is_plugin_active('elementor/elementor.php') ) {
-  require get_template_directory() . '/includes/elementor.php';
+
+  require get_template_directory() . '/includes/class-elementor.php';
+
 }
