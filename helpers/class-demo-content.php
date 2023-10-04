@@ -5,9 +5,9 @@
  * @package _xe
  */
 
-if ( !class_exists('Xe_DemoImport') ) :
+namespace Xe_Theme\Helpers;
 
-class Xe_DemoImport {
+class Demo_Import {
 
 	function __construct() {
 
@@ -86,7 +86,7 @@ class Xe_DemoImport {
 
 		// Import Revolution Slider
 		if ( class_exists('RevSlider') && file_exists($slider_path) ) {
-      
+
 			$slider = new RevSlider();
 			$slider->importSliderFromPost(true, true, $slider_path);
 
@@ -95,6 +95,4 @@ class Xe_DemoImport {
 	}
 
 }
-new Xe_DemoImport();
-
-endif;
+new Demo_Import();

@@ -1,11 +1,11 @@
-<?php 
+<?php
 /**
  * Titles Theme Options.
  *
  * @package _xe
  */
 
-use Helpers\Xe_Defaults as De;
+use Xe_Theme\Helpers\Defaults as De;
 
 Kirki::add_section( 'subtitles', array(
   'title' => esc_html__( 'Subtitles', '_xe' ),

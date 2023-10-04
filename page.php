@@ -12,7 +12,7 @@
  * @package _xe
  */
 
-use Helpers\Xe_Helpers as Helper;
+use Xe_Theme\Helpers\Helpers as Helper;
 
 global $xe_opt;
 

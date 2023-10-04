@@ -7,7 +7,7 @@
 
 namespace Xe_Theme\Helpers;
 
-use Helpers\Xe_Helpers;
+use Xe_Theme\Helpers\Helpers;
 
 class Elementor {
 

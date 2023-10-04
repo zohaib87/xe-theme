@@ -5,8 +5,8 @@
  * @package _xe
  */
 
-use Helpers\Xe_Helpers as Helper;
-use Helpers\Xe_Defaults as De;
+use Xe_Theme\Helpers\Helpers as Helper;
+use Xe_Theme\Helpers\Defaults as De;
 
 Kirki::add_config( 'xe_options', array(
   'capability'    => 'edit_theme_options',

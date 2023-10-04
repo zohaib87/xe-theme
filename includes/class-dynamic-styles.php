@@ -5,8 +5,8 @@
  * @package _xe
  */
 
-use Helpers\Xe_Helpers as Helper;
-use Helpers\Xe_Selectors as Se;
+use Xe_Theme\Helpers\Helpers as Helper;
+use Xe_Theme\Helpers\Selectors as Se;
 
 class Xe_DynamicStyles {
 

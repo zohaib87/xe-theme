@@ -5,11 +5,9 @@
  * @package _xe
  */
 
-namespace Helpers;
+namespace Xe_Theme\Helpers;
 
-if (!class_exists('Xe_Selectors')) :
-
-class Xe_Selectors {
+class Selectors {
 
   // Top-Bar
   public static $top_bar = [
@@ -21,27 +19,27 @@ class Xe_Selectors {
 
   // Titles
   $titles = [
-    'blog' => '.blog .title', 
-    'search' => '.search .title', 
-    'error' => '.error404 .title', 
+    'blog' => '.blog .title',
+    'search' => '.search .title',
+    'error' => '.error404 .title',
     'shop' => '.archive.woocommerce .title',
   ],
 
   // Subtitles
   $subtitles = [
-    'blog' => '.blog .subtitle', 
-    'search' => '.search .subtitle', 
-    'error' => '.error404 .subtitle', 
+    'blog' => '.blog .subtitle',
+    'search' => '.search .subtitle',
+    'error' => '.error404 .subtitle',
     'shop' => '.archive.woocommerce .subtitle',
   ],
 
   // Title-Bar
   $title_bar = [
-    'title_color' => '.title-bar .title', 
-    'subtitle_color' => '.title-bar .subtitle', 
-    'height' => '.title-bar', 
+    'title_color' => '.title-bar .title',
+    'subtitle_color' => '.title-bar .subtitle',
+    'height' => '.title-bar',
     'bg' => '.title-bar',
-    'overlay' => '.title-bar .overlay', 
+    'overlay' => '.title-bar .overlay',
   ],
 
   // Footer
@@ -51,5 +49,3 @@ class Xe_Selectors {
   ];
 
 }
-
-endif;

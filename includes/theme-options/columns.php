@@ -5,7 +5,7 @@
  * @package _xe
  */
 
-use Helpers\Xe_Defaults as De;
+use Xe_Theme\Helpers\Defaults as De;
 
 Kirki::add_section( 'columns', array(
   'title' => esc_html__( 'Columns', '_xe' ),

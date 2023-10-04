@@ -100,7 +100,7 @@ require get_template_directory() . '/includes/class-dashboard-widgets.php';
 /**
  * Custom template tags for this theme.
  */
-Helpers\Xe_Helpers::auto_load_files( get_template_directory() . '/includes/template-tags/*.php' );
+Xe_Theme\Helpers\Helpers::auto_load_files( get_template_directory() . '/includes/template-tags/*.php' );
 
 /**
  * Custom functions that act independently of the theme templates.
@@ -119,7 +119,7 @@ if (class_exists('OCDI_Plugin')) {
 /**
  * Elementor
  */
-if ( Helpers\Xe_Helpers::is_plugin_active('elementor/elementor.php') ) {
+if ( Xe_Theme\Helpers\Helpers::is_plugin_active('elementor/elementor.php') ) {
 
   require get_template_directory() . '/includes/class-elementor.php';
 

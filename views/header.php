@@ -7,7 +7,7 @@
  * @var $xe_opt->top_bar['social'] [< Returns on or off >]
  * @var $xe_opt->top_bar['phone']
  * @var $xe_opt->top_bar['email']
- * 
+ *
  * @var $xe_opt->header['container'] [< Returns container or container-fluid >]
  * @var $xe_opt->header['menu'] [< Returns menu location >]
  * @var $xe_opt->header['search'] [< Returns on or off >]
@@ -20,13 +20,13 @@
  * @var $xe_opt->title_bar['subtitle'] [< Returns subtitle for current post type >]
  * @var $xe_opt->title_bar['breadcrumb'] [< Returns on or off >]
  * @var $xe_opt->title_bar['parallax'] [< Returns on or off >]
- * 
+ *
  * @method $xe_opt->classes() [< Adjusting spacing of classes (Array) >]
  *
  * @package _xe
  */
 
-use Helpers\Xe_Helpers as Helper;
+use Xe_Theme\Helpers\Helpers as Helper;
 
 global $xe_opt;
 
@@ -42,7 +42,7 @@ $args = array(
   'span' => array(
     'class' => array(),
   ),
-); 
+);
 
 ?>
 
@@ -91,4 +91,4 @@ $args = array(
       </div>
     </div>
   </div>
-<?php endif; 
+<?php endif;

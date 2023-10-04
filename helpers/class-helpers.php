@@ -5,9 +5,9 @@
  * @package _xe
  */
 
-namespace Helpers;
+namespace Xe_Theme\Helpers;
 
-class Xe_Helpers {
+class Helpers {
 
   /**
    * Auto load files from a directory.

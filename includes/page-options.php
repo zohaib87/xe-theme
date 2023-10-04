@@ -5,7 +5,7 @@
  * @package _xe
  */
 
-use Helpers\Xe_Helpers as Helper;
+use Xe_Theme\Helpers\Helpers as Helper;
 
 function _xe_page_options($meta_boxes) {
 
@@ -20,7 +20,7 @@ function _xe_page_options($meta_boxes) {
        * Subtitle
        */
       array(
-        'id' => 'subtitle', 
+        'id' => 'subtitle',
         'name' => esc_html__( 'Subtitle', '_xe' ),
         'type' => 'text',
       ),
@@ -29,8 +29,8 @@ function _xe_page_options($meta_boxes) {
        * Header
        */
       array(
-        'id' => 'header_menu', 
-        'name' => esc_html__( 'Header Menu Location', '_xe' ), 
+        'id' => 'header_menu',
+        'name' => esc_html__( 'Header Menu Location', '_xe' ),
         'type' => 'select',
         'options' => Helper::menu_locations(true),
         'multiple' => false,
@@ -59,14 +59,14 @@ function _xe_page_options($meta_boxes) {
        * General
        */
       array(
-        'id' => 'padding_top', 
+        'id' => 'padding_top',
         'name' => esc_html__( 'Spacing Top', '_xe' ),
         'desc' => esc_html__( 'Spacing after title-bar and before the main content.', '_xe' ),
         'type' => 'number',
         'append' => 'px',
       ),
       array(
-        'id' => 'padding_bottom', 
+        'id' => 'padding_bottom',
         'name' => esc_html__( 'Spacing Bottom', '_xe' ),
         'desc' => esc_html__( 'Spacing before footer or sub-footer.', '_xe' ),
         'type' => 'number',
@@ -106,14 +106,14 @@ function _xe_page_options($meta_boxes) {
         'placeholder' => 'Default',
       ),
       array(
-        'id' => 'left_sidebar_width', 
+        'id' => 'left_sidebar_width',
         'name' => esc_html__( 'Left Sidebar Width', '_xe' ),
         'desc' => esc_html__( 'This option is in percent.', '_xe' ),
         'type' => 'number',
         'append' => '%',
       ),
       array(
-        'id' => 'right_sidebar_width', 
+        'id' => 'right_sidebar_width',
         'name' => esc_html__( 'Right Sidebar Width', '_xe' ),
         'desc' => esc_html__( 'This option is in percent.', '_xe' ),
         'type' => 'number',
@@ -124,6 +124,6 @@ function _xe_page_options($meta_boxes) {
   );
 
   return $meta_boxes;
-    
+
 }
 add_filter( 'rwmb_meta_boxes', '_xe_page_options' );

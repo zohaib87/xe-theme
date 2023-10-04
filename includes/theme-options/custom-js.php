@@ -5,7 +5,7 @@
  * @package _xe
  */
 
-use Helpers\Xe_Defaults as De;
+use Xe_Theme\Helpers\Defaults as De;
 
 Kirki::add_section( 'custom_js', array(
   'title' => esc_html__( 'Additional JS', '_xe' ),

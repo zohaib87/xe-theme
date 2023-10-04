@@ -5,8 +5,8 @@
  * @package _xe
  */
 
-use Helpers\Xe_Defaults as De;
-use Helpers\Xe_Helpers as Helper;
+use Xe_Theme\Helpers\Defaults as De;
+use Xe_Theme\Helpers\Helpers as Helper;
 
 Kirki::add_section( 'blog', array(
   'title' => esc_html__( 'Blog', '_xe' ),

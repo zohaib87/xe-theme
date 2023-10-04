@@ -5,7 +5,7 @@
  * @package _xe
  */
 
-use Helpers\Xe_Selectors as Se;
+use Xe_Theme\Helpers\Selectors as Se;
 
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
@@ -38,6 +38,6 @@ function _xe_customize_preview_js() {
     'error_subtitle' => Se::$subtitles['error'],
     'shop_subtitle' => Se::$subtitles['shop'],
   ));
-	
+
 }
 add_action( 'customize_preview_init', '_xe_customize_preview_js' );
