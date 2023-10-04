@@ -113,6 +113,6 @@ if (class_exists('OCDI_Plugin')) {
 /**
  * Elementor
  */
-if (in_array('elementor/elementor.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+if ( Helpers\Xe_Helpers::is_plugin_active('elementor/elementor.php') ) {
   require get_template_directory() . '/includes/elementor.php';
 }

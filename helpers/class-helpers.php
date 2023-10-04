@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Functions that helps to ease theme development.
  *
@@ -6,8 +6,6 @@
  */
 
 namespace Helpers;
-
-if (!class_exists('Xe_Helpers')) :
 
 class Xe_Helpers {
 
@@ -20,7 +18,7 @@ class Xe_Helpers {
 
     foreach ($files as $file) {
       if (basename($file) == 'index.php') continue;
-      require($file); 
+      require($file);
     }
 
   }
@@ -56,8 +54,7 @@ class Xe_Helpers {
   }
 
   /**
-   * Get and list menu locations.
-   *
+   * # Get and list menu locations.
    * Will only work after init and wp hook.
    */
   public static function menu_locations($override = false) {
@@ -96,7 +93,7 @@ class Xe_Helpers {
       }
 
     endif;
-    
+
     return $data;
 
   }
@@ -122,7 +119,7 @@ class Xe_Helpers {
   }
 
   /**
-   * Minifying styles 
+   * Minifying styles
    */
   public static function minify_css($css) {
 
@@ -161,7 +158,7 @@ class Xe_Helpers {
     $r = hexdec( $r );
     $g = hexdec( $g );
     $b = hexdec( $b );
-    
+
     return $r.', '.$g.', '.$b;
 
   }
@@ -204,7 +201,7 @@ class Xe_Helpers {
   }
 
   /**
-   * Adjusting spacing of classes
+   * # Adjusting spacing of classes
    */
   public static function classes( $classes = array() ) {
 
@@ -215,6 +212,69 @@ class Xe_Helpers {
 
   }
 
-}
+  /**
+   * # Check if a plugin is active
+   *
+   * @param string  $plugin_file  Folder name and main file e.g: 'elementor/elementor.php'
+   *
+   * @return bool either true or false
+   */
+  public static function is_plugin_active( $plugin_file ) {
 
-endif;
+    if ( in_array( $plugin_file, apply_filters( 'active_plugins', get_option('active_plugins') ) ) ) {
+
+      return true;
+
+    } else {
+
+      return false;
+
+    }
+
+  }
+
+  /**
+   * # Check if elementor is used.
+   *
+   * @return bool true or false
+   */
+  public static function is_elementor_used() {
+
+    global $post;
+
+    if ( self::is_plugin_active( 'elementor/elementor.php' ) ) {
+
+      return \Elementor\Plugin::$instance->documents->get( $post->ID )->is_built_with_elementor();
+
+    } else {
+
+      return false;
+
+    }
+
+  }
+
+  /**
+   * # Check if WPBakery plugin is active and used.
+   *
+   * @return bool true or false
+   */
+  public static function is_wpbakery_used() {
+
+    global $post;
+
+    if ( self::is_plugin_active( 'js_composer/js_composer.php' ) ) {
+
+      if ( $post && preg_match('/vc_row/', $post->post_content) ) {
+
+        return true;
+
+      }
+
+    }
+
+    return false;
+
+  }
+
+}
