@@ -14,9 +14,8 @@ var styleCss = "Text Domain: "+nameHyphen;
 var template = "Template: "+nameHyphen;
 var dockBlocks = " "+name;
 var preHandles = nameHyphen+"-";
-// var gloVars = nameUnderscores+"_opt";
 var gloVars = "$"+global+"_opt";
-var preClasses = name.replace(/ /g, '_')+"_";
+var namespaces = name.replace(/ /g, '_')+"\\";
 
 var currentTheme = path.resolve(__dirname, '..');
 
@@ -28,15 +27,19 @@ var options = {
     currentTheme+'/**/*.php',
     currentTheme+'/readme.txt',
   ],
-  from: [/'_xe'/g, /_xe_/g, /Text Domain: _xe/g, /Template: _xe/g, / _xe/g, /_xe-/g, /xe_opt/g, /Xe_/g],
-  to: [txtDomain, funcNames, styleCss, template, dockBlocks, preHandles, gloVars, preClasses],
+  from: [ /'_xe'/g, /_xe_/g, /Text Domain: _xe/g, /Template: _xe/g, / _xe/g, /_xe-/g, /xe_opt/g, /Xe_Theme\\/g ],
+  to: [txtDomain, funcNames, styleCss, template, dockBlocks, preHandles, gloVars, namespaces],
 };
 
 try {
+
   var results = replace.sync(options);
-  console.log('Text Domains, Function Names, Dock Blocks, Prefix Handles and Classes replaced.');
-  // console.log('Replacement results:', results);
+  console.log( 'Text Domains, Function Names, Dock Blocks, Prefix Handles and Classes replaced.' );
+  // console.log( 'Replacement results:', results );
+
 }
-catch (error) {
-  console.error('Error occurred:', error);
+catch ( error ) {
+
+  console.error( 'Error occurred:', error );
+
 }
