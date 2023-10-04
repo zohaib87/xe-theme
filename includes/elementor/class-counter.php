@@ -5,9 +5,9 @@
  * @package _xe
  */
 
-if (!class_exists('Xe_Counter')) :
+namespace Xe_Theme\Includes\Elementor;
 
-class Xe_Counter extends \Elementor\Widget_Base {
+class Counter extends \Elementor\Widget_Base {
 
   public function get_name() {
     return 'counter';
@@ -107,10 +107,10 @@ class Xe_Counter extends \Elementor\Widget_Base {
       <div class="column counter-column">
         <div class="column-outer">
           <div class="inner">
-            <div class="count-outer count-box counted" style="color: <?php esc_attr_e($color); ?>;">
-              <span class="count-text" data-speed="2000" data-stop="<?php esc_attr_e($count); ?>" style="color: <?php esc_attr_e($color); ?>;"><?php esc_html_e($count); ?></span><?php esc_html_e($suffix); ?>
+            <div class="count-outer count-box counted" style="color: <?php echo esc_attr($color); ?>;">
+              <span class="count-text" data-speed="2000" data-stop="<?php echo esc_attr($count); ?>" style="color: <?php echo esc_attr($color); ?>;"><?php echo esc_html($count); ?></span><?php echo esc_html($suffix); ?>
             </div>
-            <h4 class="counter-title" style="color: <?php esc_attr_e($color); ?>;"><?php esc_html_e($title); ?></h4>
+            <h4 class="counter-title" style="color: <?php echo esc_attr($color); ?>;"><?php echo esc_html($title); ?></h4>
           </div>
         </div>
       </div>
@@ -122,6 +122,4 @@ class Xe_Counter extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register( new Xe_Counter() );
-
-endif;
+\Elementor\Plugin::instance()->widgets_manager->register( new Counter() );

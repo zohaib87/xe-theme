@@ -5,7 +5,7 @@
  * @package _xe
  */
 
-namespace Xe_Theme\Helpers;
+namespace Xe_Theme\Includes;
 
 use Xe_Theme\Helpers\Helpers;
 
@@ -23,7 +23,14 @@ class Elementor {
    */
   public function widgets( $widgets_manager ) {
 
-    Helpers::auto_load_files( get_template_directory() . '/includes/elementor/*.php' );
+    require get_template_directory() . '/includes/elementor/banner.php';
+    require get_template_directory() . '/includes/elementor/button.php';
+    require get_template_directory() . '/includes/elementor/call-to-action.php';
+    require get_template_directory() . '/includes/elementor/class-counter.php';
+    require get_template_directory() . '/includes/elementor/heading.php';
+    require get_template_directory() . '/includes/elementor/icon-box.php';
+    require get_template_directory() . '/includes/elementor/pricing-table.php';
+    require get_template_directory() . '/includes/elementor/testimonials.php';
 
   }
 
