@@ -9,10 +9,10 @@ var nameHyphen = nameLower.replace(/ /g, '-');
 var currentPlugin = path.resolve(__dirname, '..');
 
 // Generate POT file.
-wpPot({
+wpPot( {
   destFile: currentPlugin+'/languages/'+nameHyphen+'.pot',
   relativeTo: currentPlugin,
   package: name,
   src: currentPlugin+'/**/*.php'
-});
-console.log('POT file Generated.');
+} );
+console.log( 'POT file Generated.' );

@@ -1,69 +1,70 @@
 
 var config = require('./config.json');
-var copydir = require('copy-dir');
+var copyDir = require('copy-dir');
 var path = require('path');
 
 var name = config.name;
 var nameLower = name.toLowerCase();
-var nameHyphen = nameLower.replace(/ /g, '-');
-var nameUnderscores = nameLower.replace(/ /g, '_');
+var nameHyphen = nameLower.replace( / /g, '-' );
 
 var targetUrl = config.build+'/'+nameHyphen+'-child';
-var currentTheme = path.resolve(__dirname, '..');
+var currentTheme = path.resolve( __dirname, '..' );
 
 // Copy Theme
-copydir.sync( currentTheme+'/child/', targetUrl, {
+copyDir.sync( currentTheme+'/child/', targetUrl, {
 
   utimes: true,  // keep add time and modify time
   mode: true,    // keep file mode
   cover: true,    // cover file when exists, default is true
 
-  filter: function(stat, filepath, filename) {
-
-    // do not want copy directories
-    if (stat === 'directory' && path.basename(filename) === '.vscode') {
-      return false;
-    }
-    if (stat === 'directory' && path.basename(filename) === 'node_modules') {
-      return false;
-    }
-    if (stat === 'directory' && path.basename(filename) === 'node_scripts') {
-      return false;
-    }
+  filter: function( stat, filepath, filename ) {
 
     // do not want copy files with specific extension
-    if (stat === 'file' && path.extname(filepath) === '.psd') {
-      return false;
-    }
-    if (stat === 'file' && path.extname(filepath) === '.settings') {
+    var extensions = [
+      '.psd',
+      '.settings'
+    ];
+    if ( stat === 'file' && extensions.includes( path.extname(filepath) ) ) {
       return false;
     }
 
     // do not want copy files with specific name and extension
-    if (stat === 'file' && path.basename(filepath) === 'package.json') {
+    var fileNames = [
+      '.gitignore',
+      'package.json',
+      'package-lock.json',
+      'composer.json',
+      'composer.lock',
+      'sftp-config.json',
+      'build.js',
+      'copy.js',
+      'init.js',
+      'browser_sync.js',
+      'README.md',
+      'LICENSE.md',
+      'mkdocs.yml'
+    ];
+    if ( stat === 'file' && fileNames.includes( path.basename(filepath) ) ) {
       return false;
     }
-    if (stat === 'file' && path.basename(filepath) === 'package-lock.json') {
-      return false;
-    }
-    if (stat === 'file' && path.basename(filepath) === 'sftp-config.json') {
-      return false;
-    }
-    if (stat === 'file' && path.basename(filepath) === 'build.js') {
-      return false;
-    }
-    if (stat === 'file' && path.basename(filepath) === 'copy.js') {
-      return false;
-    }
-    if (stat === 'file' && path.basename(filepath) === 'init.js') {
-      return false;
-    }
-    if (stat === 'file' && path.basename(filepath) === 'browser_sync.js') {
+
+    // do not want copy directories
+    var directories = [
+      '.git',
+      '.github',
+      '.vscode',
+      'node_modules',
+      'node_scripts',
+      'docs',
+      'site',
+      'src'
+    ];
+    if ( stat === 'directory' && directories.includes(path.basename(filename)) ) {
       return false;
     }
 
     // do not want copy symbolicLink directories
-    if (stat === 'symbolicLink') {
+    if ( stat === 'symbolicLink' ) {
       return false;
     }
 
@@ -72,4 +73,4 @@ copydir.sync( currentTheme+'/child/', targetUrl, {
   }
 
 });
-console.log('Child theme copied successfully.');
+console.log( 'Child theme copied successfully.' );
