@@ -5,9 +5,9 @@
  * @package _xe
  */
 
-if (!class_exists('Xe_IconBox')) :
+namespace Xe_Theme\Includes\Elementor;
 
-class Xe_IconBox extends \Elementor\Widget_Base {
+class Icon_Box extends \Elementor\Widget_Base {
 
   public function get_name() {
     return 'icon_box';
@@ -149,6 +149,4 @@ class Xe_IconBox extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register( new Xe_IconBox() );
-
-endif;
+\Elementor\Plugin::instance()->widgets_manager->register( new Icon_Box() );

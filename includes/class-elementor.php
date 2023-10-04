@@ -23,14 +23,14 @@ class Elementor {
    */
   public function widgets( $widgets_manager ) {
 
-    require get_template_directory() . '/includes/elementor/banner.php';
-    require get_template_directory() . '/includes/elementor/button.php';
-    require get_template_directory() . '/includes/elementor/call-to-action.php';
+    require get_template_directory() . '/includes/elementor/class-banner.php';
+    require get_template_directory() . '/includes/elementor/class-button.php';
+    require get_template_directory() . '/includes/elementor/class-call-to-action.php';
     require get_template_directory() . '/includes/elementor/class-counter.php';
-    require get_template_directory() . '/includes/elementor/heading.php';
-    require get_template_directory() . '/includes/elementor/icon-box.php';
-    require get_template_directory() . '/includes/elementor/pricing-table.php';
-    require get_template_directory() . '/includes/elementor/testimonials.php';
+    require get_template_directory() . '/includes/elementor/class-heading.php';
+    require get_template_directory() . '/includes/elementor/class-icon-box.php';
+    require get_template_directory() . '/includes/elementor/class-pricing-table.php';
+    require get_template_directory() . '/includes/elementor/class-testimonials.php';
 
   }
 

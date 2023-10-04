@@ -7,12 +7,12 @@
  * @package _xe
  */
 
-require get_template_directory() . '/includes/setup.php';
+require get_template_directory() . '/includes/class-setup.php';
 
 /**
  * Enqueue scripts and styles for admin and front end.
  */
-require get_template_directory() . '/includes/scripts.php';
+require get_template_directory() . '/includes/class-scripts.php';
 
 /**
  * Customizer additions.

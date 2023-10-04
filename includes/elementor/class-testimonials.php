@@ -5,9 +5,9 @@
  * @package _xe
  */
 
-if (!class_exists('Xe_Testimonials')) :
+namespace Xe_Theme\Includes\Elementor;
 
-class Xe_Testimonials extends \Elementor\Widget_Base {
+class Testimonials extends \Elementor\Widget_Base {
 
   public function get_name() {
     return 'testimonials';
@@ -145,6 +145,4 @@ class Xe_Testimonials extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register( new Xe_Testimonials() );
-
-endif;
+\Elementor\Plugin::instance()->widgets_manager->register( new Testimonials() );

@@ -5,9 +5,9 @@
  * @package _xe
  */
 
-if (!class_exists('Xe_Button')) :
+namespace Xe_Theme\Includes\Elementor;
 
-class Xe_Button extends \Elementor\Widget_Base {
+class Button extends \Elementor\Widget_Base {
 
   public function get_name() {
     return 'button';
@@ -72,6 +72,4 @@ class Xe_Button extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register( new Xe_Button() );
-
-endif;
+\Elementor\Plugin::instance()->widgets_manager->register( new Button() );

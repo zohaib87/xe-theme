@@ -5,9 +5,9 @@
  * @package _xe
  */
 
-if (!class_exists('Xe_PricingTable')) :
+namespace Xe_Theme\Includes\Elementor;
 
-class Xe_PricingTable extends \Elementor\Widget_Base {
+class Pricing_Table extends \Elementor\Widget_Base {
 
   public function get_name() {
     return 'pricing_table';
@@ -155,6 +155,4 @@ class Xe_PricingTable extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register( new Xe_PricingTable() );
-
-endif;
+\Elementor\Plugin::instance()->widgets_manager->register( new Pricing_Table() );

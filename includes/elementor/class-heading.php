@@ -5,9 +5,9 @@
  * @package _xe
  */
 
-if (!class_exists('Xe_Heading')) :
+namespace Xe_Theme\Includes\Elementor;
 
-class Xe_Heading extends \Elementor\Widget_Base {
+class Heading extends \Elementor\Widget_Base {
 
   public function get_name() {
     return 'heading';
@@ -119,6 +119,4 @@ class Xe_Heading extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register( new Xe_Heading() );
-
-endif;
+\Elementor\Plugin::instance()->widgets_manager->register( new Heading() );

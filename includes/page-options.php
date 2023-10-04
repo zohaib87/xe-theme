@@ -7,10 +7,10 @@
 
 use Xe_Theme\Helpers\Helpers as Helper;
 
-function _xe_page_options($meta_boxes) {
+function _xe_page_options( $meta_boxes ) {
 
   $meta_boxes[] = array(
-    'title'      => __( 'Page Options', '_xe' ),
+    'title'      => esc_html__( 'Page Options', '_xe' ),
     'taxonomies' => 'category',
     'post_types' => 'post, page, product',
 

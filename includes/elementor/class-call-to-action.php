@@ -5,9 +5,9 @@
  * @package _xe
  */
 
-if (!class_exists('Xe_CallToAction')) :
+namespace Xe_Theme\Includes\Elementor;
 
-class Xe_CallToAction extends \Elementor\Widget_Base {
+class Call_To_Action extends \Elementor\Widget_Base {
 
   public function get_name() {
     return 'call_to_action';
@@ -161,6 +161,4 @@ class Xe_CallToAction extends \Elementor\Widget_Base {
   protected function _content_template() {}
 
 }
-\Elementor\Plugin::instance()->widgets_manager->register( new Xe_CallToAction() );
-
-endif;
+\Elementor\Plugin::instance()->widgets_manager->register( new Call_To_Action() );
