@@ -277,4 +277,95 @@ class Helpers {
 
   }
 
+  /**
+   * # Update post meta fields
+   *
+   * @param int     $post_id      Current post id
+   * @param string  $name         Input name attribute
+   * @param bool    $is_array     If the input name attribute is array or not
+   * @param string  $validation   Sanitization type, accepts: 'text', 'intval', 'floatval', 'textarea', 'email', 'url'
+   * @param string  $meta_key     Post meta key
+   * @param string  $delete       If true, post meta will be deleted when the specified name attribute is not set.
+   */
+  public static function update_field( $post_id, $name, $is_array, $validation, $meta_key, $delete = false ) {
+
+    if ( ! array_key_exists($name, $_POST) && $delete == false ) {
+
+      return;
+
+    } elseif ( ! array_key_exists( $name, $_POST) && $delete == true ) {
+
+      delete_post_meta( $post_id, $meta_key );
+      return;
+
+    }
+
+    if ( $is_array == true ) {
+
+      switch ( $validation ) {
+
+        case 'text' :
+          $updated_val = array_map( 'sanitize_text_field', $_POST[$name] );
+          break;
+
+        case 'intval' :
+          $updated_val = array_map( 'intval', $_POST[$name] );
+          break;
+
+        case 'floatval' :
+          $updated_val = array_map( 'floatval', $_POST[$name] );
+          break;
+
+        case 'textarea' :
+          $updated_val = array_map( 'sanitize_textarea_field', $_POST[$name] );
+          break;
+
+        case 'email' :
+          $updated_val = array_map( 'sanitize_email', $_POST[$name] );
+          break;
+
+        case 'url' :
+          $updated_val = array_map( 'sanitize_url', $_POST[$name] );
+          break;
+
+      }
+
+    } else {
+
+      switch ( $validation ) {
+
+        case 'text' :
+          $updated_val = sanitize_text_field( $_POST[$name] );
+          break;
+
+        case 'intval' :
+          $updated_val = intval( $_POST[$name] );
+          break;
+
+        case 'floatval' :
+          $updated_val = floatval( $_POST[$name] );
+          break;
+
+        case 'textarea' :
+          $updated_val = sanitize_textarea_field( $_POST[$name] );
+          break;
+
+        case 'email' :
+          $updated_val = sanitize_email( $_POST[$name] );
+          break;
+
+        case 'url' :
+          $updated_val = sanitize_url( $_POST[$name] );
+          break;
+
+      }
+
+    }
+
+    update_post_meta( $post_id, $meta_key, $updated_val );
+
+    return $updated_val;
+
+  }
+
 }
