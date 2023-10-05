@@ -103,15 +103,6 @@ Xe_Theme\Helpers\Helpers::auto_load_files( get_template_directory() . '/includes
 require get_template_directory() . '/includes/class-extras.php';
 
 /**
- * One click demo import.
- */
-if ( class_exists('OCDI_Plugin') ) {
-
-	require get_template_directory() . '/helpers/class-demo-content.php';
-
-}
-
-/**
  * Elementor
  */
 if ( Xe_Theme\Helpers\Helpers::is_plugin_active('elementor/elementor.php') ) {
