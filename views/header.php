@@ -26,13 +26,13 @@
  * @package _xe
  */
 
-use Xe_Theme\Helpers\Helpers as Helper;
+use Xe_Theme\Helpers\Helpers;
 
 global $xe_opt;
 
 $mega_menu = (function_exists('max_mega_menu_is_enabled') && max_mega_menu_is_enabled($xe_opt->header['menu']));
-$header_classes = Helper::classes( array('site-header', 'bg-primary') );
-$nav_classes = Helper::classes( array('navbar', 'navbar-expand-lg', 'navbar-dark') );
+$header_classes = Helpers::classes( array('site-header', 'bg-primary') );
+$nav_classes = Helpers::classes( array('navbar', 'navbar-expand-lg', 'navbar-dark') );
 
 $args = array(
   'strong' => array(),
@@ -47,8 +47,9 @@ $args = array(
 ?>
 
 <!-- Top-Bar -->
-<?php if ($xe_opt->top_bar['switch'] == 'on') : ?>
-<?php endif; ?>
+<?php if ( $xe_opt->top_bar['switch'] == 'on' ) { ?>
+  <!-- Top-Bar Here -->
+<?php } ?>
 
 <header id="masthead" class="<?php echo esc_attr($header_classes); ?>" role="banner">
 
@@ -82,7 +83,8 @@ $args = array(
 </header><!-- #masthead -->
 
 <!-- Title-Bar -->
-<?php if ( $xe_opt->title_bar['switch'] == 'on' ) : ?>
+<?php if ( $xe_opt->title_bar['switch'] == 'on' ) { ?>
+
   <div id="title-bar" class="title-bar text-center">
     <div class="overlay">
       <div class="<?php echo esc_attr($xe_opt->container); ?>">
@@ -91,4 +93,5 @@ $args = array(
       </div>
     </div>
   </div>
-<?php endif;
+
+<?php }
