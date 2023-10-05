@@ -9,14 +9,14 @@
  * @package _xe
  */
 
-global $xe_opt; 
+global $xe_opt;
 
 ?>
 
 <footer id="colophon" class="site-footer">
-	<?php get_template_part( 'views/footer', $xe_opt->footer['style'] ); ?>
+	<?php get_template_part( 'template-parts/footer', $xe_opt->footer['style'] ); ?>
 </footer><!-- #colophon -->
-	
+
 </div><!-- #page -->
 
 </div><!-- #wrapper -->

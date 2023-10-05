@@ -16,14 +16,14 @@ get_header(); ?>
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<?php			
-			if ( have_posts() ) : 
+		<?php
+			if ( have_posts() ) :
 
         ?><div class="row">
           <div class="col-md-12">
             <?php if ($xe_opt->title_bar['switch'] == 'off') : ?>
               <p class="lead"><?php esc_html_e( 'Not what you looking for? Maybe try again...', '_xe' ); ?></p>
-            <?php endif; 
+            <?php endif;
             get_search_form(); ?>
           </div>
         </div><?php
@@ -31,7 +31,7 @@ get_header(); ?>
 				echo '<div class="card-columns my-4">';
 
 					/* Start the Loop */
-					while ( have_posts() ) : 
+					while ( have_posts() ) :
 						the_post();
 
 						/**
@@ -39,19 +39,19 @@ get_header(); ?>
 						 * If you want to overload this in a child theme then include a file
 						 * called content-search.php and that will be used instead.
 						 */
-						get_template_part( 'views/archive', 'search' );
+						get_template_part( 'template-parts/archive', 'search' );
 
-					endwhile; 
-							
+					endwhile;
+
 				echo '</div><!-- .card-columns -->';
 
 				_xe_paging_nav();
 
 			else :
 
-				get_template_part( 'views/content', 'none' );
+				get_template_part( 'template-parts/content', 'none' );
 
-			endif; 
+			endif;
 		?>
 
 		</main><!-- #main -->

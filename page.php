@@ -12,14 +12,14 @@
  * @package _xe
  */
 
-use Xe_Theme\Helpers\Helpers as Helper;
+use Xe_Theme\Helpers\Helpers;
 
 global $xe_opt;
 
 $sidebar = $xe_opt->sidebar();
 $comments_container = false;
 
-if ( Helper::is_elementor_used() || Helper::is_wpbakery_used() ) {
+if ( Helpers::is_elementor_used() || Helpers::is_wpbakery_used() ) {
 
   if ( $sidebar['position'] == 'none' ) {
 
@@ -38,7 +38,7 @@ if ( Helper::is_elementor_used() || Helper::is_wpbakery_used() ) {
 
 }
 
-$classes = Helper::classes( [ 'site-content', 'padding-top-bottom', $classes, 'clearfix' ] );
+$classes = Helpers::classes( [ 'site-content', 'padding-top-bottom', $classes, 'clearfix' ] );
 
 get_header();
 
@@ -50,10 +50,11 @@ get_header();
 		<main id="main" class="site-main" role="main">
 
 			<?php
-				while ( have_posts() ) :
+				while ( have_posts() ) {
+
 					the_post();
 
-					get_template_part( 'views/content', 'page' );
+					get_template_part( 'template-parts/content', 'page' );
 
 					if ( $xe_opt->page_comments == 'on' ) {
 
@@ -68,7 +69,7 @@ get_header();
 
 					}
 
-				endwhile; // End of the loop.
+				}
 			?>
 
 		</main><!-- #main -->

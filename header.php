@@ -38,4 +38,4 @@ global $xe_opt;
 <div id="page" class="site"><?php // Closed in footer ?>
 
 <?php
-get_template_part( 'views/header', $xe_opt->header['style'] );
+get_template_part( 'template-parts/header', $xe_opt->header['style'] );

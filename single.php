@@ -17,10 +17,10 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-				while ( have_posts() ) : 
+				while ( have_posts() ) :
           the_post();
 
-					get_template_part( 'views/single', get_post_format() );
+					get_template_part( 'template-parts/single', get_post_format() );
 
 					if ( $xe_opt->post_comments == 'on' ) {
 						// If comments are open or we have at least one comment, load up the comment template.
