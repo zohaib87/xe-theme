@@ -469,4 +469,24 @@ class Helpers {
 
   }
 
+  /**
+   * # Register sidebar
+   *
+   * @param string  $name   Title of the sidebar
+   * @param string  $id     Unique ID of the sidebar
+   */
+  public static function register_sidebar( $name, $id ) {
+
+    register_sidebar( [
+      'name'          => $name,
+      'id'            => $id,
+      'description'   => esc_html__( 'Add widgets here.', '_xe' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h4 class="widget-title">',
+      'after_title'   => '</h4>',
+    ] );
+
+  }
+
 }
