@@ -100,12 +100,12 @@ Xe_Theme\Helpers\Helpers::auto_load_files( get_template_directory() . '/includes
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/includes/extras.php';
+require get_template_directory() . '/includes/class-extras.php';
 
 /**
  * One click demo import.
  */
-if (class_exists('OCDI_Plugin')) {
+if ( class_exists('OCDI_Plugin') ) {
 
 	require get_template_directory() . '/helpers/class-demo-content.php';
 
