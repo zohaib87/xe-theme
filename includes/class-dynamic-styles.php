@@ -5,28 +5,30 @@
  * @package _xe
  */
 
-use Xe_Theme\Helpers\Helpers as Helper;
+namespace Xe_Theme\Includes;
+
+use Xe_Theme\Helpers\Helpers;
 use Xe_Theme\Helpers\Selectors as Se;
 
-class Xe_DynamicStyles {
+class Dynamic_Styles {
 
 	function __construct() {
 
-		add_action( 'wp_enqueue_scripts', array($this, 'enqueue_dynamic_styles') );
+		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_dynamic_styles' ] );
 
 	}
 
 	/**
-	 * Primary Color
+	 * # Primary Color
 	 */
 	protected function css_variables() {
 
 		global $xe_opt;
 
 		$color = $xe_opt->primary_color;
-		$rgb = Helper::hex2rgb($color);
-		$dark = Helper::darken($color, 20);
-		$light = Helper::darken($color, -20);
+		$rgb = Helpers::hex2rgb( $color );
+		$dark = Helpers::darken( $color, 20 );
+		$light = Helpers::darken( $color, -20 );
 
 		$css = "
     :root{
@@ -62,16 +64,16 @@ class Xe_DynamicStyles {
 	}
 
   /**
-   * Top-Bar
+   * # Top-Bar
    */
   protected function top_bar() {
 
-    $css = '';
-    $css .= "
+    $css = "
     ".wp_strip_all_tags(Se::$top_bar['text_color'])." {
       color: var(--top-bar-text-color);
     }
     ";
+
     $css .= "
     ".wp_strip_all_tags(Se::$top_bar['bg_color'])." {
       background-color: var(--top-bar-bg-color);
@@ -83,27 +85,29 @@ class Xe_DynamicStyles {
   }
 
   /**
-   * Title-Bar
+   * # Title-Bar
    */
   protected function title_bar() {
 
-    $css = '';
-    $css .= "
+    $css = "
     ".wp_strip_all_tags(Se::$title_bar['bg'])." {
       background-color: var(--title-bar-bg-color);
       background-image: var(--title-bar-bg-image);
     }
     ";
+
     $css .= "
     ".wp_strip_all_tags(Se::$title_bar['title_color'])." {
       color: var(--title-color);
     }
     ";
+
     $css .= "
     ".wp_strip_all_tags(Se::$title_bar['subtitle_color'])." {
       color: var(--subtitle-color);
     }
     ";
+
     $css .= "
     ".wp_strip_all_tags(Se::$title_bar['overlay'])." {
       background-color: var(--title-bar-overlay);
@@ -115,16 +119,16 @@ class Xe_DynamicStyles {
   }
 
   /**
-   * Footer
+   * # Footer
    */
   protected function footer() {
 
-    $css = '';
-    $css .= "
+    $css = "
     ".wp_strip_all_tags(Se::$footer['text_color'])." {
       color: var(--footer-text-color);
     }
     ";
+
     $css .= "
     ".wp_strip_all_tags(Se::$footer['bg_color'])." {
       background-color: var(--footer-bg-color);
@@ -136,13 +140,14 @@ class Xe_DynamicStyles {
   }
 
 	/**
-	 * Boxed Layout
+	 * # Boxed Layout
 	 */
 	protected function boxed_layout() {
 
 		global $xe_opt;
 
-		if ( isset($xe_opt->site_layout) && $xe_opt->site_layout == 'boxed') {
+		if ( isset($xe_opt->site_layout) && $xe_opt->site_layout == 'boxed' ) {
+
 			$css = "
 			.bg {
 				background-color: ".esc_attr($xe_opt->bg['color']).";
@@ -157,25 +162,28 @@ class Xe_DynamicStyles {
 			}
 			@media (min-width: 768px) {
 				.boxed {
-			    max-width: 750px;
-			    margin: ".esc_attr($xe_opt->boxed_layout_margin)."px auto;
-				}
-			}
-			@media (min-width: 992px) {
-				.boxed {
-			    max-width: 970px;
-			    margin: ".esc_attr($xe_opt->boxed_layout_margin)."px auto;
-				}
-			}
-			@media (min-width: 1200px) {
-				.boxed {
-			    max-width: ".esc_attr($xe_opt->main_grid_width)."px;
-			    margin: ".esc_attr($xe_opt->boxed_layout_margin)."px auto;
-				}
+          max-width: 750px;
+          margin: ".esc_attr($xe_opt->boxed_layout_margin)."px auto;
+        }
+      }
+      @media (min-width: 992px) {
+        .boxed {
+          max-width: 970px;
+          margin: ".esc_attr($xe_opt->boxed_layout_margin)."px auto;
+        }
+      }
+      @media (min-width: 1200px) {
+        .boxed {
+          max-width: ".esc_attr($xe_opt->main_grid_width)."px;
+          margin: ".esc_attr($xe_opt->boxed_layout_margin)."px auto;
+        }
 			}
 			";
+
 		} else {
+
 			$css = '';
+
 		}
 
 		return $css;
@@ -183,20 +191,26 @@ class Xe_DynamicStyles {
 	}
 
 	/**
-	 * Main grid width
+	 * # Main grid width
 	 */
 	protected function main_grid_width() {
 
 		global $xe_opt;
 
-		if ($xe_opt->main_grid_width != '1170') {
-			$css = "@media (min-width: 1200px) {
+		if ( $xe_opt->main_grid_width != '1170' ) {
+
+			$css = "
+      @media (min-width: 1200px) {
 				.container {
-			    width: ".esc_attr($xe_opt->main_grid_width)."px;
+          width: ".esc_attr( $xe_opt->main_grid_width )."px;
 				}
-			}";
+			}
+      ";
+
 		} else {
+
 			$css = '';
+
 		}
 
 		return $css;
@@ -204,7 +218,7 @@ class Xe_DynamicStyles {
 	}
 
 	/**
-	 * Content width
+	 * # Content width
 	 */
 	protected function content_width() {
 
@@ -332,34 +346,6 @@ class Xe_DynamicStyles {
 
 	}
 
-	/**
-	 * Push header down if admin-bar is showing
-	 */
-	protected function admin_bar() {
-
-		if ( is_admin_bar_showing() ) {
-
-			$css = "@media (min-width: 783px) {
-				body {
-					padding-top: 32px;
-				}
-			}
-			@media (max-width: 782px) {
-				body {
-					padding-top: 46px;
-				}
-			}";
-
-		} else {
-
-			$css = '';
-
-		}
-
-		return $css;
-
-	}
-
 	public function enqueue_dynamic_styles() {
 
 		global $xe_opt;
@@ -369,21 +355,25 @@ class Xe_DynamicStyles {
 		$main_css = $this->main_grid_width();
 		$main_css .= $this->content_width();
 		$main_css .= $this->boxed_layout();
-		$main_css .= $this->admin_bar();
     $main_css .= $this->top_bar();
     $main_css .= $this->title_bar();
     $main_css .= $this->footer();
 
 		// Enqueue Styles
-    if ( !empty($style_css) ) {
-      wp_add_inline_style( '_xe-style', Helper::minify_css($style_css) );
+    if ( ! empty($style_css) ) {
+
+      wp_add_inline_style( '_xe-style', Helpers::minify_css($style_css) );
+
     }
-    if ( !empty($main_css) ) {
-      wp_add_inline_style( '_xe-main', Helper::minify_css($main_css) );
+
+    if ( ! empty($main_css) ) {
+
+      wp_add_inline_style( '_xe-main', Helpers::minify_css($main_css) );
+
     }
 
 	}
 
 
 }
-new Xe_DynamicStyles();
+new Dynamic_Styles();
