@@ -14,7 +14,6 @@ class Extras {
   function __construct() {
 
     add_filter( 'body_class', [ $this, 'body_classes' ] );
-    add_action( 'get_header', [ $this, 'admin_bar_push_down' ] );
     add_filter( 'comment_form_defaults', [ $this, 'comment_textarea_placeholder' ] );
     add_filter( 'comment_form_default_fields', [ $this, 'comment_fields_placeholder' ] );
     add_filter( 'excerpt_length', [ $this, 'custom_excerpt_length' ], 999 );
@@ -49,15 +48,6 @@ class Extras {
     $classes[] = $xe_opt->boxed_layout_class;
 
     return $classes;
-
-  }
-
-  /**
-   * # Remove admin-bar push down.
-   */
-  public function admin_bar_push_down() {
-
-    remove_action( 'wp_head', '_admin_bar_bump_cb' );
 
   }
 
