@@ -14,7 +14,7 @@ class Testimonials extends \Elementor\Widget_Base {
   }
 
   public function get_title() {
-    return esc_html__( 'Testimonials', 'xhost' );
+    return esc_html__( 'Testimonials', '_xe' );
   }
 
   public function get_icon() {
@@ -29,7 +29,7 @@ class Testimonials extends \Elementor\Widget_Base {
 
     $this->start_controls_section(
       'content_section', [
-        'label' => esc_html__( 'Content', 'xhost' ),
+        'label' => esc_html__( 'Content', '_xe' ),
         'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
       ]
     );
@@ -39,7 +39,7 @@ class Testimonials extends \Elementor\Widget_Base {
     // Repeater Controls
     $repeater->add_control(
       'image', [
-        'label' => esc_html__( 'Choose Image', 'xhost' ),
+        'label' => esc_html__( 'Choose Image', '_xe' ),
         'type' => \Elementor\Controls_Manager::MEDIA,
         'default' => [
           'url' => \Elementor\Utils::get_placeholder_image_src(),
@@ -48,29 +48,29 @@ class Testimonials extends \Elementor\Widget_Base {
     );
     $repeater->add_control(
       'name', [
-        'label' => esc_html__('Name', 'xhost'),
+        'label' => esc_html__('Name', '_xe'),
         'type' => \Elementor\Controls_Manager::TEXT,
         'input_type' => 'text',
-        'default' => esc_html__('John Doe', 'xhost'),
+        'default' => esc_html__('John Doe', '_xe'),
       ]
     );
     $repeater->add_control(
       'comment', [
-        'label' => esc_html__('Testimonial', 'xhost'),
+        'label' => esc_html__('Testimonial', '_xe'),
         'type' => \Elementor\Controls_Manager::TEXTAREA,
         'rows' => 10,
-        'default' => esc_html__('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', 'xhost'),
+        'default' => esc_html__('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', '_xe'),
       ]
     );
 
     $this->add_control(
       'list', [
-        'label' => esc_html__( 'Repeater List', 'xhost' ),
+        'label' => esc_html__( 'Repeater List', '_xe' ),
         'type' => \Elementor\Controls_Manager::REPEATER,
         'fields' => $repeater->get_controls(),
         'default' => [
           [
-            'name' => esc_html__( 'John Doe', 'xhost' ),
+            'name' => esc_html__( 'John Doe', '_xe' ),
           ]
         ],
         'title_field' => '{{{ name }}}',
