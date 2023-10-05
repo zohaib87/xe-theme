@@ -32,7 +32,7 @@ require get_template_directory() . '/helpers/class-wp-bootstrap-navwalker.php';
 /**
  * Required plugins activation.
  */
-require get_template_directory() . '/helpers/plugins-activator.php';
+require get_template_directory() . '/helpers/class-plugins-activator.php';
 
 /**
  * Class that holds helper methods.
