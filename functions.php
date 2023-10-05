@@ -95,7 +95,7 @@ require get_template_directory() . '/includes/class-dashboard-widgets.php';
 /**
  * Custom template tags for this theme.
  */
-Xe_Theme\Helpers\Helpers::auto_load_files( get_template_directory() . '/includes/template-tags/*.php' );
+require get_template_directory() . '/includes/class-template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.

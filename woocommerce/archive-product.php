@@ -30,7 +30,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-				if ( have_posts() ) : 
+				if ( have_posts() ) :
 
 					/**
 					 * woocommerce_before_shop_loop hook.
@@ -41,11 +41,11 @@ get_header(); ?>
 					 */
 					do_action( 'woocommerce_before_shop_loop' );
 
-					woocommerce_product_loop_start(); 
+					woocommerce_product_loop_start();
 
 					woocommerce_product_subcategories();
 
-						while ( have_posts() ) : 
+						while ( have_posts() ) :
               the_post();
 
 							/**
@@ -54,8 +54,8 @@ get_header(); ?>
 							 * @hooked WC_Structured_Data::generate_product_data() - 10
 							 */
 							do_action( 'woocommerce_shop_loop' );
-							
-							wc_get_template_part( 'content', 'product' ); 
+
+							wc_get_template_part( 'content', 'product' );
 
 						endwhile; // end of the loop.
 
@@ -64,9 +64,9 @@ get_header(); ?>
 					/**
 					 * Paging Navigation
 					 */
-					_xe_paging_nav();
+					Template_Tags::paging_nav();
 
-				elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) : 
+				elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) :
 
 					/**
 					 * woocommerce_no_products_found hook.
@@ -92,4 +92,4 @@ get_header(); ?>
 
 </div><!-- #content -->
 
-<?php get_footer(); 
+<?php get_footer();

@@ -12,9 +12,13 @@
  * @package _xe
  */
 
+use Xe_Theme\Includes\Template_Tags;
+
 global $xe_opt;
 
-get_header(); ?>
+get_header();
+
+?>
 
 <div id="content" class="site-content <?php echo esc_attr($xe_opt->container); ?> padding-top-bottom clearfix">
 
@@ -22,32 +26,33 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-				if ( have_posts() ) :
+				if ( have_posts() ) {
 
 					echo '<div class="card-columns">';
 
 					/* Start the Loop */
-					while ( have_posts() ) :
+					while ( have_posts() ) {
+
 						the_post();
 
-						/*
+						/**
 						 * Include the Post-Format-specific template for the content.
 						 * If you want to override this in a child theme, then include a file
 						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 						 */
 						get_template_part( 'template-parts/archive', get_post_type() );
 
-					endwhile;
+          }
 
 					echo '</div><!-- .card-columns -->';
 
-					_xe_paging_nav();
+					Template_Tags::paging_nav();
 
-				else :
+        } else {
 
 					get_template_part( 'template-parts/content', 'none' );
 
-				endif;
+				}
 			?>
 
 		</main><!-- #main -->
@@ -57,4 +62,5 @@ get_header(); ?>
 
 </div><!-- #content -->
 
-<?php get_footer();
+<?php
+get_footer();

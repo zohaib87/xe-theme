@@ -7,9 +7,13 @@
  * @package _xe
  */
 
+use Xe_Theme\Includes\Template_Tags;
+
 global $xe_opt;
 
-get_header(); ?>
+get_header();
+
+?>
 
 <div id="content" class="site-content <?php echo esc_attr($xe_opt->container); ?> padding-top-bottom clearfix">
 
@@ -17,21 +21,24 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-			if ( have_posts() ) :
+			if ( have_posts() ) {
 
-        ?><div class="row">
-          <div class="col-md-12">
-            <?php if ($xe_opt->title_bar['switch'] == 'off') : ?>
-              <p class="lead"><?php esc_html_e( 'Not what you looking for? Maybe try again...', '_xe' ); ?></p>
-            <?php endif;
-            get_search_form(); ?>
+        ?>
+          <div class="row">
+            <div class="col-md-12">
+              <?php if ($xe_opt->title_bar['switch'] == 'off') : ?>
+                <p class="lead"><?php esc_html_e( 'Not what you looking for? Maybe try again...', '_xe' ); ?></p>
+              <?php endif;
+              get_search_form(); ?>
+            </div>
           </div>
-        </div><?php
+        <?php
 
 				echo '<div class="card-columns my-4">';
 
 					/* Start the Loop */
-					while ( have_posts() ) :
+					while ( have_posts() ) {
+
 						the_post();
 
 						/**
@@ -41,17 +48,17 @@ get_header(); ?>
 						 */
 						get_template_part( 'template-parts/archive', 'search' );
 
-					endwhile;
+          }
 
 				echo '</div><!-- .card-columns -->';
 
-				_xe_paging_nav();
+				Template_Tags::paging_nav();
 
-			else :
+      } else {
 
 				get_template_part( 'template-parts/content', 'none' );
 
-			endif;
+			}
 		?>
 
 		</main><!-- #main -->

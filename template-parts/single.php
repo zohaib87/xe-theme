@@ -7,6 +7,8 @@
  * @package _xe
  */
 
+use Xe_Theme\Includes\Template_Tags;
+
 global $xe_opt;
 
 $thumbnail_url = get_the_post_thumbnail_url( null, '_xe-post' );
@@ -29,7 +31,7 @@ $str_regux = '';
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<?php
-				if ($post_format == 'gallery') {
+				if ( $post_format == 'gallery' ) {
 
 					_xe_featured_gallery();
 
@@ -51,14 +53,15 @@ $str_regux = '';
 					if ( is_sticky() ) {
 						echo '<i class="fa fa-thumb-tack sticky-post"></i>';
 					}
-					if ($xe_opt->title_bar['switch'] == 'off') {
+
+					if ( $xe_opt->title_bar['switch'] == 'off' ) {
 						the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 					}
 				?>
 			</header><!-- .entry-header -->
 
 			<div class="entry-meta text-muted mt-2 mb-4">
-				<?php _xe_posted_on(); ?>
+				<?php Template_Tags::posted_on(); ?>
 			</div><!-- .entry-meta -->
 
 			<div class="entry-content">
@@ -76,8 +79,8 @@ $str_regux = '';
 
 			<footer class="entry-footer">
 				<?php
-					_xe_entry_footer();
-					_xe_about_author();
+					Template_Tags::entry_footer();
+					Template_Tags::about_author();
 				?>
 			</footer><!-- .entry-footer -->
 

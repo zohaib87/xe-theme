@@ -7,9 +7,13 @@
  * @package _xe
  */
 
+use Xe_Theme\Includes\Template_Tags;
+
 global $xe_opt;
 
-get_header(); ?>
+get_header();
+
+?>
 
 <div id="content" class="site-content <?php echo esc_attr($xe_opt->container); ?> padding-top-bottom clearfix">
 
@@ -23,6 +27,7 @@ get_header(); ?>
 
 					/* Start the Loop */
 					while ( have_posts() ) {
+
 						the_post();
 
 						get_template_part( 'template-parts/archive', get_post_format() );
@@ -31,7 +36,7 @@ get_header(); ?>
 
 					echo '</div><!-- .card-columns -->';
 
-					_xe_paging_nav();
+					Template_Tags::paging_nav();
 
         } else {
 

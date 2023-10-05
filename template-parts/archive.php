@@ -7,6 +7,8 @@
  * @package _xe
  */
 
+use Xe_Theme\Includes\Template_Tags;
+
 global $xe_opt;
 
 $thumbnail_url = get_the_post_thumbnail_url( null, '_xe-blog' );
@@ -26,17 +28,17 @@ $post_format = get_post_format();
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 		<?php
-      if ($post_format == 'video') {
+      if ( $post_format == 'video' ) {
 
-        _xe_featured_video();
+        Template_Tags::featured_video();
 
-      } elseif ($post_format == 'audio') {
+      } elseif ( $post_format == 'audio' ) {
 
-        _xe_featured_audio();
+        Template_Tags::featured_audio();
 
-      } elseif ($post_format == 'gallery') {
+      } elseif ( $post_format == 'gallery' ) {
 
-        _xe_featured_gallery();
+        Template_Tags::featured_gallery();
 
       } else {
 
@@ -62,7 +64,7 @@ $post_format = get_post_format();
       </header><!-- .entry-header -->
 
       <div class="entry-meta text-muted mb-2">
-        <?php _xe_posted_on(); ?>
+        <?php Template_Tags::posted_on(); ?>
       </div><!-- .entry-meta -->
 
       <div class="entry-content">
