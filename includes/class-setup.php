@@ -11,15 +11,21 @@
 
 namespace Xe_Theme\Includes;
 
+use Xe_Theme\Helpers\Helpers;
+
 class Setup {
 
   function __construct() {
 
     add_action( 'after_setup_theme', [ $this, 'setup' ] );
     add_action( 'after_setup_theme', [ $this, 'content_width' ], 0 );
+    add_action( 'widgets_init', [ $this, 'register_sidebars' ] );
 
   }
 
+  /**
+   * # Theme setup
+   */
   public function setup() {
 
     /**
@@ -119,6 +125,20 @@ class Setup {
   public function content_width() {
 
     $GLOBALS['content_width'] = apply_filters( 'content_width', 1170 );
+
+  }
+
+  /**
+   * # Register sidebars
+   */
+  public function register_sidebars() {
+
+    Helpers::register_sidebar( esc_html__( 'Sidebar 1', '_xe' ), 'sidebar-1' );
+    Helpers::register_sidebar( esc_html__( 'Sidebar 2', '_xe' ), 'sidebar-2' );
+    Helpers::register_sidebar( esc_html__( 'Sub-Footer Column 1', '_xe' ), 'footer-1' );
+    Helpers::register_sidebar( esc_html__( 'Sub-Footer Column 2', '_xe' ), 'footer-2' );
+    Helpers::register_sidebar( esc_html__( 'Sub-Footer Column 3', '_xe' ), 'footer-3' );
+    Helpers::register_sidebar( esc_html__( 'Sub-Footer Column 4', '_xe' ), 'footer-4' );
 
   }
 
