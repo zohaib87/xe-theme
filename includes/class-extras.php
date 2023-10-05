@@ -21,14 +21,6 @@ class Extras {
     add_filter( 'excerpt_more', [ $this, 'excerpt_more' ] );
     add_action( 'admin_menu', [ $this, 'add_menu_pages' ] );
     add_action( 'admin_menu', [ $this, 'remove_menu_pages' ] );
-    add_filter( 'get_search_form', [ $this, 'custom_search_form' ], 100 );
-
-    if ( class_exists('WooCommerce') ) {
-
-      add_filter( 'get_product_search_form' , [ $this, 'woo_search_form' ] );
-      remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 ); // Remove WooCommerce breadcrumbs
-
-    }
 
   }
 
@@ -148,45 +140,6 @@ class Extras {
    * @link https://developer.wordpress.org/reference/functions/remove_submenu_page/
    */
   public function remove_menu_pages() {
-  }
-
-  /**
-   * # Search form customization etc.
-   */
-  public function custom_search_form( $form ) {
-
-    $form = '
-      <form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
-        <div class="search-form">
-          <label class="screen-reader-text" for="s">' . esc_html__('Search:', '_xe') . '</label>
-          <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="Search" class="form-control mr-sm-1">
-          <input type="submit" id="searchsubmit" value="" class="search-submit">
-        </div>
-      </form>
-    ';
-
-    return $form;
-
-  }
-
-  /**
-   * # WooCommerce --> Search button text
-   */
-  public function woo_search_form( $form ) {
-
-    $form = '
-      <form role="search" method="get" class="woocommerce-product-search" action="' . esc_url( home_url( '/'  ) ) . '">
-        <div>
-          <label class="screen-reader-text" for="woocommerce-product-search-field">' . esc_html__( 'Search for:', '_xe' ) . '</label>
-          <input type="search" id="woocommerce-product-search-field" class="search-field" placeholder="' . esc_html__( 'Search products...', '_xe' ) . '" value="' . get_search_query() . '" name="s" />
-          <input type="submit" value="" />
-          <input type="hidden" name="post_type" value="product" />
-        </div>
-      </form>
-    ';
-
-    return $form;
-
   }
 
 }
