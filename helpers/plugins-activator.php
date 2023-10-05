@@ -8,7 +8,7 @@ require_once get_template_directory() . '/helpers/class-tgm-plugin-activation.ph
  * Register the required plugins for this theme.
  *
  * <snip />
- * 
+ *
  * This function is hooked into tgmpa_init, which is fired within the
  * TGM_Plugin_Activation class constructor.
  */
@@ -19,7 +19,7 @@ function _xe_register_required_plugins() {
 	 * If the source is NOT from the .org repo, then source is also required.
 	 */
 	$plugins = array(
-    
+
 		// Include a plugin from the WordPress Plugin Repository.
 		array(
 			'name'      => 'Elementor Website Builder',
@@ -35,11 +35,6 @@ function _xe_register_required_plugins() {
 			'name'      => 'Meta Box',
 			'slug'      => 'meta-box',
 			'required'  => true,
-		),
-		array(
-			'name'      => 'One Click Demo Import',
-			'slug'      => 'one-click-demo-import',
-			'required'  => false,
 		),
     array(
       'name'      => 'Max Mega Menu',
@@ -58,8 +53,8 @@ function _xe_register_required_plugins() {
 		),
 
 		// <snip />
-		
-	); 
+
+	);
 
 	/**
 	 * Array of configuration settings. Amend each line as needed.
