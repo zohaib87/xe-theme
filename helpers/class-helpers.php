@@ -92,7 +92,7 @@ class Helpers {
    * # Get and list menu locations.
    * Will only work after init and wp hook.
    */
-  public static function menu_locations($override = false) {
+  public static function menu_locations( $override = false ) {
 
     global $_wp_registered_nav_menus;
 
@@ -116,18 +116,22 @@ class Helpers {
     $data = array();
     $data['none'] = esc_html__( 'None', '_xe' );
 
-    if ( class_exists('RevSlider') ) :
+    if ( class_exists('RevSlider') ) {
 
       $slider = new \RevSliderSlider();
       $sliders = $slider->getArrSlidersShort();
 
-      if (!empty($sliders)) {
-        foreach ($sliders as $key => $val) {
+      if ( ! empty( $sliders ) ) {
+
+        foreach ( $sliders as $key => $val ) {
+
           $data[$key] = $val;
+
         }
+
       }
 
-    endif;
+    }
 
     return $data;
 
