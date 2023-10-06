@@ -23,7 +23,7 @@ jobs:
           filename: ${{ github.event.repository.name }}.zip
           directory: ../
           exclusions: '*.git* *.md *.yml /*docs/*'
-          recursive_exclusions: '/*psd/* *.psd'
+          recursive_exclusions: '**/psd/**'
           # exclusions e.g: '*.git* /*node_*/* *.json *.lock *.md'
 
       - name: Upload Archive Release Asset
