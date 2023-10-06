@@ -11,12 +11,18 @@ Just a starter WordPress theme + build process. It is built for developers to cr
 
 == Changelog ==
 ----- v2.3.15 ------------
-New Added: Version control for CSS and JS files.
+New Added: Custom enqueue method for CSS and JS files.
 New Added: Links to WordPress Developer Resources.
+New Added: Elementor widget samples.
+Updated: Some coding standards.
 Updated: Elementor deprecated functions.
 Removed: Minification feature and options.
+Removed: Classic custom widgets.
+Removed: Browser-sync and copy.js.
 Fixed: Error if no featured image selected for products.
-Fixed: Minor bugs.
+Fixed: Some broken WooCommerce templates.
+Fixed: Warnings and required errors in theme check.
+Fixed: Some minor bugs.
 
 ----- v2.3.14 ------------
 Removed: Model folder.
