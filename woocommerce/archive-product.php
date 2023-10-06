@@ -13,16 +13,20 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.4.0
+ * @version   3.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+use Xe_Theme\Includes\Template_Tags;
+
 global $xe_opt;
 
-get_header(); ?>
+get_header();
+
+?>
 
 <div id="content" class="site-content <?php echo esc_attr($xe_opt->container); ?> padding-top-bottom">
 
@@ -30,7 +34,7 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-				if ( have_posts() ) :
+				if ( have_posts() ) {
 
 					/**
 					 * woocommerce_before_shop_loop hook.
@@ -45,7 +49,8 @@ get_header(); ?>
 
 					woocommerce_product_subcategories();
 
-						while ( have_posts() ) :
+						while ( have_posts() ) {
+
               the_post();
 
 							/**
@@ -57,7 +62,7 @@ get_header(); ?>
 
 							wc_get_template_part( 'content', 'product' );
 
-						endwhile; // end of the loop.
+            }
 
 					woocommerce_product_loop_end();
 
@@ -66,7 +71,7 @@ get_header(); ?>
 					 */
 					Template_Tags::paging_nav();
 
-				elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) :
+        } elseif ( ! woocommerce_product_subcategories( array( 'before' => woocommerce_product_loop_start( false ), 'after' => woocommerce_product_loop_end( false ) ) ) ) {
 
 					/**
 					 * woocommerce_no_products_found hook.
@@ -75,7 +80,7 @@ get_header(); ?>
 					 */
 					do_action( 'woocommerce_no_products_found' );
 
-				endif;
+        }
 			?>
 
 		</main><!-- #main -->
@@ -92,4 +97,5 @@ get_header(); ?>
 
 </div><!-- #content -->
 
-<?php get_footer();
+<?php
+get_footer();
