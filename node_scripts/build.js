@@ -67,7 +67,8 @@ copyDir.sync( currentTheme, targetUrl, {
       'node_scripts',
       'docs',
       'site',
-      'src'
+      'src',
+      'psd'
     ];
     if ( stat === 'directory' && directories.includes(path.basename(filename)) ) {
       return false;
