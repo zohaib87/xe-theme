@@ -2,7 +2,7 @@
 
 [![Issues](https://img.shields.io/github/issues/zohaib87/xe-theme)](https://github.com/zohaib87/xe-theme/issues)
 [![Release Latest](https://img.shields.io/github/v/release/zohaib87/xe-theme?color=yellowgreen)](https://github.com/zohaib87/xe-theme/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/zohaib87/xe-theme/total)](https://github.com/zohaib87/xe-theme/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/zohaib87/xe-theme/total)](https://github.com/zohaib87/xe-theme/releases/latest/download/xe-theme.zip)
 ![Repo Size](https://img.shields.io/github/repo-size/zohaib87/xe-theme.svg)
 [![License](https://img.shields.io/github/license/zohaib87/xe-theme)](https://github.com/zohaib87/xe-theme/blob/master/LICENSE.md)
 

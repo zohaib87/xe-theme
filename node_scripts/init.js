@@ -4,6 +4,7 @@ var config = require('./config.json');
 var path = require('path');
 
 var name = config.name;
+var global = config.global;
 var nameLower = name.toLowerCase();
 var nameHyphen = nameLower.replace(/ /g, '-');
 var nameUnderscores = nameLower.replace(/ /g, '_');
@@ -27,7 +28,7 @@ var options = {
     currentTheme+'/**/*.php',
     currentTheme+'/readme.txt',
   ],
-  from: [ /'_xe'/g, /_xe_/g, /Text Domain: _xe/g, /Template: _xe/g, / _xe/g, /_xe-/g, /xe_opt/g, /Xe_Theme\\/g ],
+  from: [ /'_xe'/g, /_xe_/g, /Text Domain: _xe/g, /Template: _xe/g, / _xe/g, /_xe-/g, /\$xe_opt/g, /Xe_Theme\\/g ],
   to: [txtDomain, funcNames, styleCss, template, dockBlocks, preHandles, gloVars, namespaces],
 };
 
